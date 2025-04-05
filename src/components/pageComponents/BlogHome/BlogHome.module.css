@@ -1,0 +1,101 @@
+.blogHomeContainer {
+  height: 100vh;
+  flex: 7;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.top {
+  width: 100%;
+  height: 5%;
+  text-align: end;
+  position: sticky;
+  top: 0px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.bottom {
+  width: 100%;
+  height: 95%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.listContainer {
+  margin-top: 2rem;
+  width: 50%;
+  height: 75%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: top;
+  overflow: hidden;
+  overflow-y: scroll;
+}
+
+.listContainer::-webkit-scrollbar {
+  width: 1px;
+}
+
+.listContainer::-webkit-scrollbar-thumb {
+  background-color: black;
+}
+
+.listContainer::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+
+.postTitleContainer {
+  width: 50%;
+  position: sticky;
+  top: 0;
+}
+
+.titleText {
+  font-size: 0.9rem;
+}
+
+.postLink {
+  text-decoration: none;
+}
+
+.postLink p {
+  color: black;
+  font-size: 0.8rem;
+}
+
+.postLink p:hover {
+  color: gray;
+  transition: 0.3s;
+}
+
+.allPostsLinkContainer {
+  margin-top: 2rem;
+}
+
+@media screen and (max-width: 600px) {
+  .blogHomeContainer {
+    min-height: 100vh;
+  }
+  .top {
+    margin-top: 2rem;
+  }
+
+  .listContainer {
+    height: 65vh;
+    width: 90%;
+  }
+
+  .listContainer::-webkit-scrollbar {
+    width: 1.5px;
+  }
+
+  .postTitleContainer {
+    text-align: center;
+  }
+}

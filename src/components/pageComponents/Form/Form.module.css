@@ -1,0 +1,153 @@
+.formPageContainer {
+  max-height: 100vh;
+  flex: 7;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.top {
+  width: 100%;
+  height: 5%;
+  text-align: end;
+  position: sticky;
+  top: 0px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.bottom {
+  width: 100%;
+  height: 95%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.formContainer {
+  height: 100%;
+  width: 80%;
+}
+
+.form {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.form input:nth-child(1) {
+  width: 60%;
+  height: 2rem;
+  border: none;
+  border-bottom: 1px solid transparent;
+  font-family: "andale mono", "Reddit Mono", monospace;
+  text-align: center;
+}
+
+.form input:nth-child(1):hover {
+  border-bottom: 1px solid black;
+  transition: 0.3s;
+}
+
+.videoInput {
+  width: 60%;
+  border: none;
+  height: 2rem;
+  text-align: center;
+  border-bottom: 1px solid transparent;
+  font-family: "andale mono", "Reddit Mono", monospace;
+}
+
+.videoInput:hover {
+  border-bottom: 1px solid black;
+  transition: 0.3s;
+}
+
+.form input:nth-child(2):hover {
+  border-bottom: 1px solid black;
+  transition: 0.3s;
+}
+
+.form input:focus {
+  outline: none;
+}
+
+.form input::file-selector-button {
+  background-color: white;
+  border: 1px solid black;
+  font-family: "andale mono", "Reddit Mono", monospace;
+  margin: 1rem;
+  border: none;
+}
+
+.form input::file-selector-button:hover {
+  cursor: pointer;
+  color: gray;
+  transition: 0.3s;
+}
+
+.form input::file-selector-button:focus {
+  outline: none;
+}
+
+.form label {
+  color: gray;
+  font-family: "andale mono", "Reddit Mono", monospace;
+  font-weight: 100;
+  font-size: 0.8rem;
+}
+
+.directionsText {
+  color: red;
+  font-size: 0.7rem;
+}
+
+.form textarea {
+  width: 80%;
+  border: none;
+  border: 1px solid transparent;
+  font-family: "andale mono", "Reddit Mono", monospace;
+  text-align: center;
+}
+
+.form textarea:focus {
+  outline: none;
+}
+
+.form textarea:hover {
+  border-bottom: black 1px solid;
+  transition: 0.3s;
+}
+
+.form button {
+  width: auto;
+  height: 5%;
+  background-color: transparent;
+  border: none;
+  color: black;
+  font-family: "andale mono", "Reddit Mono", monospace;
+}
+
+.form button:hover {
+  opacity: 0.3;
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 600px) {
+  .top {
+    margin-top: 2rem;
+  }
+
+  .formPageContainer {
+    min-height: 110vh;
+  }
+
+  .form {
+    min-height: 100vh;
+  }
+}
