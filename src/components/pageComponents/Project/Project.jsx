@@ -88,7 +88,8 @@ const Project = (props) => {
 
             {props.project.id === 7 ? (
               <div className={s.descText}>
-                <p>{props.project.description}</p>
+                <p>{props.project.description.slice(0, 320)}</p>
+                <p>{props.project.description.slice(321)}</p>
               </div>
             ) : null}
 

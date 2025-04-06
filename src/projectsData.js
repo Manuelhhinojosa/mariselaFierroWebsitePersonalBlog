@@ -105,7 +105,7 @@ export const projectsData = [
     path: "/sigilio",
     title: "Sigilio",
     description:
-      "Sigilo es el nombre de una serie de móviles efímeros que se componen de intenciones codificadas a partir de números y reglas de composición visual. El carácter perecedero de los pétalos y su liviandad permiten que eventualmente las intenciones se liberen de su código material y regresen a su abstracción e inasibilidad.",
+      "Sigilo es el nombre de una serie de móviles efímeros que se componen de intenciones codificadas a partir de números y reglas de composición visual. El carácter perecedero de los pétalos y su liviandad permiten que eventualmente las intenciones se liberen de su código material y regresen a su abstracción e inasibilidad. Se expuso en la Casa Museo López Portillo en diciembre de 2022.",
     imgOne:
       "https://res.cloudinary.com/mangud/image/upload/v1711190217/Marisela/Captura_de_pantalla_2024-03-21_a_la_s_23.21.24_hmewi0.png",
     imgTwo:
