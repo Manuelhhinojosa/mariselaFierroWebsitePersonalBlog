@@ -123,19 +123,38 @@ export const Blog = (props) => {
                         .patch(
                           `${process.env.REACT_APP_DATABASE_URL_POSTS}${post._id}`
                         )
-                        .then(() => {
+                        .then((result) => {
+                          console.log(result);
+                          console.log("SUCCESS! Post edited. Result:", {
+                            config: result.config,
+                            data: result.data,
+                            status: result.status,
+                            headers: result.headers,
+                          });
                           axios.get(getAllPostsUrl).then((res) => {
+                            console.log(res);
                             const updatedPosts = res.data;
                             props.verificationState.setPosts(
                               updatedPosts.reverse()
                             );
                           });
+                          console.log("SUCCESS! Posts loaded Result:", {
+                            config: result.config,
+                            data: result.data,
+                            status: result.status,
+                            headers: result.headers,
+                          });
                           toast("*** Gracias :) ***", toastStyleObject);
                         })
                         .catch((error) => {
-                          console.log("this is the error:", error);
+                          console.log("This is the error:", {
+                            message: error.message,
+                            stack: error.stack,
+                            config: error.config,
+                            response: error.response,
+                          });
                           toast(
-                            "*** Error! Intenta más tarde :( ***",
+                            `*** Error! Intenta más tarde. ${error.message} ***`,
                             toastStyleObject
                           );
                         });
@@ -172,18 +191,31 @@ export const Blog = (props) => {
                           )
                           .then(() => {
                             axios.get(getAllPostsUrl).then((res) => {
+                              console.log(res);
                               const updatedPosts2 = res.data;
                               props.verificationState.setPosts(
                                 updatedPosts2.reverse()
                               );
+                              console.log("SUCCESS! Post deleted. Result:", {
+                                config: res.config,
+                                data: res.data,
+                                status: res.status,
+                                headers: res.headers,
+                              });
                             });
+
                             toast(
                               "*** Publicación eliminada :) ***",
                               toastStyleObject
                             );
                           })
                           .catch((error) => {
-                            console.log("this is the error:", error);
+                            console.log("This is the error:", {
+                              message: error.message,
+                              stack: error.stack,
+                              config: error.config,
+                              response: error.response,
+                            });
                             toast(
                               "*** No se puede eliminar la publicación en este instante. Intentar más tarde ***",
                               toastStyleObject
