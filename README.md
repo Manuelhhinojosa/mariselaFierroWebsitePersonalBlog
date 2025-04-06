@@ -1,4 +1,4 @@
-# 🌺 Marisela Fierro Blog
+# 📝 Marisela Fierro Blog & website
 
 This is a full-stack MERN (MongoDB, Express, React, Node.js) web application built as a personal blog and portfolio site for a real client — artist and academic Marisela Fierro.
 
@@ -31,3 +31,7 @@ The backend API was fully built by me as well, including authentication, post ro
 ## 💼 Real Client Collaboration
 
 This site was made in collaboration with a real client who provided the visual design and content requirements. All functionality was tailored specifically to their needs — including the blog flow, login permissions, and layout preferences.
+
+## The client side of this application can be visited here:
+
+https://mariselafierro.netlify.app
