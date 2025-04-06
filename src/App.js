@@ -42,7 +42,6 @@ function App() {
 
   // Posts for blog state
   const [posts, setPosts] = useState([]);
-  const [axiosEr, setAxiosEr] = useState("no error");
 
   // API URL
   const getAllPostsUrl = process.env.REACT_APP_DATABASE_URL;
@@ -54,15 +53,28 @@ function App() {
       .then((result) => {
         const postsFromAPI = result.data;
         setPosts(postsFromAPI.reverse());
-        console.log("Posts loaded:", result);
+        console.log(result);
+        console.log("SUCCESS! Posts loaded. Result:", {
+          config: result.config,
+          data: result.data,
+          status: result.status,
+          headers: result.headers,
+        });
       })
       .catch((error) => {
-        console.log("Posts not loaded", error);
-        setAxiosEr(`${error.message}. Please try again later`);
-        console.log(axiosEr);
-        toast.error("*** Posts not loaded ***", toastStyleObject);
+        console.log("This is the error:", {
+          message: error.message,
+          stack: error.stack,
+          config: error.config,
+          response: error.response,
+        });
+
+        toast(
+          `Error con la conexión con la base de datos. Blog no disponible. Error: ${error.message} `,
+          toastStyleObject
+        );
       });
-  }, [axiosEr, isLoggedIn]);
+  }, []);
 
   // NavBar props
   const navBarState = {
