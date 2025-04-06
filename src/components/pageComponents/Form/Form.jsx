@@ -122,7 +122,7 @@ const Form = (props) => {
             status: result.status,
             headers: result.headers,
           });
-          props.userState.setPosts(response.data.reverse());
+          props.userState.setPosts(result.data.reverse());
         });
         // Upons success
         navigate("/allposts");

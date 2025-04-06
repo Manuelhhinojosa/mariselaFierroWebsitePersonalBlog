@@ -43,20 +43,31 @@ export const Login = (props) => {
     axios
       .post(loginURL, data)
       .then((result) => {
+        console.log(result);
+        console.log("SUCCESS! User loggedin. Result:", {
+          config: result.config,
+          data: result.data,
+          status: result.status,
+          headers: result.headers,
+        });
         const user = result.data;
         props.userState.setUser(user._id);
         props.userState.setIsLoggedIn(true);
         toast("*** Güelcomrps la Marips ***", toastStyleObject);
         navigate("/blogmain");
-        console.log(result);
       })
       // Error handleling
       .catch((error) => {
+        console.log("This is the error:", {
+          message: error.message,
+          stack: error.stack,
+          config: error.config,
+          response: error.response,
+        });
         toast(
           "*** Usuario y/ó Contraseńa no son conrrectos ***",
           toastStyleObject
         );
-        console.log("this is the error:", error);
         usernameRef.current.value = "";
         passwordRef.current.value = "";
         usernameRef.current.focus();
