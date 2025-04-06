@@ -54,16 +54,34 @@ const EditForm = (props) => {
       .then((result) => {
         console.log(result);
         const getAllPostsUrl = process.env.REACT_APP_DATABASE_URL;
+        console.log("SUCCESS! Post edited. Result:", {
+          config: result.config,
+          data: result.data,
+          status: result.status,
+          headers: result.headers,
+        });
         axios.get(getAllPostsUrl).then((response) => {
+          console.log(response);
           const allPostsAfterEditing = response.data;
           props.verificationState.setPosts(allPostsAfterEditing.reverse());
+        });
+        console.log("SUCCESS! Posts loaded. Result:", {
+          config: result.config,
+          data: result.data,
+          status: result.status,
+          headers: result.headers,
         });
         navigate(`/${post.reference}`);
         toast("*** Publicación editada ***", toastStyleObject);
       })
       // Error handing
       .catch((error) => {
-        console.log("this is the error", error);
+        console.log("This is the error:", {
+          message: error.message,
+          stack: error.stack,
+          config: error.config,
+          response: error.response,
+        });
         toast(
           "*** Publicación no puede ser editada en este momento. Intenta más tarde ***",
           toastStyleObject
