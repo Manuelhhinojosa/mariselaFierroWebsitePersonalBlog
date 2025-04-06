@@ -94,6 +94,7 @@ const NavBar = (props) => {
                   <div
                     className={s.menuItemContainer}
                     onClick={() => {
+                      console.log("SUCCESS! User logged out");
                       props.navBarState.setIsLoggedIn(false);
                       props.navBarState.setShowNavBar(false);
                       toast("*** Gurps brais Marips. ***", toastStyleObject);
