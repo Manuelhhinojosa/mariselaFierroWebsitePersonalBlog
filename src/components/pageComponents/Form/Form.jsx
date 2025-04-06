@@ -92,7 +92,14 @@ const Form = (props) => {
     // Axios call
     axios
       .post(createUrl, formData)
-      .then((response) => {
+      .then((result) => {
+        console.log(result);
+        console.log("SUCCESS! Post added. Result:", {
+          config: result.config,
+          data: result.data,
+          status: result.status,
+          headers: result.headers,
+        });
         // Reseting to initial values so app can add another post
         titleRef.current.value = "";
         mediaRef.current.value = "";
@@ -107,8 +114,14 @@ const Form = (props) => {
         // catching all post after the new post was added
         const getAllPostsUrl = process.env.REACT_APP_DATABASE_URL;
         // Reasigning value of posts (best practices)
-        axios.get(getAllPostsUrl).then((response) => {
-          console.log(response);
+        axios.get(getAllPostsUrl).then((result) => {
+          console.log(result);
+          console.log("SUCCESS! Posts loaded. Result:", {
+            config: result.config,
+            data: result.data,
+            status: result.status,
+            headers: result.headers,
+          });
           props.userState.setPosts(response.data.reverse());
         });
         // Upons success
@@ -117,7 +130,12 @@ const Form = (props) => {
       })
       // Adding post error handling
       .catch((error) => {
-        console.log("Error:", error);
+        console.log("This is the error:", {
+          message: error.message,
+          stack: error.stack,
+          config: error.config,
+          response: error.response,
+        });
         toast(
           "*** Publicación no puede ser agregada en este instante. Intenta más tarde o contacta a tu desarrollador ***",
           toastStyleObject
