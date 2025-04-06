@@ -151,4 +151,38 @@ export const projectsData = [
     imgFive:
       "https://res.cloudinary.com/mangud/image/upload/v1711437878/Marisela/Captura_de_pantalla_2024-03-25_a_la_s_16.53.00_ahwc4c.png",
   },
+  {
+    id: 10,
+    path: "/riga",
+    title: "Riga",
+    description:
+      "Riga es una extensión íntima de mi práctica artística, una intersección entre la geografía emocional y los objetos que habitan lo cotidiano. Este proyecto nace de la necesidad de traducir la experiencia del mundo —sus colores, texturas y silencios— en formas que puedan ser llevadas, tocadas, atesoradas. En estas piezas exploro cómo el espacio moldea la percepción, cómo los objetos conservan memoria, y cómo el cuerpo se convierte en un archivo en movimiento. Riga responde al deseo de materializar esas exploraciones en formas que acompañen lo cotidiano: piezas que, además de usarse, entablan un diálogo con quien las porta o las observa. Riga nace del acto de caminar ciudades, recolectar impresiones, atmósferas y texturas, para luego transformarlas en fragmentos portátiles del mundo.",
+    imgOne:
+      "https://res.cloudinary.com/mangud/image/upload/v1743971544/Marisela/Copia_de_Riga_portada_peq_e9bbiw.jpg",
+    imgTwo:
+      "https://res.cloudinary.com/mangud/image/upload/v1743971554/Marisela/Copia_de_Riga-07_e4akdw.jpg",
+    imgThree:
+      "https://res.cloudinary.com/mangud/image/upload/v1743971576/Marisela/Copia_de_Riga-17_yahyca.jpg",
+    imgFour:
+      "https://res.cloudinary.com/mangud/image/upload/v1743971564/Marisela/Copia_de_Riga-11_ln2iiq.jpg",
+    imgFive:
+      "https://res.cloudinary.com/mangud/image/upload/v1743971530/Marisela/Copia_de_Riga-18_zx0ens.jpg",
+  },
+  {
+    id: 11,
+    path: "/tardio",
+    title: "Tardío",
+    description:
+      "En este trabajo, exploro las formas que surgen a partir del teñido de telas con la técnica Shibori. Esta es una técnica que consiste en doblar las telas, amarrarlas o prensarlas para que al momento de teñirlas, se bloqueen algunas partes y resulten formas como las que vemos. Mi intención es crear un objeto que, al desplegarse, invite a la observación y al juego con las formas que surgen, estimulando su interpretación desde el subconsciente. Esto se asemeja al test psicológico de Rorschach, que opera en el inconsciente a través de la libre asociación de significados en torno a las manchas de tinta observadas en sus láminas. En este caso, elegí utilizar telas blancas con pintura roja para remitir a las gasas quirúrgicas por un tema que me inquieta y con el que estoy familiarizada, el de los hospitales públicos y el sistema de salud. En estos espacios, los derechohabientes necesitan atención y en todos lados hay que esperar para recibirla, hacer filas, largos trámites, procesos interminables, transitar por espacios hostiles, con atención muchas veces deshumanizada, mientras las personas se desangran de manera metafórica y literal. En Tardío exploro la conexión entre el cuerpo herido y el inconsciente. Abro un diálogo sobre la vulnerabilidad, el dolor y los procesos de curación, tanto físicos como psicológicos. La sangre, símbolo de vida y muerte, se convierte aquí en un elemento abstracto que transforma la gasa, un objeto clínico y funcional, en un medio que tiene la intención de transmitir emociones ambiguas. La pieza se expuso en el mes de marzo y abril del 2025 en Escaparate Independencia del CUAAD Artes de la Universidad de Guadalajara.",
+    imgOne:
+      "https://res.cloudinary.com/mangud/image/upload/v1743973089/Marisela/Tardi%C3%8C_o-5_fulsjx.jpg",
+    imgTwo:
+      "https://res.cloudinary.com/mangud/image/upload/v1743973320/Marisela/Screen_Shot_2025-04-06_at_2.01.40_PM_k2vkaa.png",
+    imgThree:
+      "https://res.cloudinary.com/mangud/image/upload/v1743973116/Marisela/Tardi%C3%8C_o-2_hyiuoo.jpg",
+    imgFour:
+      "https://res.cloudinary.com/mangud/image/upload/v1743973102/Marisela/Tardi%C3%8C_o-3_bjjq5u.jpg",
+    imgFive:
+      "https://res.cloudinary.com/mangud/image/upload/v1743973075/Marisela/Tardi%C3%8C_o-6_fdzfpn.jpg",
+  },
 ];

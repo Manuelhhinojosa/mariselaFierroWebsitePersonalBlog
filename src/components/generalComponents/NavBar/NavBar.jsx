@@ -85,6 +85,12 @@ const NavBar = (props) => {
               <Link className={s.link} to="/dif">
                 <div className={s.menuItemContainer}>Expreso</div>
               </Link>
+              <Link className={s.link} to="/riga">
+                <div className={s.menuItemContainer}>Riga</div>
+              </Link>
+              <Link className={s.link} to="/tardio">
+                <div className={s.menuItemContainer}>Tardío</div>
+              </Link>
             </div>
 
             {/* LOGIN/OUT BUTTON CONTAINER */}

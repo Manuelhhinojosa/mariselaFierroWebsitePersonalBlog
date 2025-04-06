@@ -116,6 +116,23 @@ const Project = (props) => {
                 <p>{props.project.description.slice(407)}</p>
               </div>
             ) : null}
+
+            {props.project.id === 10 ? (
+              <div className={s.descText}>
+                <p>{props.project.description.slice(0, 304)}</p>
+                <p>{props.project.description.slice(305, 642)}</p>
+                <p>{props.project.description.slice(643)}</p>
+              </div>
+            ) : null}
+
+            {props.project.id === 11 ? (
+              <div className={s.descText}>
+                <p>{props.project.description.slice(0, 630)}</p>
+                <p>{props.project.description.slice(631, 1145)}</p>
+                <p>{props.project.description.slice(1146, 1532)}</p>
+                <p>{props.project.description.slice(1533)}</p>
+              </div>
+            ) : null}
           </div>
           {/* Images container */}
           <div className={s.imagesContainer}>
