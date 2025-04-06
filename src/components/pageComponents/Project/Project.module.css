@@ -110,8 +110,8 @@
 }
 
 .image {
-  height: 80%;
-  width: 80%;
+  height: 65%;
+  width: 65%;
   opacity: 0.75;
   object-fit: cover;
 }
@@ -120,6 +120,8 @@
   cursor: none;
   opacity: 1;
   transition: 0.5s;
+  height: 100%;
+  width: 100%;
 }
 
 @media screen and (max-width: 600px) {
