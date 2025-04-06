@@ -130,15 +130,36 @@ export const SinglePost = (props) => {
                     `${process.env.REACT_APP_DATABASE_URL_POSTS}${post._id}`
                   )
                   .then((result) => {
+                    console.log(result);
+                    console.log("SUCCESS! Post updated. Result:", {
+                      config: result.config,
+                      data: result.data,
+                      status: result.status,
+                      headers: result.headers,
+                    });
+
                     axios.get(getAllPostsUrl).then((res) => {
+                      console.log(res);
                       console.log(result);
+                      console.log("SUCCESS! Posts loaded. Result:", {
+                        config: result.config,
+                        data: result.data,
+                        status: result.status,
+                        headers: result.headers,
+                      });
                       const updatedPosts = res.data;
                       props.postState.setPosts(updatedPosts.reverse());
                     });
                     toast("*** Gracias :) ***", toastStyleObject);
                   })
                   .catch((error) => {
-                    console.log("this is the error:", error);
+                    console.log("This is the error:", {
+                      message: error.message,
+                      stack: error.stack,
+                      config: error.config,
+                      response: error.response,
+                    });
+
                     toast(
                       "*** Error! Intenta más tarde :( ***",
                       toastStyleObject
