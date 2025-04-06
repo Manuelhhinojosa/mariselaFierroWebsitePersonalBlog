@@ -71,7 +71,7 @@ function App() {
 
         toast(
           `Error con la conexión con la base de datos. Blog no disponible. Error: ${error.message} `,
-          toastStyleObject
+          toastStyleObject()
         );
       });
   }, []);

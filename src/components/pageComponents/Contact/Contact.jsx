@@ -34,7 +34,7 @@ const Contact = () => {
       messageRef.current.value === ""
     ) {
       nameRef.current.focus();
-      toast("*** Todos los campos son obligatorios ***", toastStyleObject);
+      toast("*** Todos los campos son obligatorios ***", toastStyleObject());
       return;
     }
     // Send data
@@ -55,12 +55,12 @@ const Contact = () => {
           nameRef.current.focus();
           toast(
             "*** Tu mensaje me ha llegado. Pronto me pondré en contacto. :) ***",
-            toastStyleObject
+            toastStyleObject()
           );
         },
         (error) => {
           console.log("Failure. Error:", error);
-          toast(error.text, toastStyleObject);
+          toast(error.text, toastStyleObject());
         }
       );
   };

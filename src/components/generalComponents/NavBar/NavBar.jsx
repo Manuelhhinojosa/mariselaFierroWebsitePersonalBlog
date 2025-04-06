@@ -103,7 +103,7 @@ const NavBar = (props) => {
                       console.log("SUCCESS! User logged out");
                       props.navBarState.setIsLoggedIn(false);
                       props.navBarState.setShowNavBar(false);
-                      toast("*** Gurps brais Marips. ***", toastStyleObject);
+                      toast("*** Gurps brais Marips. ***", toastStyleObject());
                       navigate("/");
                     }}
                   >

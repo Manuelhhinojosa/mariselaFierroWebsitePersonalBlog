@@ -144,7 +144,7 @@ export const Blog = (props) => {
                             status: result.status,
                             headers: result.headers,
                           });
-                          toast("*** Gracias :) ***", toastStyleObject);
+                          toast("*** Gracias :) ***", toastStyleObject());
                         })
                         .catch((error) => {
                           console.log("This is the error:", {
@@ -155,7 +155,7 @@ export const Blog = (props) => {
                           });
                           toast(
                             `*** Error! Intenta más tarde. ${error.message} ***`,
-                            toastStyleObject
+                            toastStyleObject()
                           );
                         });
                     }}
@@ -206,7 +206,7 @@ export const Blog = (props) => {
 
                             toast(
                               "*** Publicación eliminada :) ***",
-                              toastStyleObject
+                              toastStyleObject()
                             );
                           })
                           .catch((error) => {
@@ -218,7 +218,7 @@ export const Blog = (props) => {
                             });
                             toast(
                               "*** No se puede eliminar la publicación en este instante. Intentar más tarde ***",
-                              toastStyleObject
+                              toastStyleObject()
                             );
                           });
                       }}

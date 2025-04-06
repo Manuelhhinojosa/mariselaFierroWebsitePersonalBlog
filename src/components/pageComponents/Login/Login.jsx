@@ -35,7 +35,7 @@ export const Login = (props) => {
       usernameRef.current.focus();
       toast(
         "*** Usuario y Contraseña son campos obligatorios ***",
-        toastStyleObject
+        toastStyleObject()
       );
       return;
     }
@@ -53,7 +53,7 @@ export const Login = (props) => {
         const user = result.data;
         props.userState.setUser(user._id);
         props.userState.setIsLoggedIn(true);
-        toast("*** Güelcomrps la Marips ***", toastStyleObject);
+        toast("*** Güelcomrps la Marips ***", toastStyleObject());
         navigate("/blogmain");
       })
       // Error handleling
@@ -66,7 +66,7 @@ export const Login = (props) => {
         });
         toast(
           "*** Usuario y/ó Contraseńa no son conrrectos ***",
-          toastStyleObject
+          toastStyleObject()
         );
         usernameRef.current.value = "";
         passwordRef.current.value = "";

@@ -150,7 +150,7 @@ export const SinglePost = (props) => {
                       const updatedPosts = res.data;
                       props.postState.setPosts(updatedPosts.reverse());
                     });
-                    toast("*** Gracias :) ***", toastStyleObject);
+                    toast("*** Gracias :) ***", toastStyleObject());
                   })
                   .catch((error) => {
                     console.log("This is the error:", {
@@ -162,7 +162,7 @@ export const SinglePost = (props) => {
 
                     toast(
                       "*** Error! Intenta más tarde :( ***",
-                      toastStyleObject
+                      toastStyleObject()
                     );
                   });
               }}
@@ -205,14 +205,14 @@ export const SinglePost = (props) => {
                       });
                       toast(
                         "*** Publicación eliminada :) ***",
-                        toastStyleObject
+                        toastStyleObject()
                       );
                     })
                     .catch((error) => {
                       console.log("this is the error:", error);
                       toast(
                         "*** No se puede eliminar la publicación en este instante. Intentar más tarde ***",
-                        toastStyleObject
+                        toastStyleObject()
                       );
                     });
                 }}

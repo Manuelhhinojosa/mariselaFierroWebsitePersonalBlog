@@ -36,7 +36,7 @@ const EditForm = (props) => {
       titleRef.current.focus();
       toast(
         "*** Título y Desripción son campos obligatorios ***",
-        toastStyleObject
+        toastStyleObject()
       );
       return;
     }
@@ -72,7 +72,7 @@ const EditForm = (props) => {
           headers: result.headers,
         });
         navigate(`/${post.reference}`);
-        toast("*** Publicación editada ***", toastStyleObject);
+        toast("*** Publicación editada ***", toastStyleObject());
       })
       // Error handing
       .catch((error) => {
@@ -84,7 +84,7 @@ const EditForm = (props) => {
         });
         toast(
           "*** Publicación no puede ser editada en este momento. Intenta más tarde ***",
-          toastStyleObject
+          toastStyleObject()
         );
       });
   };

@@ -49,30 +49,42 @@ const Form = (props) => {
       titleRef.current.focus();
       toast(
         "*** Título y Descripción son campos obligatorios ***",
-        toastStyleObject
+        toastStyleObject()
       );
       return;
     } else if (mediaPost.length === 0 && textPost === "" && video === "") {
       titleRef.current.focus();
       toast(
         "*** Incluye Liga para video, selecciona imagen(es) ó incluye texto ***",
-        toastStyleObject
+        toastStyleObject()
       );
       return;
     } else if (mediaPost.length > 0 && textPost !== "" && video !== "") {
       titleRef.current.focus();
-      toast("*** Incluye solo una de las tres opciones ***", toastStyleObject);
+      toast(
+        "*** Incluye solo una de las tres opciones ***",
+        toastStyleObject()
+      );
       return;
     } else if (mediaPost.length > 0 && textPost !== "" && video === "") {
       titleRef.current.focus();
-      toast("*** Incluye solo una de las tres opciones ***", toastStyleObject);
+      toast(
+        "*** Incluye solo una de las tres opciones ***",
+        toastStyleObject()
+      );
       return;
     } else if (mediaPost.length > 0 && textPost === "" && video !== "") {
       titleRef.current.focus();
-      toast("*** Incluye solo una de las tres opciones ***", toastStyleObject);
+      toast(
+        "*** Incluye solo una de las tres opciones ***",
+        toastStyleObject()
+      );
       return;
     } else if (video !== "" && textPost !== "") {
-      toast("*** Incluye solo una de las tres opciones ***", toastStyleObject);
+      toast(
+        "*** Incluye solo una de las tres opciones ***",
+        toastStyleObject()
+      );
       return;
     }
     //
@@ -126,7 +138,7 @@ const Form = (props) => {
         });
         // Upons success
         navigate("/allposts");
-        toast("*** Publicación agregada ***", toastStyleObject);
+        toast("*** Publicación agregada ***", toastStyleObject());
       })
       // Adding post error handling
       .catch((error) => {
@@ -138,7 +150,7 @@ const Form = (props) => {
         });
         toast(
           "*** Publicación no puede ser agregada en este instante. Intenta más tarde o contacta a tu desarrollador ***",
-          toastStyleObject
+          toastStyleObject()
         );
       });
   };
