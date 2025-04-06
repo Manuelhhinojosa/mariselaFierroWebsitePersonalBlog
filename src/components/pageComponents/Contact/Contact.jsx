@@ -47,7 +47,7 @@ const Contact = () => {
       )
       .then(
         (result) => {
-          console.log(result);
+          console.log("Success!! Result:", result);
           nameRef.current.value = "";
           subjectRef.current.value = "";
           emailRef.current.value = "";
@@ -59,7 +59,7 @@ const Contact = () => {
           );
         },
         (error) => {
-          console.log(error.text);
+          console.log("Failure. Error:", error);
           toast(error.text, toastStyleObject);
         }
       );
