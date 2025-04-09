@@ -26,7 +26,7 @@ SASS / CSS Modules for styling
 🔒 API and Backend
 
 The backend API was fully built by me as well, including authentication, post routing, and error handling.
-🔗 API GitHub Repository: https://github.com/Manuelhhinojosa/marisela-fierro-api
+🔗 API GitHub Repository: https://github.com/Manuelhhinojosa/mariselaFierroPersonalBlogWebisiteAPI
 
 ## 💼 Real Client Collaboration
 
