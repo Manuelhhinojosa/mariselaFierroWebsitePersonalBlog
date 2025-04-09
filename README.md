@@ -35,3 +35,7 @@ This site was made in collaboration with a real client who provided the visual d
 ## The client side of this application can be visited here:
 
 https://mariselafierro.netlify.app
+
+---
+
+Made with ❤️ by [Manuel H Hinojosa](https://manuelhinojosa.netlify.app).
