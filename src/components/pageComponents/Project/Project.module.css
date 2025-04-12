@@ -114,16 +114,14 @@
   width: 65%;
   opacity: 0.75;
   object-fit: cover;
+  transition: all 1s ease;
 }
 
 .image:hover {
-  cursor: none;
   opacity: 1;
-  transition: 0.5s;
   height: 100%;
   width: 100%;
 }
-
 @media screen and (max-width: 600px) {
   .topContainer {
     margin-top: 2rem;
