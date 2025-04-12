@@ -58,6 +58,13 @@ const NavBar = (props) => {
             <div className={s.pageMenuContainerBottom1}>
               <div>Proyectos:</div>
               <br />
+
+              <Link className={s.link} to="/tardio">
+                <div className={s.menuItemContainer}>Tardío</div>
+              </Link>
+              <Link className={s.link} to="/riga">
+                <div className={s.menuItemContainer}>Riga</div>
+              </Link>
               <Link className={s.link} to="/pangea">
                 <div className={s.menuItemContainer}>Pangea</div>
               </Link>
@@ -84,12 +91,6 @@ const NavBar = (props) => {
               </Link>
               <Link className={s.link} to="/dif">
                 <div className={s.menuItemContainer}>Expreso</div>
-              </Link>
-              <Link className={s.link} to="/riga">
-                <div className={s.menuItemContainer}>Riga</div>
-              </Link>
-              <Link className={s.link} to="/tardio">
-                <div className={s.menuItemContainer}>Tardío</div>
               </Link>
             </div>
 
