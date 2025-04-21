@@ -122,6 +122,11 @@ const Project = (props) => {
                 <p>{props.project.description.slice(0, 304)}</p>
                 <p>{props.project.description.slice(305, 642)}</p>
                 <p>{props.project.description.slice(643)}</p>
+                <p>
+                  <a target="#" href="https://shopriga.netlify.app">
+                    visita RIGA
+                  </a>
+                </p>
               </div>
             ) : null}
 

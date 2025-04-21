@@ -154,7 +154,7 @@ export const projectsData = [
   {
     id: 10,
     path: "/riga",
-    title: "Riga",
+    title: "RIGA",
     description:
       "Riga es una extensión íntima de mi práctica artística, una intersección entre la geografía emocional y los objetos que habitan lo cotidiano. Este proyecto nace de la necesidad de traducir la experiencia del mundo —sus colores, texturas y silencios— en formas que puedan ser llevadas, tocadas, atesoradas. En estas piezas exploro cómo el espacio moldea la percepción, cómo los objetos conservan memoria, y cómo el cuerpo se convierte en un archivo en movimiento. Riga responde al deseo de materializar esas exploraciones en formas que acompañen lo cotidiano: piezas que, además de usarse, entablan un diálogo con quien las porta o las observa. Riga nace del acto de caminar ciudades, recolectar impresiones, atmósferas y texturas, para luego transformarlas en fragmentos portátiles del mundo.",
     imgOne:
