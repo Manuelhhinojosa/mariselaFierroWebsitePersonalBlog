@@ -60,10 +60,7 @@ export const Blog = (props) => {
                 <div className={s.titleContainer}>
                   <p>{post.title}</p>
                 </div>
-                {/* Description container */}
-                <div className={s.descriptionContainer}>
-                  <p>{post.description}</p>
-                </div>
+
                 {/* Date container */}
                 <div className={s.dateContainer}>
                   {post.createdAt.slice(0, 10)}
@@ -113,6 +110,12 @@ export const Blog = (props) => {
                     </div>
                   </div>
                 )}
+                {/* Description container */}
+                <div className={s.descriptionContainer}>
+                  {post.description.split("\n").map((line, index) => (
+                    <p key={index}>{line}</p>
+                  ))}
+                </div>
                 {/* Likes container */}
                 <div className={s.likesContainer}>
                   {/* Likes button container */}

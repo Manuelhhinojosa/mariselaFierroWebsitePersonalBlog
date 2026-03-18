@@ -52,6 +52,7 @@
 .postContainer {
   width: 85%;
   min-height: 100%;
+
   margin: 0rem 3rem 3rem 3rem;
   display: flex;
   flex-direction: column;
@@ -76,15 +77,17 @@
 .descriptionContainer {
   position: static;
   width: 90%;
-  min-height: 5%;
-  max-height: 10%;
+  min-height: auto;
   margin: 1rem;
-  padding: 1rem;
+  padding: 2rem;
   font-size: 0.75rem;
   overflow: hidden;
   overflow-y: scroll;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  justify-content: start;
+  text-align: justify;
 }
 
 .descriptionContainer::-webkit-scrollbar {
@@ -96,6 +99,18 @@
 }
 
 .descriptionContainer::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+
+.descriptionContainer2::-webkit-scrollbar {
+  width: 1px;
+}
+
+.descriptionContainer2::-webkit-scrollbar-thumb {
+  background-color: black;
+}
+
+.descriptionContainer2::-webkit-scrollbar-track {
   background-color: transparent;
 }
 
