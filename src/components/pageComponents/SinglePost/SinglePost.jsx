@@ -52,10 +52,7 @@ export const SinglePost = (props) => {
           <div className={s.titleContainer}>
             <p>{post.title}</p>
           </div>
-          {/* Description container */}
-          <div className={s.descriptionContainer}>
-            <p>{post.description}</p>
-          </div>
+
           {/* Date container */}
           <div className={s.dateContainer}>
             <p> {post.createdAt.slice(0, 10)}</p>
@@ -118,7 +115,15 @@ export const SinglePost = (props) => {
             </div>
           ) : null}
           {/* end if post is  media and media is image/gif */}
-
+          {/* Description container */}
+          {/* <div className={s.descriptionContainer}>
+            <p>{post.description}</p>
+          </div> */}
+          <div className={s.descriptionContainer}>
+            {post.description.split("\n").map((line, index) => (
+              <p key={index}>{line}</p>
+            ))}
+          </div>
           {/* Likes container */}
           <div className={s.likesContainer}>
             {/* Likes button container  */}
