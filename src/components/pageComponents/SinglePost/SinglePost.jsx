@@ -30,6 +30,12 @@ export const SinglePost = (props) => {
       return;
     }
   });
+  // handles dispplaying long post's long descriptions
+  const [showText, setShowText] = useState(false);
+  const showLongDesc = () => {
+    setShowText(!showText);
+  };
+
   // Function that handles imgae to be displayed
   const [index, setIndex] = useState(0);
   const handlePrev = () => {
@@ -42,10 +48,20 @@ export const SinglePost = (props) => {
   return (
     // Main container
     <div className={s.siglePostContainer}>
+      {/* text container */}
+      <div
+        className={s.test2Container}
+        style={showText ? {} : { display: "none" }}
+      >
+        {post.description.split("\n").map((line, index) => (
+          <p key={index}>{line}</p>
+        ))}
+        <span onClick={showLongDesc}>cerrar</span>
+      </div>
       {/* Home button container */}
       <div className={s.top}>{<HomeButton />}</div>
       {/* Page container */}
-      <div className={s.bottom}>
+      <div className={s.bottom} style={showText ? { opacity: "0" } : {}}>
         {/* Full post container */}
         <div className={s.postContainer}>
           {/* Title container */}
@@ -115,14 +131,15 @@ export const SinglePost = (props) => {
             </div>
           ) : null}
           {/* end if post is  media and media is image/gif */}
-          {/* Description container */}
-          {/* <div className={s.descriptionContainer}>
-            <p>{post.description}</p>
-          </div> */}
           <div className={s.descriptionContainer}>
-            {post.description.split("\n").map((line, index) => (
-              <p key={index}>{line}</p>
-            ))}
+            {post.description.length > 150 ? (
+              <p>
+                {post.description.slice(0, 150)}...{" "}
+                <span onClick={showLongDesc}>ver más</span>
+              </p>
+            ) : (
+              `${post.description}`
+            )}
           </div>
           {/* Likes container */}
           <div className={s.likesContainer}>
