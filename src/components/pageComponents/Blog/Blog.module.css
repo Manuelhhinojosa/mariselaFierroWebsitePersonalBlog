@@ -109,19 +109,6 @@
 }
 
 .descriptionContainer {
-  /* position: static;
-  width: 90%;
-  min-height: auto;
-  margin: 1rem;
-  padding: 2rem;
-  font-size: 0.75rem;
-  overflow: hidden;
-  overflow-y: scroll;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: start;
-  text-align: justify; */
   position: static;
   width: 90%;
   min-height: auto;
@@ -132,10 +119,6 @@
   align-items: center;
   justify-content: start;
   text-align: justify;
-}
-
-.descriptionContainer p {
-  text-align: center;
 }
 
 .descriptionContainer span {
@@ -202,7 +185,7 @@
 
 .imgContainer {
   width: 90%;
-  height: 55%;
+  height: 50%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;

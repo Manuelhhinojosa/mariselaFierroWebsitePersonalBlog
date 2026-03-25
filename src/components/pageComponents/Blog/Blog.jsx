@@ -21,16 +21,15 @@ export const Blog = (props) => {
   const getAllPostsUrl = process.env.REACT_APP_DATABASE_URL;
   // Index to manage post's images display dinamicaly
   const [mediaIndexes, setMediaIndexes] = useState({});
-  // post state
-  const [postInfo, setPostInfo] = useState({});
+  // post description state
+  const [postInfo, setPostInfo] = useState("");
 
   // handles dispplaying post's long descriptions
   const showLongDesc = (id) => {
     props.verificationState.setShowText(!props.verificationState.showText);
     props.verificationState.posts.forEach((p) => {
       if (p._id === id) {
-        setPostInfo(p);
-        return;
+        setPostInfo(p.description);
       }
     });
   };
@@ -43,10 +42,9 @@ export const Blog = (props) => {
         className={s.test2Container}
         style={props.verificationState.showText ? {} : { display: "none" }}
       >
-        {/* {postInfo.description.split("\n").map((line, index) => (
+        {postInfo?.split("\n").map((line, index) => (
           <p key={index}>{line}</p>
-        ))} */}
-        <p>{postInfo.description}</p>
+        ))}
         <span onClick={showLongDesc}>volver</span>
       </div>
       {/* Top container */}
@@ -140,12 +138,18 @@ export const Blog = (props) => {
                 {/* Description container */}
                 <div className={s.descriptionContainer}>
                   {post.description.length > 150 ? (
-                    <p>
-                      {post.description.slice(0, 150)}...{" "}
+                    <div>
+                      {post.description
+                        .slice(0, 150)
+                        .split("\n")
+                        .map((line, index) => (
+                          <p key={index}>{line}</p>
+                        ))}
+                      ...{" "}
                       <span onClick={() => showLongDesc(post._id)}>
                         ver más
                       </span>
-                    </p>
+                    </div>
                   ) : (
                     `${post.description}`
                   )}

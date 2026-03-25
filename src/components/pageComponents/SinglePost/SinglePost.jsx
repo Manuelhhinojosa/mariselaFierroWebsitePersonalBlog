@@ -135,10 +135,15 @@ export const SinglePost = (props) => {
           {/* end if post is  media and media is image/gif */}
           <div className={s.descriptionContainer}>
             {post.description.length > 150 ? (
-              <p>
-                {post.description.slice(0, 150)}...{" "}
-                <span onClick={showLongDesc}>ver más</span>
-              </p>
+              <div>
+                {post.description
+                  .slice(0, 150)
+                  .split("\n")
+                  .map((line, index) => (
+                    <p key={index}>{line}</p>
+                  ))}
+                ... <span onClick={showLongDesc}>ver más</span>
+              </div>
             ) : (
               `${post.description}`
             )}
