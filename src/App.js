@@ -93,6 +93,8 @@ function App() {
     setIsLoggedIn,
     posts,
     setPosts,
+    showText,
+    setShowText,
   };
 
   // Form props

@@ -22,15 +22,33 @@ export const Blog = (props) => {
   // Index to manage post's images display dinamicaly
   const [mediaIndexes, setMediaIndexes] = useState({});
 
+  // handles dispplaying post's long descriptions
+  const showLongDesc = () => {
+    props.verificationState.setShowText(!props.verificationState.showText);
+  };
+
   return (
     // Main container
     <div className={s.blogPageContainer}>
+      {/* post long description container */}
+      <div
+        className={s.test2Container}
+        style={props.verificationState.showText ? {} : { display: "none" }}
+      >
+        {/* {post.description.split("\n").map((line, index) => (
+          <p key={index}>{line}</p>
+        ))} */}
+        <span onClick={showLongDesc}>volver</span>
+      </div>
       {/* Top container */}
       <div className={s.top}>
         <HomeButton />
       </div>
       {/* Bottom container */}
-      <div className={s.bottom}>
+      <div
+        className={s.bottom}
+        style={props.verificationState.showText ? { opacity: "0" } : {}}
+      >
         {/* posts container */}
         {/*  */}
         <div className={s.postsContainer}>
@@ -112,9 +130,14 @@ export const Blog = (props) => {
                 )}
                 {/* Description container */}
                 <div className={s.descriptionContainer}>
-                  {post.description.split("\n").map((line, index) => (
-                    <p key={index}>{line}</p>
-                  ))}
+                  {post.description.length > 150 ? (
+                    <p>
+                      {post.description.slice(0, 150)}...{" "}
+                      <span onClick={showLongDesc}>ver más</span>
+                    </p>
+                  ) : (
+                    `${post.description}`
+                  )}
                 </div>
                 {/* Likes container */}
                 <div className={s.likesContainer}>
