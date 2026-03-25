@@ -30,7 +30,7 @@ export const SinglePost = (props) => {
       return;
     }
   });
-  // handles dispplaying long post's long descriptions
+  // handles dispplaying post's long descriptions
   const [showText, setShowText] = useState(false);
   const showLongDesc = () => {
     setShowText(!showText);
@@ -56,7 +56,7 @@ export const SinglePost = (props) => {
         {post.description.split("\n").map((line, index) => (
           <p key={index}>{line}</p>
         ))}
-        <span onClick={showLongDesc}>cerrar</span>
+        <span onClick={showLongDesc}>volver</span>
       </div>
       {/* Home button container */}
       <div className={s.top}>{<HomeButton />}</div>

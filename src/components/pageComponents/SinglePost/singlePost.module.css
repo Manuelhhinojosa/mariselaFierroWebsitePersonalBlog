@@ -10,14 +10,26 @@
 .test2Container {
   position: fixed;
   top: center;
-  height: fit-content;
+  height: 50%;
   width: 50%;
-  padding: 1rem;
+  padding: 2rem;
   text-align: justify;
   overflow: hidden;
   overflow-y: scroll;
   z-index: 999;
   font-size: 0.75rem;
+}
+
+.test2Container::-webkit-scrollbar {
+  width: 1px;
+}
+
+.test2Container::-webkit-scrollbar-thumb {
+  background-color: black;
+}
+
+.test2Container::-webkit-scrollbar-track {
+  background-color: transparent;
 }
 
 .test2Container span {
@@ -46,7 +58,6 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  /* opacity: 0.1; */
   opacity: 1;
 }
 
@@ -76,7 +87,6 @@
   position: static;
   width: 90%;
   min-height: auto;
-  margin: 1rem;
   padding: 2rem;
   font-size: 0.75rem;
   display: flex;
