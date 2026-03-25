@@ -31,9 +31,8 @@ export const SinglePost = (props) => {
     }
   });
   // handles dispplaying post's long descriptions
-  const [showText, setShowText] = useState(false);
   const showLongDesc = () => {
-    setShowText(!showText);
+    props.postState.setShowText(!props.postState.showText);
   };
 
   // Function that handles imgae to be displayed
@@ -51,7 +50,7 @@ export const SinglePost = (props) => {
       {/* text container */}
       <div
         className={s.test2Container}
-        style={showText ? {} : { display: "none" }}
+        style={props.postState.showText ? {} : { display: "none" }}
       >
         {post.description.split("\n").map((line, index) => (
           <p key={index}>{line}</p>
@@ -61,7 +60,10 @@ export const SinglePost = (props) => {
       {/* Home button container */}
       <div className={s.top}>{<HomeButton />}</div>
       {/* Page container */}
-      <div className={s.bottom} style={showText ? { opacity: "0" } : {}}>
+      <div
+        className={s.bottom}
+        style={props.postState.showText ? { opacity: "0" } : {}}
+      >
         {/* Full post container */}
         <div className={s.postContainer}>
           {/* Title container */}

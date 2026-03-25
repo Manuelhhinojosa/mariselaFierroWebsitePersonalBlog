@@ -36,6 +36,9 @@ function App() {
   // NavBar state
   const [showNavBar, setShowNavBar] = useState(false);
 
+  // single post / all postst page state
+  const [showText, setShowText] = useState(false);
+
   // Auth state
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [user, setUser] = useState("");
@@ -108,6 +111,8 @@ function App() {
     posts,
     setPosts,
     isLoggedIn,
+    showText,
+    setShowText,
   };
 
   return (
