@@ -266,19 +266,32 @@
 }
 
 @media screen and (max-width: 600px) {
-  .siglePostContainer {
-    min-height: 100vh;
+  /* .siglePostContainer {
+
+  } */
+
+  .test2Container {
+    position: fixed;
+    top: 3rem;
+    height: 80%;
+    width: 80%;
+    padding: 2rem;
+    text-align: justify;
+    overflow: hidden;
+    overflow-y: scroll;
+    z-index: 999;
+    font-size: 0.75rem;
   }
 
   .top {
-    margin-top: 2rem;
+    margin-top: 3rem;
   }
 
-  .postContainer {
+  /* .postContainer {
     margin: 3rem;
-  }
+  } */
 
-  .descriptionContainer {
+  /* .descriptionContainer {
     max-height: 10vh;
   }
 
@@ -292,5 +305,5 @@
 
   .likesContainer {
     margin-top: 1rem;
-  }
+  } */
 }

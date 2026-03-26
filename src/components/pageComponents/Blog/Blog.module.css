@@ -270,7 +270,20 @@
 
 @media screen and (max-width: 600px) {
   .top {
-    margin-top: 2rem;
+    margin-top: 3rem;
+  }
+
+  .test2Container {
+    position: fixed;
+    top: 3rem;
+    min-height: 80%;
+    width: 80%;
+    padding: 2rem;
+    text-align: justify;
+    overflow: hidden;
+    overflow-y: scroll;
+    z-index: 999;
+    font-size: 0.75rem;
   }
 
   .postsContainer {

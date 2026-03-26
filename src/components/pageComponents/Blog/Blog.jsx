@@ -48,13 +48,16 @@ export const Blog = (props) => {
         <span onClick={showLongDesc}>volver</span>
       </div>
       {/* Top container */}
-      <div className={s.top}>
+      <div
+        className={s.top}
+        style={props.verificationState.showText ? { display: "none" } : {}}
+      >
         <HomeButton />
       </div>
       {/* Bottom container */}
       <div
         className={s.bottom}
-        style={props.verificationState.showText ? { opacity: "0" } : {}}
+        style={props.verificationState.showText ? { display: "none" } : {}}
       >
         {/* posts container */}
         {/*  */}

@@ -58,7 +58,12 @@ export const SinglePost = (props) => {
         <span onClick={showLongDesc}>volver</span>
       </div>
       {/* Home button container */}
-      <div className={s.top}>{<HomeButton />}</div>
+      <div
+        className={s.top}
+        style={props.postState.showText ? { display: "none" } : {}}
+      >
+        {<HomeButton />}
+      </div>
       {/* Page container */}
       <div
         className={s.bottom}

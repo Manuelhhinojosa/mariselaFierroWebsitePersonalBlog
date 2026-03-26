@@ -121,7 +121,9 @@ function App() {
     <div className={s.appContainer}>
       {/* General components */}
       <ToastContainer />
-      <NavBar navBarState={navBarState} />
+
+      {showText ? "" : <NavBar navBarState={navBarState} />}
+
       {/* Page components */}
       <Routes>
         <Route path="/" element={<Home />} />
