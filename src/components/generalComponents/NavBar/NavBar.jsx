@@ -49,7 +49,7 @@ const NavBar = (props) => {
         >
           {/* ABOUT & BLOG CONTAINER */}
           <div className={s.pageMenuContainerTop}>
-            <Link className={s.link} to="/about">
+            <Link className={s.link} to="/about" onClick={handleNavBar}>
               <div className={s.menuItemContainer}>Acerca de</div>
             </Link>
 

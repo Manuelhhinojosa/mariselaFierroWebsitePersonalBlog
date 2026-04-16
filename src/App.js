@@ -145,7 +145,7 @@ function App() {
       {/* Page components */}
       <Routes>
         <Route path="/" element={<Home mobileState={mobileState} />} />
-        <Route path="/about" element={<About />} />
+        <Route path="/about" element={<About mobileState={mobileState} />} />
         <Route path="/blogmain" element={<BlogHome postState={postState} />} />
 
         {projectsData.map((project) => (

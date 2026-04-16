@@ -6,10 +6,17 @@ import aboutImg from "../../../images/aboutPage/aboutImg.png";
 import HomeButton from "../../generalComponents/HomeButton/HomeButton";
 //
 // Component
-const About = () => {
+const About = (props) => {
   return (
     //  Main container
-    <div className={s.aboutPageContainer}>
+    <div
+      className={s.aboutPageContainer}
+      style={
+        props.mobileState.isMobile && props.mobileState.showNavBar
+          ? { display: "none" }
+          : {}
+      }
+    >
       {/* Home button container */}
       <div className={s.top}>
         <HomeButton />
