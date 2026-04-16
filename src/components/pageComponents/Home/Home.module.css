@@ -1,5 +1,5 @@
 .homeCompContainer {
-  height: 100vh;
+  height: 95vh;
   flex: 7;
   display: flex;
   justify-content: center;
@@ -13,6 +13,6 @@
 
 @media screen and (max-width: 600px) {
   .homeCompContainer {
-    min-height: 100vh;
+    min-height: 90vh;
   }
 }

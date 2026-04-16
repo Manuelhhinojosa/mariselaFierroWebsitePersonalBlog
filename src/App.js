@@ -32,23 +32,31 @@ import { toastStyleObject } from "./toastStyle";
 //
 //
 // App coponent (Main component)
+// App coponent (Main component)
+// App coponent (Main component)
 function App() {
-  // NavBar state
+  // is the user using mobile size screen/device
+  const [isMobile, setIsMobile] = useState(window.innerWidth < 600);
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 600);
+    };
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  // state
   const [showNavBar, setShowNavBar] = useState(false);
-
-  // single post / all postst page state
   const [showText, setShowText] = useState(false);
-
-  // Auth state
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [user, setUser] = useState("");
-
-  // Posts for blog state
   const [posts, setPosts] = useState([]);
 
   // API URL
   const getAllPostsUrl = process.env.REACT_APP_DATABASE_URL;
 
+  // Axios call loads posts from API
+  // Axios call loads posts from API
   // Axios call loads posts from API
   useEffect(() => {
     axios
@@ -79,12 +87,22 @@ function App() {
       });
   }, []);
 
+  // home props
+  const homeState = {
+    isMobile,
+    setIsMobile,
+    showNavBar,
+    setShowNavBar,
+  };
+
   // NavBar props
   const navBarState = {
     showNavBar,
     setShowNavBar,
     isLoggedIn,
     setIsLoggedIn,
+    isMobile,
+    setIsMobile,
   };
 
   // Blog props
@@ -126,7 +144,7 @@ function App() {
 
       {/* Page components */}
       <Routes>
-        <Route path="/" element={<Home />} />
+        <Route path="/" element={<Home homeState={homeState} />} />
         <Route path="/about" element={<About />} />
         <Route path="/blogmain" element={<BlogHome postState={postState} />} />
 

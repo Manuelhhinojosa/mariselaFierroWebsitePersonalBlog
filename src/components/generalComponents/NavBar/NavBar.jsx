@@ -25,10 +25,16 @@ const NavBar = (props) => {
     props.navBarState.setShowNavBar(!props.navBarState.showNavBar);
   };
 
-  //
-
+  // return
+  // return
+  // return
   return (
-    <div className={s.navBarContainer}>
+    <div
+      className={s.navBarContainer}
+      style={
+        props.navBarState.showNavBar ? { height: "95vh" } : { height: "auto" }
+      }
+    >
       {/* TOP CONTAINER */}
       <div className={s.topNavBarContainer}>
         {/* HIDE BUTTON CONTAINER */}
