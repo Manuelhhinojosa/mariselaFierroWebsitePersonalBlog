@@ -8,7 +8,7 @@ export const Home = (props) => {
     <div
       className={s.homeCompContainer}
       style={
-        props.homeState.isMobile && props.homeState.showNavBar
+        props.mobileState.isMobile && props.mobileState.showNavBar
           ? { display: "none" }
           : {}
       }

@@ -87,14 +87,6 @@ function App() {
       });
   }, []);
 
-  // home props
-  const homeState = {
-    isMobile,
-    setIsMobile,
-    showNavBar,
-    setShowNavBar,
-  };
-
   // NavBar props
   const navBarState = {
     showNavBar,
@@ -103,6 +95,14 @@ function App() {
     setIsLoggedIn,
     isMobile,
     setIsMobile,
+  };
+
+  // home props, about props
+  const mobileState = {
+    isMobile,
+    setIsMobile,
+    showNavBar,
+    setShowNavBar,
   };
 
   // Blog props
@@ -144,7 +144,7 @@ function App() {
 
       {/* Page components */}
       <Routes>
-        <Route path="/" element={<Home homeState={homeState} />} />
+        <Route path="/" element={<Home mobileState={mobileState} />} />
         <Route path="/about" element={<About />} />
         <Route path="/blogmain" element={<BlogHome postState={postState} />} />
 
