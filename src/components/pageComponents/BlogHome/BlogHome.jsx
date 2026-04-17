@@ -9,7 +9,14 @@ import { Link } from "react-router-dom";
 const BlogHome = (props) => {
   return (
     // Main container
-    <div className={s.blogHomeContainer}>
+    <div
+      className={s.blogHomeContainer}
+      style={
+        props.mobileState.isMobile && props.mobileState.showNavBar
+          ? { display: "none" }
+          : {}
+      }
+    >
       {/* Home button container */}
       <div className={s.top}>
         <HomeButton />

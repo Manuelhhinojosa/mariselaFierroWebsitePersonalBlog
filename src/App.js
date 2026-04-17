@@ -97,7 +97,7 @@ function App() {
     setIsMobile,
   };
 
-  // home props, about props
+  // mobile state props
   const mobileState = {
     isMobile,
     setIsMobile,
@@ -146,7 +146,10 @@ function App() {
       <Routes>
         <Route path="/" element={<Home mobileState={mobileState} />} />
         <Route path="/about" element={<About mobileState={mobileState} />} />
-        <Route path="/blogmain" element={<BlogHome postState={postState} />} />
+        <Route
+          path="/blogmain"
+          element={<BlogHome postState={postState} mobileState={mobileState} />}
+        />
 
         {projectsData.map((project) => (
           <Route

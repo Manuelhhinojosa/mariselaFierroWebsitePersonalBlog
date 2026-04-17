@@ -53,7 +53,7 @@ const NavBar = (props) => {
               <div className={s.menuItemContainer}>Acerca de</div>
             </Link>
 
-            <Link className={s.link} to="/blogmain">
+            <Link className={s.link} to="/blogmain" onClick={handleNavBar}>
               <div className={s.menuItemContainer}>Blog</div>
             </Link>
           </div>
