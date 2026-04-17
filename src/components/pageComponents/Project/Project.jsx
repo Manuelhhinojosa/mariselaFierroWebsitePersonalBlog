@@ -8,7 +8,14 @@ import HomeButton from "../../generalComponents/HomeButton/HomeButton";
 const Project = (props) => {
   return (
     // Main container
-    <div className={s.mainProjectContainer}>
+    <div
+      className={s.mainProjectContainer}
+      style={
+        props.mobileState.isMobile && props.mobileState.showNavBar
+          ? { display: "none" }
+          : {}
+      }
+    >
       {/* Home button container */}
       <div className={s.topContainer}>
         <HomeButton />

@@ -65,37 +65,41 @@ const NavBar = (props) => {
               <div>Proyectos:</div>
               <br />
 
-              <Link className={s.link} to="/tardio">
+              <Link className={s.link} to="/tardio" onClick={handleNavBar}>
                 <div className={s.menuItemContainer}>Tardío</div>
               </Link>
-              <Link className={s.link} to="/riga">
+              <Link className={s.link} to="/riga" onClick={handleNavBar}>
                 <div className={s.menuItemContainer}>Riga</div>
               </Link>
-              <Link className={s.link} to="/pangea">
+              <Link className={s.link} to="/pangea" onClick={handleNavBar}>
                 <div className={s.menuItemContainer}>Pangea</div>
               </Link>
-              <Link className={s.link} to="/sigilio">
+              <Link className={s.link} to="/sigilio" onClick={handleNavBar}>
                 <div className={s.menuItemContainer}>Sigilio</div>
               </Link>
-              <Link className={s.link} to="/amanuense">
+              <Link className={s.link} to="/amanuense" onClick={handleNavBar}>
                 <div className={s.menuItemContainer}>Amanuense</div>
               </Link>
-              <Link className={s.link} to="/lacuerpaquesomos">
+              <Link
+                className={s.link}
+                to="/lacuerpaquesomos"
+                onClick={handleNavBar}
+              >
                 <div className={s.menuItemContainer}>Cuerpa</div>
               </Link>
-              <Link className={s.link} to="/dada">
+              <Link className={s.link} to="/dada" onClick={handleNavBar}>
                 <div className={s.menuItemContainer}>DADA/fanzine</div>
               </Link>
-              <Link className={s.link} to="/duelo">
+              <Link className={s.link} to="/duelo" onClick={handleNavBar}>
                 <div className={s.menuItemContainer}>Duelo</div>
               </Link>
-              <Link className={s.link} to="/asociacion">
+              <Link className={s.link} to="/asociacion" onClick={handleNavBar}>
                 <div className={s.menuItemContainer}>Asociación</div>
               </Link>
-              <Link className={s.link} to="/laboratorio">
+              <Link className={s.link} to="/laboratorio" onClick={handleNavBar}>
                 <div className={s.menuItemContainer}>Laboratorio</div>
               </Link>
-              <Link className={s.link} to="/dif">
+              <Link className={s.link} to="/dif" onClick={handleNavBar}>
                 <div className={s.menuItemContainer}>Expreso</div>
               </Link>
 

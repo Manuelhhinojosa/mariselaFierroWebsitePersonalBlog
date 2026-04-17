@@ -155,7 +155,7 @@ function App() {
           <Route
             key={project._id}
             path={project.path}
-            element={<Project project={project} />}
+            element={<Project project={project} mobileState={mobileState} />}
           />
         ))}
 
