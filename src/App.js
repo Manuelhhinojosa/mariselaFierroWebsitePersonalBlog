@@ -159,8 +159,14 @@ function App() {
           />
         ))}
 
-        <Route path="/contact" element={<Contact />} />
-        <Route path="/login" element={<Login userState={userState} />} />
+        <Route
+          path="/contact"
+          element={<Contact mobileState={mobileState} />}
+        />
+        <Route
+          path="/login"
+          element={<Login userState={userState} mobileState={mobileState} />}
+        />
         <Route
           path="/allposts"
           element={<Blog verificationState={verificationState} />}

@@ -76,7 +76,14 @@ export const Login = (props) => {
 
   return (
     // Main container
-    <div className={s.loginPageContainer}>
+    <div
+      className={s.loginPageContainer}
+      style={
+        props.mobileState.isMobile && props.mobileState.showNavBar
+          ? { display: "none" }
+          : {}
+      }
+    >
       {/* Home button container  */}
       <div className={s.top}>
         <HomeButton />

@@ -32,7 +32,9 @@ const NavBar = (props) => {
     <div
       className={s.navBarContainer}
       style={
-        props.navBarState.showNavBar ? { height: "95vh" } : { height: "auto" }
+        props.navBarState.showNavBar
+          ? { minHeight: "95vh" }
+          : { height: "auto" }
       }
     >
       {/* TOP CONTAINER */}
@@ -115,7 +117,7 @@ const NavBar = (props) => {
             {/* LOGIN/OUT BUTTON CONTAINER */}
             {props.navBarState.isLoggedIn ? (
               <div className={s.pageMenuContainerBottom2}>
-                <div className={s.link} to="/login">
+                <div className={s.link}>
                   <div
                     className={s.menuItemContainer}
                     onClick={() => {
@@ -132,7 +134,7 @@ const NavBar = (props) => {
               </div>
             ) : (
               <div className={s.pageMenuContainerBottom2}>
-                <Link className={s.link} to="/login">
+                <Link className={s.link} to="/login" onClick={handleNavBar}>
                   <div className={s.menuItemContainer}>Ingresar</div>
                 </Link>
               </div>
@@ -150,7 +152,7 @@ const NavBar = (props) => {
       >
         {/* email icon */}
         <div className={s.contactMenuItemContainer}>
-          <Link to="/contact">
+          <Link to="/contact" onClick={handleNavBar}>
             <img src={emailImg} alt="email-icon" />
           </Link>
         </div>
@@ -160,6 +162,7 @@ const NavBar = (props) => {
             href="https://www.linkedin.com/in/mariselalf"
             target="_blank"
             rel="noreferrer"
+            onClick={handleNavBar}
           >
             <img src={linkedInImg} alt="linkedIn-icon" />
           </a>
@@ -170,6 +173,7 @@ const NavBar = (props) => {
             href="https://www.instagram.com/marisela_con_ese/"
             target="_blank"
             rel="noreferrer"
+            onClick={handleNavBar}
           >
             <img src={igImg} alt="ig-icon" />
           </a>
@@ -180,6 +184,7 @@ const NavBar = (props) => {
             href="https://www.twitter.com/marisela_con_s"
             target="_blank"
             rel="noreferrer"
+            onClick={handleNavBar}
           >
             <img src={twitterImg} alt="twitter-icon" />
           </a>

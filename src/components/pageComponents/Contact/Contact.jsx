@@ -14,7 +14,7 @@ import { toastStyleObject } from "../../../toastStyle";
 //
 //
 // Function Component
-const Contact = () => {
+const Contact = (props) => {
   // Initial state
   const formRef = useRef(null);
   const nameRef = useRef(null);
@@ -66,7 +66,14 @@ const Contact = () => {
   };
 
   return (
-    <div className={s.contactPageContainer}>
+    <div
+      className={s.contactPageContainer}
+      style={
+        props.mobileState.isMobile && props.mobileState.showNavBar
+          ? { display: "none" }
+          : {}
+      }
+    >
       <div className={s.topContainer}>
         <HomeButton />
       </div>
