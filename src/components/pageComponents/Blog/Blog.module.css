@@ -54,7 +54,7 @@
 
 .bottom {
   width: 100%;
-  height: 95%;
+  height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
@@ -62,8 +62,8 @@
 }
 
 .postsContainer {
-  width: 85%;
-  max-height: 85%;
+  width: 100%;
+  height: 95%;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -288,14 +288,7 @@
 
   .postsContainer {
     width: 100%;
-    background-color: red;
-    border-top: 1px dotted black;
     border-bottom: 1px dotted black;
-  }
-
-  .postContainer {
-    height: fit-content;
-    background-color: green;
   }
 
   .descriptionContainer {
