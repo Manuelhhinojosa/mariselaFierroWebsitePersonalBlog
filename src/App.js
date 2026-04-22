@@ -169,19 +169,29 @@ function App() {
         />
         <Route
           path="/allposts"
-          element={<Blog verificationState={verificationState} />}
+          element={
+            <Blog
+              verificationState={verificationState}
+              mobileState={mobileState}
+            />
+          }
         />
 
         {posts.map((post) => (
           <Route
             key={post._id}
             path={`/${post.reference}`}
-            element={<SinglePost postState={postState} />}
+            element={
+              <SinglePost postState={postState} mobileState={mobileState} />
+            }
           />
         ))}
 
         {isLoggedIn ? (
-          <Route path="/add" element={<Form userState={userState} />} />
+          <Route
+            path="/add"
+            element={<Form userState={userState} mobileState={mobileState} />}
+          />
         ) : (
           ""
         )}
@@ -189,13 +199,18 @@ function App() {
         {isLoggedIn ? (
           <Route
             path="/edit"
-            element={<EditForm verificationState={verificationState} />}
+            element={
+              <EditForm
+                verificationState={verificationState}
+                mobileState={mobileState}
+              />
+            }
           />
         ) : (
           ""
         )}
 
-        <Route path="*" element={<ErrorPage />} />
+        <Route path="*" element={<ErrorPage mobileState={mobileState} />} />
       </Routes>
     </div>
   );

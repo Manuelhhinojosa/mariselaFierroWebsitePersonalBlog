@@ -36,7 +36,14 @@ export const Blog = (props) => {
 
   return (
     // Main container
-    <div className={s.blogPageContainer}>
+    <div
+      className={s.blogPageContainer}
+      style={
+        props.mobileState.isMobile && props.mobileState.showNavBar
+          ? { display: "none" }
+          : {}
+      }
+    >
       {/* post long description container */}
       <div
         className={s.test2Container}

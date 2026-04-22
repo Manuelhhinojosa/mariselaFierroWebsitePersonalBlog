@@ -96,7 +96,14 @@ const EditForm = (props) => {
 
   return (
     // Main container
-    <div className={s.editFormContainer}>
+    <div
+      className={s.editFormContainer}
+      style={
+        props.mobileState.isMobile && props.mobileState.showNavBar
+          ? { display: "none" }
+          : {}
+      }
+    >
       {/* Home button container */}
       <div className={s.top}>
         <HomeButton />

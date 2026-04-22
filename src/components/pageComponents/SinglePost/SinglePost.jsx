@@ -46,7 +46,14 @@ export const SinglePost = (props) => {
 
   return (
     // Main container
-    <div className={s.siglePostContainer}>
+    <div
+      className={s.siglePostContainer}
+      style={
+        props.mobileState.isMobile && props.mobileState.showNavBar
+          ? { display: "none" }
+          : {}
+      }
+    >
       {/* text container */}
       <div
         className={s.test2Container}

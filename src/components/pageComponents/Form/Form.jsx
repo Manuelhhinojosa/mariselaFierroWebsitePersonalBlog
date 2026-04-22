@@ -165,7 +165,14 @@ const Form = (props) => {
   // Component
   return (
     // Main container
-    <div className={s.formPageContainer}>
+    <div
+      className={s.formPageContainer}
+      style={
+        props.mobileState.isMobile && props.mobileState.showNavBar
+          ? { display: "none" }
+          : {}
+      }
+    >
       {/* Home button container */}
       <div className={s.top}>
         <HomeButton />
