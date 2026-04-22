@@ -288,8 +288,14 @@
 
   .postsContainer {
     width: 100%;
+    background-color: red;
     border-top: 1px dotted black;
     border-bottom: 1px dotted black;
+  }
+
+  .postContainer {
+    height: fit-content;
+    background-color: green;
   }
 
   .descriptionContainer {
