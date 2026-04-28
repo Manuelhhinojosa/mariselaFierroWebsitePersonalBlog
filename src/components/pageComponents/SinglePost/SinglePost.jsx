@@ -154,7 +154,7 @@ export const SinglePost = (props) => {
                   .map((line, index) => (
                     <p key={index}>{line}</p>
                   ))}
-                ... <span onClick={showLongDesc}>ver más</span>
+                <span onClick={showLongDesc}>ver más</span>
               </div>
             ) : (
               `${post.description}`

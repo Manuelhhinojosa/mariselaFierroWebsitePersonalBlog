@@ -36,7 +36,7 @@ const BlogHome = (props) => {
               to={`/${post.reference}`}
             >
               <p>
-                *** {post.title} Del 20{post.createdAt.slice(2, 10)} ***
+                {post.title} Del 20{post.createdAt.slice(2, 10)}
               </p>
             </Link>
           ))}

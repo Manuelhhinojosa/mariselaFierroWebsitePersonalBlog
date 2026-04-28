@@ -266,9 +266,9 @@
 }
 
 @media screen and (max-width: 600px) {
-  /* .siglePostContainer {
-
-  } */
+  .siglePostContainer {
+    height: fit-content;
+  }
 
   .test2Container {
     position: fixed;
@@ -287,12 +287,13 @@
     margin-top: 3rem;
   }
 
-  /* .postContainer {
-    margin: 3rem;
-  } */
+  .postContainer {
+    margin: 1rem;
+    width: 100%;
+  }
 
-  /* .descriptionContainer {
-    max-height: 10vh;
+  .descriptionContainer {
+    margin: 0rem 0rem 1rem 0rem;
   }
 
   .textContainer {
@@ -305,5 +306,5 @@
 
   .likesContainer {
     margin-top: 1rem;
-  } */
+  }
 }

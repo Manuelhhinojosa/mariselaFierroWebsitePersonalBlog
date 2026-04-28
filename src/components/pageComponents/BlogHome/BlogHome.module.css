@@ -32,10 +32,14 @@
   height: 75%;
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: center;
   justify-content: top;
   overflow: hidden;
   overflow-y: scroll;
+}
+
+.listContainer p {
+  text-decoration: underline;
 }
 
 .listContainer::-webkit-scrollbar {
@@ -54,6 +58,10 @@
   width: 50%;
   position: sticky;
   top: 0;
+}
+
+.postTitleContainer p {
+  text-align: center;
 }
 
 .titleText {
@@ -93,9 +101,5 @@
 
   .listContainer::-webkit-scrollbar {
     width: 1.5px;
-  }
-
-  .postTitleContainer {
-    text-align: center;
   }
 }

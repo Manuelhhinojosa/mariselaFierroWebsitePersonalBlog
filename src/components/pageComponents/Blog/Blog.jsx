@@ -155,7 +155,7 @@ export const Blog = (props) => {
                         .map((line, index) => (
                           <p key={index}>{line}</p>
                         ))}
-                      ...{" "}
+
                       <span onClick={() => showLongDesc(post._id)}>
                         ver más
                       </span>
