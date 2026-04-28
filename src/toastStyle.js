@@ -2,7 +2,7 @@ export const toastStyleObject = () => {
   const isMobile = window.innerWidth <= 600;
 
   return {
-    position: isMobile ? "top-left" : "bottom-left",
+    position: isMobile ? "top-center" : "bottom-left",
     autoClose: 3000,
     hideProgressBar: true,
     closeOnClick: true,
@@ -14,7 +14,7 @@ export const toastStyleObject = () => {
       backgroundColor: "smoke",
       color: "white",
       fontSize: "12px",
-      width: isMobile ? "65%" : "auto",
+      width: isMobile ? "50%" : "auto",
       height: "auto",
       padding: isMobile ? null : "2rem",
       marginTop: isMobile ? "3rem" : null,
