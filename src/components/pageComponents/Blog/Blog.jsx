@@ -45,14 +45,20 @@ export const Blog = (props) => {
       }
     >
       {/* post long description container */}
+
       <div
         className={s.test2Container}
         style={props.verificationState.showText ? {} : { display: "none" }}
       >
+        <div className={s.backBtnContainer}>
+          <h3 className={s.button} onClick={showLongDesc}>
+            cerrar
+          </h3>
+        </div>
+
         {postInfo?.split("\n").map((line, index) => (
           <p key={index}>{line}</p>
         ))}
-        <span onClick={showLongDesc}>volver</span>
       </div>
       {/* Top container */}
       <div

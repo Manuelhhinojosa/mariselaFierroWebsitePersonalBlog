@@ -59,10 +59,15 @@ export const SinglePost = (props) => {
         className={s.test2Container}
         style={props.postState.showText ? {} : { display: "none" }}
       >
+        <div className={s.backBtnContainer}>
+          <h3 className={s.button} onClick={showLongDesc}>
+            cerrar
+          </h3>
+        </div>
+
         {post.description.split("\n").map((line, index) => (
           <p key={index}>{line}</p>
         ))}
-        <span onClick={showLongDesc}>volver</span>
       </div>
       {/* Home button container */}
       <div

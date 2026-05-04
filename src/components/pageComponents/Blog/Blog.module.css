@@ -32,12 +32,21 @@
   background-color: transparent;
 }
 
-.test2Container span {
-  opacity: 0.7;
+.backBtnContainer {
+  background-color: white;
+  position: fixed;
+  width: 100%;
+  top: 25%;
 }
 
-.test2Container span:hover {
+.button {
   opacity: 1;
+  background-color: white;
+  text-align: center;
+}
+
+.button:hover {
+  opacity: 0.5;
   cursor: pointer;
 }
 
@@ -284,6 +293,12 @@
     overflow-y: scroll;
     z-index: 999;
     font-size: 0.75rem;
+  }
+
+  .backBtnContainer {
+    width: fit-content;
+    position: sticky;
+    top: 0;
   }
 
   .postsContainer {
