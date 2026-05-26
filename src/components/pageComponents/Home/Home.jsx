@@ -1,6 +1,10 @@
 // Styles
 import s from "./Home.module.css";
 //
+// Dependencies
+// Framer motion (for animation)
+import { motion } from "framer-motion";
+//
 // Component
 export const Home = (props) => {
   return (
@@ -14,11 +18,29 @@ export const Home = (props) => {
       }
     >
       {/* Text container */}
-      <div className={s.textContainer}>
+      <motion.div
+        className={s.textContainer}
+        initial={{
+          opacity: 0,
+          y: 40,
+          scale: 0,
+          filter: "blur(10px)",
+        }}
+        animate={{
+          opacity: 1,
+          y: 0,
+          scale: 1,
+          filter: "blur(0px)",
+        }}
+        transition={{
+          duration: 2,
+          ease: [0.22, 1, 0.36, 1],
+        }}
+      >
         <h1 className={s.text} role="heading">
           Marisela Fierro
         </h1>
-      </div>
+      </motion.div>
     </div>
   );
 };
