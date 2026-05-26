@@ -54,7 +54,7 @@ const NavBar = (props) => {
               className={s.pageMenuContainer}
               initial={{
                 opacity: 0,
-                scale: 0,
+                scale: 0.7,
                 filter: "blur(10px)",
               }}
               animate={{
@@ -64,7 +64,7 @@ const NavBar = (props) => {
               }}
               exit={{
                 opacity: 0,
-                scale: 0,
+                scale: 0.7,
                 filter: "blur(10px)",
               }}
               transition={{

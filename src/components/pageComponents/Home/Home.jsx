@@ -23,8 +23,8 @@ export const Home = (props) => {
         initial={{
           opacity: 0,
           y: 40,
-          scale: 0,
-          filter: "blur(10px)",
+          scale: 0.5,
+          filter: "blur(5px)",
         }}
         animate={{
           opacity: 1,
@@ -33,8 +33,7 @@ export const Home = (props) => {
           filter: "blur(0px)",
         }}
         transition={{
-          duration: 1.5,
-          ease: [0.22, 1, 0.36, 1],
+          duration: 1,
         }}
       >
         <h1 className={s.text} role="heading">
