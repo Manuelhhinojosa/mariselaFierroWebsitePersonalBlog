@@ -186,50 +186,71 @@ const NavBar = (props) => {
 
       {/* CONTACT BUTTONS CONTAINER */}
 
-      <div
-        className={s.contactMenuContainer}
-        style={props.navBarState.showNavBar ? {} : { display: "none" }}
-      >
-        {/* email icon */}
-        <div className={s.contactMenuItemContainer}>
-          <Link to="/contact" onClick={handleNavBar}>
-            <img src={emailImg} alt="email-icon" />
-          </Link>
-        </div>
-        {/* Linkedin icon */}
-        <div className={s.contactMenuItemContainer}>
-          <a
-            href="https://www.linkedin.com/in/mariselalf"
-            target="_blank"
-            rel="noreferrer"
-            onClick={handleNavBar}
+      <AnimatePresence>
+        {props.navBarState.showNavBar && (
+          <motion.div
+            className={s.contactMenuContainer}
+            initial={{
+              opacity: 0,
+              scale: 0,
+              filter: "blur(10px)",
+            }}
+            animate={{
+              opacity: 1,
+              scale: 1,
+              filter: "blur(0px)",
+            }}
+            exit={{
+              opacity: 0,
+              scale: 0,
+              filter: "blur(10px)",
+            }}
+            transition={{
+              duration: 0.5,
+            }}
           >
-            <img src={linkedInImg} alt="linkedIn-icon" />
-          </a>
-        </div>
-        {/* Intagram icon */}
-        <div className={s.contactMenuItemContainer}>
-          <a
-            href="https://www.instagram.com/marisela_con_ese/"
-            target="_blank"
-            rel="noreferrer"
-            onClick={handleNavBar}
-          >
-            <img src={igImg} alt="ig-icon" />
-          </a>
-        </div>
-        {/* X icon */}
-        <div className={s.contactMenuItemContainer}>
-          <a
-            href="https://www.twitter.com/marisela_con_s"
-            target="_blank"
-            rel="noreferrer"
-            onClick={handleNavBar}
-          >
-            <img src={twitterImg} alt="twitter-icon" />
-          </a>
-        </div>
-      </div>
+            {/* email icon */}
+            <div className={s.contactMenuItemContainer}>
+              <Link to="/contact" onClick={handleNavBar}>
+                <img src={emailImg} alt="email-icon" />
+              </Link>
+            </div>
+            {/* Linkedin icon */}
+            <div className={s.contactMenuItemContainer}>
+              <a
+                href="https://www.linkedin.com/in/mariselalf"
+                target="_blank"
+                rel="noreferrer"
+                onClick={handleNavBar}
+              >
+                <img src={linkedInImg} alt="linkedIn-icon" />
+              </a>
+            </div>
+            {/* Intagram icon */}
+            <div className={s.contactMenuItemContainer}>
+              <a
+                href="https://www.instagram.com/marisela_con_ese/"
+                target="_blank"
+                rel="noreferrer"
+                onClick={handleNavBar}
+              >
+                <img src={igImg} alt="ig-icon" />
+              </a>
+            </div>
+            {/* X icon */}
+            <div className={s.contactMenuItemContainer}>
+              <a
+                href="https://www.twitter.com/marisela_con_s"
+                target="_blank"
+                rel="noreferrer"
+                onClick={handleNavBar}
+              >
+                <img src={twitterImg} alt="twitter-icon" />
+              </a>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </div>
   );
 };
