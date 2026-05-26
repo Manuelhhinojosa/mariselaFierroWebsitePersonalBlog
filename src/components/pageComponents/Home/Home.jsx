@@ -33,7 +33,7 @@ export const Home = (props) => {
           filter: "blur(0px)",
         }}
         transition={{
-          duration: 2,
+          duration: 1.5,
           ease: [0.22, 1, 0.36, 1],
         }}
       >

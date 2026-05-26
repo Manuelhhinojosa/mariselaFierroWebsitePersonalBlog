@@ -13,7 +13,10 @@ import "react-toastify/dist/ReactToastify.css";
 // error handling state (for styling)
 import { toastStyleObject } from "../../../toastStyle";
 //
-//
+//framer motion for animations
+import { motion, AnimatePresence, scale } from "framer-motion";
+// Component
+// Component
 // Component
 const NavBar = (props) => {
   // Router
@@ -45,107 +48,144 @@ const NavBar = (props) => {
             {props.navBarState.showNavBar ? "Ocultar" : "Ver más"}
           </p>
         </div>
-        <div
-          className={s.pageMenuContainer}
-          style={props.navBarState.showNavBar ? {} : { display: "none" }}
-        >
-          {/* ABOUT & BLOG CONTAINER */}
-          <div className={s.pageMenuContainerTop}>
-            <Link className={s.link} to="/about" onClick={handleNavBar}>
-              <div className={s.menuItemContainer}>Acerca de</div>
-            </Link>
+        <AnimatePresence>
+          {props.navBarState.showNavBar && (
+            <motion.div
+              className={s.pageMenuContainer}
+              initial={{
+                opacity: 0,
+                scale: 0,
+                filter: "blur(10px)",
+              }}
+              animate={{
+                opacity: 1,
+                scale: 1,
+                filter: "blur(0px)",
+              }}
+              exit={{
+                opacity: 0,
+                scale: 0,
+                filter: "blur(10px)",
+              }}
+              transition={{
+                duration: 0.5,
+              }}
+            >
+              {/* ABOUT & BLOG CONTAINER */}
+              <div className={s.pageMenuContainerTop}>
+                <Link className={s.link} to="/about" onClick={handleNavBar}>
+                  <div className={s.menuItemContainer}>Acerca de</div>
+                </Link>
 
-            <Link className={s.link} to="/blogmain" onClick={handleNavBar}>
-              <div className={s.menuItemContainer}>Blog</div>
-            </Link>
-          </div>
-
-          {/* PROJECTS CONTAINER */}
-
-          <div className={s.pageMenuContainerBottom}>
-            <div className={s.pageMenuContainerBottom1}>
-              <div>Proyectos:</div>
-              <br />
-
-              <Link className={s.link} to="/tardio" onClick={handleNavBar}>
-                <div className={s.menuItemContainer}>Tardío</div>
-              </Link>
-              <Link className={s.link} to="/riga" onClick={handleNavBar}>
-                <div className={s.menuItemContainer}>Riga</div>
-              </Link>
-              <Link className={s.link} to="/pangea" onClick={handleNavBar}>
-                <div className={s.menuItemContainer}>Pangea</div>
-              </Link>
-              <Link className={s.link} to="/sigilio" onClick={handleNavBar}>
-                <div className={s.menuItemContainer}>Sigilio</div>
-              </Link>
-              <Link className={s.link} to="/amanuense" onClick={handleNavBar}>
-                <div className={s.menuItemContainer}>Amanuense</div>
-              </Link>
-              <Link
-                className={s.link}
-                to="/lacuerpaquesomos"
-                onClick={handleNavBar}
-              >
-                <div className={s.menuItemContainer}>Cuerpa</div>
-              </Link>
-              <Link className={s.link} to="/dada" onClick={handleNavBar}>
-                <div className={s.menuItemContainer}>DADA/fanzine</div>
-              </Link>
-              <Link className={s.link} to="/duelo" onClick={handleNavBar}>
-                <div className={s.menuItemContainer}>Duelo</div>
-              </Link>
-              <Link className={s.link} to="/asociacion" onClick={handleNavBar}>
-                <div className={s.menuItemContainer}>Asociación</div>
-              </Link>
-              <Link className={s.link} to="/laboratorio" onClick={handleNavBar}>
-                <div className={s.menuItemContainer}>Laboratorio</div>
-              </Link>
-              <Link className={s.link} to="/dif" onClick={handleNavBar}>
-                <div className={s.menuItemContainer}>Expreso</div>
-              </Link>
-
-              <div>
-                <p>
-                  <a target="#" href="https://shopriga.netlify.app">
-                    Tienda
-                  </a>
-                </p>
-              </div>
-            </div>
-
-            {/* LOGIN/OUT BUTTON CONTAINER */}
-            {props.navBarState.isLoggedIn ? (
-              <div className={s.pageMenuContainerBottom2}>
-                <div className={s.link}>
-                  <div
-                    className={s.menuItemContainer}
-                    onClick={() => {
-                      console.log("SUCCESS! User logged out");
-                      props.navBarState.setIsLoggedIn(false);
-                      props.navBarState.setShowNavBar(false);
-                      toast("*** Gurps brais Marips. ***", toastStyleObject());
-                      navigate("/");
-                    }}
-                  >
-                    Salir
-                  </div>
-                </div>
-              </div>
-            ) : (
-              <div className={s.pageMenuContainerBottom2}>
-                <Link className={s.link} to="/login" onClick={handleNavBar}>
-                  <div className={s.menuItemContainer}>Ingresar</div>
+                <Link className={s.link} to="/blogmain" onClick={handleNavBar}>
+                  <div className={s.menuItemContainer}>Blog</div>
                 </Link>
               </div>
-            )}
-          </div>
-        </div>
+
+              {/* PROJECTS CONTAINER */}
+
+              <div className={s.pageMenuContainerBottom}>
+                <div className={s.pageMenuContainerBottom1}>
+                  <div>Proyectos:</div>
+                  <br />
+
+                  <Link className={s.link} to="/tardio" onClick={handleNavBar}>
+                    <div className={s.menuItemContainer}>Tardío</div>
+                  </Link>
+                  <Link className={s.link} to="/riga" onClick={handleNavBar}>
+                    <div className={s.menuItemContainer}>Riga</div>
+                  </Link>
+                  <Link className={s.link} to="/pangea" onClick={handleNavBar}>
+                    <div className={s.menuItemContainer}>Pangea</div>
+                  </Link>
+                  <Link className={s.link} to="/sigilio" onClick={handleNavBar}>
+                    <div className={s.menuItemContainer}>Sigilio</div>
+                  </Link>
+                  <Link
+                    className={s.link}
+                    to="/amanuense"
+                    onClick={handleNavBar}
+                  >
+                    <div className={s.menuItemContainer}>Amanuense</div>
+                  </Link>
+                  <Link
+                    className={s.link}
+                    to="/lacuerpaquesomos"
+                    onClick={handleNavBar}
+                  >
+                    <div className={s.menuItemContainer}>Cuerpa</div>
+                  </Link>
+                  <Link className={s.link} to="/dada" onClick={handleNavBar}>
+                    <div className={s.menuItemContainer}>DADA/fanzine</div>
+                  </Link>
+                  <Link className={s.link} to="/duelo" onClick={handleNavBar}>
+                    <div className={s.menuItemContainer}>Duelo</div>
+                  </Link>
+                  <Link
+                    className={s.link}
+                    to="/asociacion"
+                    onClick={handleNavBar}
+                  >
+                    <div className={s.menuItemContainer}>Asociación</div>
+                  </Link>
+                  <Link
+                    className={s.link}
+                    to="/laboratorio"
+                    onClick={handleNavBar}
+                  >
+                    <div className={s.menuItemContainer}>Laboratorio</div>
+                  </Link>
+                  <Link className={s.link} to="/dif" onClick={handleNavBar}>
+                    <div className={s.menuItemContainer}>Expreso</div>
+                  </Link>
+
+                  <div>
+                    <p>
+                      <a target="#" href="https://shopriga.netlify.app">
+                        Tienda
+                      </a>
+                    </p>
+                  </div>
+                </div>
+
+                {/* LOGIN/OUT BUTTON CONTAINER */}
+                {props.navBarState.isLoggedIn ? (
+                  <div className={s.pageMenuContainerBottom2}>
+                    <div className={s.link}>
+                      <div
+                        className={s.menuItemContainer}
+                        onClick={() => {
+                          console.log("SUCCESS! User logged out");
+                          props.navBarState.setIsLoggedIn(false);
+                          props.navBarState.setShowNavBar(false);
+                          toast(
+                            "*** Gurps brais Marips. ***",
+                            toastStyleObject()
+                          );
+                          navigate("/");
+                        }}
+                      >
+                        Salir
+                      </div>
+                    </div>
+                  </div>
+                ) : (
+                  <div className={s.pageMenuContainerBottom2}>
+                    <Link className={s.link} to="/login" onClick={handleNavBar}>
+                      <div className={s.menuItemContainer}>Ingresar</div>
+                    </Link>
+                  </div>
+                )}
+              </div>
+            </motion.div>
+          )}
+        </AnimatePresence>
       </div>
 
       {/* BOTTOM CONTAINER */}
 
       {/* CONTACT BUTTONS CONTAINER */}
+
       <div
         className={s.contactMenuContainer}
         style={props.navBarState.showNavBar ? {} : { display: "none" }}
