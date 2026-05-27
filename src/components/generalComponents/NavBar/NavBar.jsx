@@ -36,8 +36,8 @@ const NavBar = (props) => {
       className={s.navBarContainer}
       style={
         props.navBarState.showNavBar
-          ? { minHeight: "95vh", maxHeight: "95vh" }
-          : { height: "auto" }
+          ? { height: "95vh" }
+          : { height: "fit-content" }
       }
     >
       {/* TOP CONTAINER */}
