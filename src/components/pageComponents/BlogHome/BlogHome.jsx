@@ -5,6 +5,10 @@ import HomeButton from "../../generalComponents/HomeButton/HomeButton";
 // React Router V6
 import { Link } from "react-router-dom";
 //
+// dependencies
+// framer motion for animation
+import { motion } from "framer-motion";
+//
 // Component
 const BlogHome = (props) => {
   return (
@@ -22,7 +26,23 @@ const BlogHome = (props) => {
         <HomeButton />
       </div>
       {/* Page container */}
-      <div className={s.bottom}>
+      <motion.div
+        className={s.bottom}
+        initial={{
+          opacity: 0,
+          scale: 0.95,
+          filter: "blur(10px)",
+        }}
+        animate={{
+          opacity: 1,
+          scale: 1,
+          filter: "blur(0px)",
+        }}
+        transition={{
+          duration: 2,
+          ease: [0.22, 1, 0.36, 1],
+        }}
+      >
         {/* Title container */}
         <div className={s.postTitleContainer}>
           <p className={s.titleText}>Publicaciones:</p>
@@ -61,7 +81,7 @@ const BlogHome = (props) => {
             </Link>
           </div>
         ) : null}
-      </div>
+      </motion.div>
     </div>
   );
 };
