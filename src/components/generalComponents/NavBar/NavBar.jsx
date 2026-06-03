@@ -62,11 +62,19 @@ const NavBar = (props) => {
                 scale: 1,
                 filter: "blur(0px)",
               }}
-              exit={{
-                opacity: 0,
-                scale: 0.7,
-                filter: "blur(10px)",
-              }}
+              exit={
+                props.navBarState.isMobile
+                  ? {
+                      opacity: 1,
+                      scale: 1,
+                      filter: "blur(0px)",
+                    }
+                  : {
+                      opacity: 0,
+                      scale: 0.7,
+                      filter: "blur(10px)",
+                    }
+              }
               transition={{
                 duration: 0.5,
               }}
@@ -192,7 +200,7 @@ const NavBar = (props) => {
             className={s.contactMenuContainer}
             initial={{
               opacity: 0,
-              scale: 0,
+              scale: 0.7,
               filter: "blur(10px)",
             }}
             animate={{
@@ -200,11 +208,19 @@ const NavBar = (props) => {
               scale: 1,
               filter: "blur(0px)",
             }}
-            exit={{
-              opacity: 0,
-              scale: 0,
-              filter: "blur(10px)",
-            }}
+            exit={
+              props.navBarState.isMobile
+                ? {
+                    opacity: 1,
+                    scale: 1,
+                    filter: "blur(0px)",
+                  }
+                : {
+                    opacity: 0,
+                    scale: 0.7,
+                    filter: "blur(10px)",
+                  }
+            }
             transition={{
               duration: 0.5,
             }}

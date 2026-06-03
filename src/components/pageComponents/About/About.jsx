@@ -5,6 +5,9 @@ import aboutImg from "../../../images/aboutPage/aboutImg.png";
 // General components
 import HomeButton from "../../generalComponents/HomeButton/HomeButton";
 //
+// dependencies
+// framer motion for animation
+import { motion } from "framer-motion";
 // Component
 const About = (props) => {
   return (
@@ -24,9 +27,28 @@ const About = (props) => {
       {/* Page container */}
       <div className={s.bottom}>
         {/* Text & Img container */}
-        <div className={s.aboutContainer}>
+        <motion.div
+          className={s.aboutContainer}
+          initial={{
+            opacity: 0,
+            y: 30,
+          }}
+          animate={{
+            opacity: 1,
+            y: 0,
+          }}
+          transition={{
+            duration: 0.8,
+            ease: [0.22, 1, 0.36, 1],
+          }}
+        >
           {/* Text container */}
-          <div className={s.aboutTextContainer}>
+          <motion.div
+            className={s.aboutTextContainer}
+            initial={{ opacity: 0, x: -30 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8 }}
+          >
             <p className={s.text}>
               <p className={s.name}> Marisela Fierro</p>
               Soy artista visual, docente e investigadora novel con interés por
@@ -71,12 +93,17 @@ const About = (props) => {
                 Descargar mi CV
               </a>
             </p>
-          </div>
+          </motion.div>
           {/* Image container */}
-          <div className={s.aboutImgContainer}>
+          <motion.div
+            className={s.aboutImgContainer}
+            initial={{ opacity: 0, x: 30 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+          >
             <img className={s.aboutImg} src={aboutImg} alt="about" />
-          </div>
-        </div>
+          </motion.div>
+        </motion.div>
       </div>
     </div>
   );
