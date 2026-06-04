@@ -8,6 +8,14 @@ import HomeButton from "../../generalComponents/HomeButton/HomeButton";
 import { motion } from "framer-motion";
 // Function component
 const Project = (props) => {
+  // help vars
+  const images = [
+    props.project.imgOne,
+    props.project.imgTwo,
+    props.project.imgThree,
+    props.project.imgFour,
+    props.project.imgFive,
+  ];
   return (
     // Main container
     <div
@@ -167,41 +175,39 @@ const Project = (props) => {
           </div>
           {/* Images container */}
           <div className={s.imagesContainer}>
-            <div className={s.imageContainer}>
-              <img
-                className={s.image}
-                src={props.project.imgOne}
-                alt="projectImage"
-              />
-            </div>
-            <div className={s.imageContainer}>
-              <img
-                className={s.image}
-                src={props.project.imgTwo}
-                alt="projectImage"
-              />
-            </div>
-            <div className={s.imageContainer}>
-              <img
-                className={s.image}
-                src={props.project.imgThree}
-                alt="projectImage"
-              />
-            </div>
-            <div className={s.imageContainer}>
-              <img
-                className={s.image}
-                src={props.project.imgFour}
-                alt="projectImage"
-              />
-            </div>
-            <div className={s.imageContainer}>
-              <img
-                className={s.image}
-                src={props.project.imgFive}
-                alt="projectImage"
-              />
-            </div>
+            {images.map(
+              (img, index) =>
+                img && (
+                  <motion.div
+                    key={index}
+                    className={s.imageContainer}
+                    initial={{
+                      opacity: 0,
+                      scale: 0.8,
+                      filter: "blur(20px)",
+                    }}
+                    whileInView={{
+                      opacity: 1,
+                      scale: 1,
+                      filter: "blur(0px)",
+                    }}
+                    viewport={{
+                      once: false,
+                      amount: 0.15,
+                    }}
+                    transition={{
+                      duration: 1.5,
+                      ease: [0.22, 1, 0.36, 1],
+                    }}
+                  >
+                    <img
+                      className={s.image}
+                      src={img}
+                      alt={`project-${index + 1}`}
+                    />
+                  </motion.div>
+                )
+            )}
           </div>
         </div>
       </motion.div>
