@@ -31,23 +31,32 @@ const About = (props) => {
           className={s.aboutContainer}
           initial={{
             opacity: 0,
-            y: 30,
+            scale: 0.92,
+            filter: "blur(20px)",
           }}
           animate={{
             opacity: 1,
-            y: 0,
+            scale: 1,
+            filter: "blur(0px)",
           }}
           transition={{
-            duration: 0.8,
+            duration: 1.2,
             ease: [0.22, 1, 0.36, 1],
           }}
         >
           {/* Text container */}
           <motion.div
             className={s.aboutTextContainer}
-            initial={{ opacity: 0, x: -30 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8 }}
+            initial={{
+              opacity: 0,
+            }}
+            animate={{
+              opacity: 1,
+            }}
+            transition={{
+              duration: 1,
+              delay: 0.2,
+            }}
           >
             <p className={s.text}>
               <p className={s.name}> Marisela Fierro</p>
@@ -97,9 +106,16 @@ const About = (props) => {
           {/* Image container */}
           <motion.div
             className={s.aboutImgContainer}
-            initial={{ opacity: 0, x: 30 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
+            initial={{
+              opacity: 0,
+            }}
+            animate={{
+              opacity: 1,
+            }}
+            transition={{
+              duration: 1,
+              delay: 0.4,
+            }}
           >
             <img className={s.aboutImg} src={aboutImg} alt="about" />
           </motion.div>
