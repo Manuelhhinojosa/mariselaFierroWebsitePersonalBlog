@@ -4,6 +4,9 @@ import s from "./Contact.module.css";
 import HomeButton from "../../generalComponents/HomeButton/HomeButton";
 // React Hooks
 import { useRef } from "react";
+// dependencies
+// framer motion for animation
+import { motion } from "framer-motion";
 // emailJS
 import emailjs from "@emailjs/browser";
 // Toastify for handling errors
@@ -77,7 +80,23 @@ const Contact = (props) => {
       <div className={s.topContainer}>
         <HomeButton />
       </div>
-      <div className={s.bottomContainer}>
+      <motion.div
+        className={s.bottomContainer}
+        initial={{
+          opacity: 0,
+          scale: 0.95,
+          filter: "blur(10px)",
+        }}
+        animate={{
+          opacity: 1,
+          scale: 1,
+          filter: "blur(0px)",
+        }}
+        transition={{
+          duration: 2,
+          ease: [0.22, 1, 0.36, 1],
+        }}
+      >
         <div className={s.contactFormContainer}>
           <form action="" className={s.contactForm} ref={formRef}>
             <input
@@ -110,7 +129,7 @@ const Contact = (props) => {
             <button onClick={handleUserData}>Enviar</button>
           </form>
         </div>
-      </div>
+      </motion.div>
     </div>
   );
 };

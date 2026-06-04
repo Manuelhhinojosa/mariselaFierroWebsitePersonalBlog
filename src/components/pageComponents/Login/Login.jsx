@@ -2,6 +2,9 @@
 import s from "./Login.module.css";
 // General components
 import HomeButton from "../../generalComponents/HomeButton/HomeButton";
+// dependencies
+// framer motion for animation
+import { motion } from "framer-motion";
 // Axios
 import axios from "axios";
 // React hooks
@@ -89,7 +92,23 @@ export const Login = (props) => {
         <HomeButton />
       </div>
       {/* Component container */}
-      <div className={s.bottom}>
+      <motion.div
+        className={s.bottom}
+        initial={{
+          opacity: 0,
+          scale: 0.95,
+          filter: "blur(10px)",
+        }}
+        animate={{
+          opacity: 1,
+          scale: 1,
+          filter: "blur(0px)",
+        }}
+        transition={{
+          duration: 2,
+          ease: [0.22, 1, 0.36, 1],
+        }}
+      >
         {/* Title container */}
         <div className={s.BlogTitleContainer}>
           Blog personal de Marisela Fierro
@@ -122,7 +141,7 @@ export const Login = (props) => {
             <button onClick={handleSignIn}>Ingresar</button>
           </form>
         </div>
-      </div>
+      </motion.div>
     </div>
   );
 };

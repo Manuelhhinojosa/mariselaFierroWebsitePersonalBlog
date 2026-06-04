@@ -3,7 +3,9 @@ import s from "./Project.module.css";
 // General components
 import HomeButton from "../../generalComponents/HomeButton/HomeButton";
 //
-//
+// dependencies
+// framer motion for animation
+import { motion } from "framer-motion";
 // Function component
 const Project = (props) => {
   return (
@@ -21,7 +23,24 @@ const Project = (props) => {
         <HomeButton />
       </div>
       {/* component container */}
-      <div className={s.bottomContainer}>
+      <motion.div
+        key={props.project.id}
+        className={s.bottomContainer}
+        initial={{
+          opacity: 0,
+          scale: 0.95,
+          filter: "blur(10px)",
+        }}
+        animate={{
+          opacity: 1,
+          scale: 1,
+          filter: "blur(0px)",
+        }}
+        transition={{
+          duration: 2,
+          ease: [0.22, 1, 0.36, 1],
+        }}
+      >
         {/* Main project container */}
         <div className={s.projectContainer}>
           {/* Title container */}
@@ -185,7 +204,7 @@ const Project = (props) => {
             </div>
           </div>
         </div>
-      </div>
+      </motion.div>
     </div>
   );
 };
