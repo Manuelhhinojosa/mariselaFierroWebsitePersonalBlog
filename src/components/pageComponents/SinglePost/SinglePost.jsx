@@ -2,6 +2,9 @@
 import s from "./singlePost.module.css";
 // General components
 import HomeButton from "../../generalComponents/HomeButton/HomeButton";
+// Dependencies:
+// framer motion for animation
+import { motion } from "framer-motion";
 // React Router V6
 import { Link, useLocation, useNavigate } from "react-router-dom";
 // Axios
@@ -55,20 +58,37 @@ export const SinglePost = (props) => {
       }
     >
       {/* text container */}
-      <div
-        className={s.test2Container}
-        style={props.postState.showText ? {} : { display: "none" }}
-      >
-        <div className={s.backBtnContainer}>
-          <h3 className={s.button} onClick={showLongDesc}>
-            Volver
-          </h3>
-        </div>
+      {props.verificationState.showText && (
+        <motion.div
+          className={s.test2Container}
+          style={props.postState.showText ? {} : { display: "none" }}
+          initial={{
+            opacity: 0,
+            scale: 0.95,
+            filter: "blur(10px)",
+          }}
+          animate={{
+            opacity: 1,
+            scale: 1,
+            filter: "blur(0px)",
+          }}
+          transition={{
+            duration: 1,
+            ease: [0.22, 1, 0.36, 1],
+          }}
+        >
+          <div className={s.backBtnContainer}>
+            <h3 className={s.button} onClick={showLongDesc}>
+              Volver
+            </h3>
+          </div>
 
-        {post.description.split("\n").map((line, index) => (
-          <p key={index}>{line}</p>
-        ))}
-      </div>
+          {post.description.split("\n").map((line, index) => (
+            <p key={index}>{line}</p>
+          ))}
+        </motion.div>
+      )}
+
       {/* Home button container */}
       <div
         className={s.top}
@@ -77,212 +97,236 @@ export const SinglePost = (props) => {
         {<HomeButton />}
       </div>
       {/* Page container */}
-      <div
-        className={s.bottom}
-        style={props.postState.showText ? { opacity: "0" } : {}}
-      >
-        {/* Full post container */}
-        <div className={s.postContainer}>
-          {/* Title container */}
-          <div className={s.titleContainer}>
-            <p>{post.title}</p>
-          </div>
 
-          {/* Date container */}
-          <div className={s.dateContainer}>
-            <p> {post.createdAt.slice(0, 10)}</p>
-          </div>
-          {/* if post is text  */}
-          {post.text ? (
-            // Text container
-            <div className={s.textContainer}>
-              <p>
-                {post.text.split("\n").map((line, index) => (
-                  <p key={index}>{line}</p>
-                ))}
-              </p>
+      {!props.postState.showText && (
+        <div
+          className={s.bottom}
+          style={props.postState.showText ? { opacity: "0" } : {}}
+        >
+          {/* Full post container */}
+          <motion.div
+            className={s.postContainer}
+            key={post._id}
+            initial={{
+              opacity: 0,
+              scale: 0.9,
+              filter: "blur(20px)",
+            }}
+            whileInView={{
+              opacity: 1,
+              scale: 1,
+              filter: "blur(0px)",
+            }}
+            viewport={{
+              once: false,
+              amount: 0.15,
+            }}
+            transition={{
+              duration: 1.5,
+              ease: [0.22, 1, 0.36, 1],
+            }}
+          >
+            {/* Title container */}
+            <div className={s.titleContainer}>
+              <p>{post.title}</p>
             </div>
-          ) : (
-            ""
-          )}
-          {/* end if post is text */}
 
-          {/* if post is video */}
-          {post.video ? (
-            // Video container
-            <div className={s.videoContainer}>
-              <iframe
-                title={post.reference}
-                allowFullScreen
-                src={post.video}
-                frameborder="0"
-              ></iframe>
+            {/* Date container */}
+            <div className={s.dateContainer}>
+              <p> {post.createdAt.slice(0, 10)}</p>
             </div>
-          ) : (
-            ""
-          )}
-          {/* end if post is video */}
-
-          {/* if post is  media and media is image/gif */}
-          {post.media.length > 0 ? (
-            // Image container
-            <div className={s.imgContainer}>
-              {/* Media post with one image */}
-              <img src={post.media[index].url} alt="imgePost" />
-              {/* Media post with more than 1 image */}
-              {post.media.length > 1 ? (
-                <div className={s.btnsContainer}>
-                  <button className={s.sliderButton} onClick={handlePrev}>
-                    {`<<<`}
-                  </button>
-
-                  <div className={s.mediaAmount}>{`${index + 1} de ${
-                    post.media.length
-                  }`}</div>
-
-                  <button className={s.sliderButton} onClick={handleNext}>
-                    {`>>>`}
-                  </button>
-                </div>
-              ) : (
-                ""
-              )}
-            </div>
-          ) : null}
-          {/* end if post is  media and media is image/gif */}
-          <div className={s.descriptionContainer}>
-            {post.description.length > 150 ? (
-              <div>
-                {post.description
-                  .slice(0, 150)
-                  .split("\n")
-                  .map((line, index) => (
+            {/* if post is text  */}
+            {post.text ? (
+              // Text container
+              <div className={s.textContainer}>
+                <p>
+                  {post.text.split("\n").map((line, index) => (
                     <p key={index}>{line}</p>
                   ))}
-                <span onClick={showLongDesc}>ver más</span>
+                </p>
               </div>
             ) : (
-              `${post.description}`
+              ""
             )}
-          </div>
-          {/* Likes container */}
-          <div className={s.likesContainer}>
-            {/* Likes button container  */}
-            <div
-              className={s.likesBtnContainer}
-              onClick={() => {
-                axios
-                  .patch(
-                    `${process.env.REACT_APP_DATABASE_URL_POSTS}${post._id}`
-                  )
-                  .then((result) => {
-                    console.log(result);
-                    console.log("SUCCESS! Post updated. Result:", {
-                      config: result.config,
-                      data: result.data,
-                      status: result.status,
-                      headers: result.headers,
-                    });
+            {/* end if post is text */}
 
-                    axios.get(getAllPostsUrl).then((res) => {
-                      console.log(res);
+            {/* if post is video */}
+            {post.video ? (
+              // Video container
+              <div className={s.videoContainer}>
+                <iframe
+                  title={post.reference}
+                  allowFullScreen
+                  src={post.video}
+                  frameborder="0"
+                ></iframe>
+              </div>
+            ) : (
+              ""
+            )}
+            {/* end if post is video */}
+
+            {/* if post is  media and media is image/gif */}
+            {post.media.length > 0 ? (
+              // Image container
+              <div className={s.imgContainer}>
+                {/* Media post with one image */}
+                <img src={post.media[index].url} alt="imgePost" />
+                {/* Media post with more than 1 image */}
+                {post.media.length > 1 ? (
+                  <div className={s.btnsContainer}>
+                    <button className={s.sliderButton} onClick={handlePrev}>
+                      {`<<<`}
+                    </button>
+
+                    <div className={s.mediaAmount}>{`${index + 1} de ${
+                      post.media.length
+                    }`}</div>
+
+                    <button className={s.sliderButton} onClick={handleNext}>
+                      {`>>>`}
+                    </button>
+                  </div>
+                ) : (
+                  ""
+                )}
+              </div>
+            ) : null}
+            {/* end if post is  media and media is image/gif */}
+            <div className={s.descriptionContainer}>
+              {post.description.length > 150 ? (
+                <div>
+                  {post.description
+                    .slice(0, 150)
+                    .split("\n")
+                    .map((line, index) => (
+                      <p key={index}>{line}</p>
+                    ))}
+                  <span onClick={showLongDesc}>ver más</span>
+                </div>
+              ) : (
+                `${post.description}`
+              )}
+            </div>
+            {/* Likes container */}
+            <div className={s.likesContainer}>
+              {/* Likes button container  */}
+              <div
+                className={s.likesBtnContainer}
+                onClick={() => {
+                  axios
+                    .patch(
+                      `${process.env.REACT_APP_DATABASE_URL_POSTS}${post._id}`
+                    )
+                    .then((result) => {
                       console.log(result);
-                      console.log("SUCCESS! Posts loaded. Result:", {
+                      console.log("SUCCESS! Post updated. Result:", {
                         config: result.config,
                         data: result.data,
                         status: result.status,
                         headers: result.headers,
                       });
-                      const updatedPosts = res.data;
-                      props.postState.setPosts(updatedPosts.reverse());
-                    });
-                    toast("*** Gracias :) ***", toastStyleObject());
-                  })
-                  .catch((error) => {
-                    console.log("This is the error:", {
-                      message: error.message,
-                      stack: error.stack,
-                      config: error.config,
-                      response: error.response,
-                    });
 
-                    toast(
-                      "*** Error! Intenta más tarde :( ***",
-                      toastStyleObject()
-                    );
-                  });
-              }}
-            >
-              Me gusta
-            </div>
-            {/* Likes count container */}
-            <div className={s.likesCountContainer}>
-              {post.likes === 0 ? `0 Me gusta.` : null}
-
-              {post.likes === 1 ? `${post.likes} Me gusta.` : null}
-
-              {post.likes > 1 ? `${post.likes} Me gusta.` : null}
-            </div>
-          </div>
-          {/* Admin option container */}
-          {props.postState.isLoggedIn ? (
-            <div className={s.barContainer}>
-              <Link
-                style={{ textDecoration: "none" }}
-                to={"/edit"}
-                state={post}
-              >
-                <div className={s.editContainer}>Editar</div>
-              </Link>
-
-              <div
-                className={s.deleteContainer}
-                onClick={() => {
-                  axios
-                    .delete(
-                      `${process.env.REACT_APP_DATABASE_URL_POSTS}${post._id}`
-                    )
-                    .then((result) => {
-                      axios.get(getAllPostsUrl).then((r) => {
+                      axios.get(getAllPostsUrl).then((res) => {
+                        console.log(res);
                         console.log(result);
-                        const updatedPosts2 = r.data;
-                        props.postState.setPosts(updatedPosts2.reverse());
-                        navigate("/allposts");
+                        console.log("SUCCESS! Posts loaded. Result:", {
+                          config: result.config,
+                          data: result.data,
+                          status: result.status,
+                          headers: result.headers,
+                        });
+                        const updatedPosts = res.data;
+                        props.postState.setPosts(updatedPosts.reverse());
                       });
-                      toast(
-                        "*** Publicación eliminada :) ***",
-                        toastStyleObject()
-                      );
+                      toast("*** Gracias :) ***", toastStyleObject());
                     })
                     .catch((error) => {
-                      console.log("this is the error:", error);
+                      console.log("This is the error:", {
+                        message: error.message,
+                        stack: error.stack,
+                        config: error.config,
+                        response: error.response,
+                      });
+
                       toast(
-                        "*** No se puede eliminar la publicación en este instante. Intentar más tarde ***",
+                        "*** Error! Intenta más tarde :( ***",
                         toastStyleObject()
                       );
                     });
                 }}
               >
-                Eliminar
+                Me gusta
+              </div>
+              {/* Likes count container */}
+              <div className={s.likesCountContainer}>
+                {post.likes === 0 ? `0 Me gusta.` : null}
+
+                {post.likes === 1 ? `${post.likes} Me gusta.` : null}
+
+                {post.likes > 1 ? `${post.likes} Me gusta.` : null}
               </div>
             </div>
-          ) : (
-            ""
-          )}
-          {/* End admin options contianer */}
-          {/*  */}
-          {/* Home blog button container */}
-          <div className={s.linkContainer}>
-            <Link
-              style={{ textDecoration: "none" }}
-              to={`/blogmain`}
-              state={post}
-            >
-              <p className={s.backText}> Volver</p>
-            </Link>
-          </div>
+            {/* Admin option container */}
+            {props.postState.isLoggedIn ? (
+              <div className={s.barContainer}>
+                <Link
+                  style={{ textDecoration: "none" }}
+                  to={"/edit"}
+                  state={post}
+                >
+                  <div className={s.editContainer}>Editar</div>
+                </Link>
+
+                <div
+                  className={s.deleteContainer}
+                  onClick={() => {
+                    axios
+                      .delete(
+                        `${process.env.REACT_APP_DATABASE_URL_POSTS}${post._id}`
+                      )
+                      .then((result) => {
+                        axios.get(getAllPostsUrl).then((r) => {
+                          console.log(result);
+                          const updatedPosts2 = r.data;
+                          props.postState.setPosts(updatedPosts2.reverse());
+                          navigate("/allposts");
+                        });
+                        toast(
+                          "*** Publicación eliminada :) ***",
+                          toastStyleObject()
+                        );
+                      })
+                      .catch((error) => {
+                        console.log("this is the error:", error);
+                        toast(
+                          "*** No se puede eliminar la publicación en este instante. Intentar más tarde ***",
+                          toastStyleObject()
+                        );
+                      });
+                  }}
+                >
+                  Eliminar
+                </div>
+              </div>
+            ) : (
+              ""
+            )}
+            {/* End admin options contianer */}
+            {/*  */}
+            {/* Home blog button container */}
+            <div className={s.linkContainer}>
+              <Link
+                style={{ textDecoration: "none" }}
+                to={`/blogmain`}
+                state={post}
+              >
+                <p className={s.backText}> Volver</p>
+              </Link>
+            </div>
+          </motion.div>
         </div>
-      </div>
+      )}
     </div>
   );
 };

@@ -182,7 +182,11 @@ function App() {
             key={post._id}
             path={`/${post.reference}`}
             element={
-              <SinglePost postState={postState} mobileState={mobileState} />
+              <SinglePost
+                postState={postState}
+                mobileState={mobileState}
+                verificationState={verificationState}
+              />
             }
           />
         ))}
