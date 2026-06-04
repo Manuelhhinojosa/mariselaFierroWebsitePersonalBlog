@@ -7,7 +7,7 @@ import HomeButton from "../../generalComponents/HomeButton/HomeButton";
 //
 // dependencies
 // framer motion for animation
-import { motion } from "framer-motion";
+import { motion, scale } from "framer-motion";
 // Component
 const About = (props) => {
   return (
@@ -31,7 +31,7 @@ const About = (props) => {
           className={s.aboutContainer}
           initial={{
             opacity: 0,
-            scale: 0.92,
+            scale: 0.8,
             filter: "blur(20px)",
           }}
           animate={{
@@ -40,7 +40,7 @@ const About = (props) => {
             filter: "blur(0px)",
           }}
           transition={{
-            duration: 1.2,
+            duration: 1.5,
             ease: [0.22, 1, 0.36, 1],
           }}
         >
@@ -49,12 +49,14 @@ const About = (props) => {
             className={s.aboutTextContainer}
             initial={{
               opacity: 0,
+              scale: 0.8,
             }}
             animate={{
               opacity: 1,
+              scale: 1,
             }}
             transition={{
-              duration: 1,
+              duration: 1.5,
               delay: 0.2,
             }}
           >
@@ -108,13 +110,15 @@ const About = (props) => {
             className={s.aboutImgContainer}
             initial={{
               opacity: 0,
+              scale: 0.8,
             }}
             animate={{
               opacity: 1,
+              scale: 1,
             }}
             transition={{
-              duration: 1,
-              delay: 0.4,
+              duration: 1.5,
+              delay: 0.2,
             }}
           >
             <img className={s.aboutImg} src={aboutImg} alt="about" />
