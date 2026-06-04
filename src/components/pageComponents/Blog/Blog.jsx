@@ -5,6 +5,8 @@ import { Link } from "react-router-dom";
 // React hooks
 import { useState } from "react";
 // Dependencies:
+// framer motion for animation
+import { motion } from "framer-motion";
 import axios from "axios";
 // Toastify for handling errors
 import { toast } from "react-toastify";
@@ -46,20 +48,36 @@ export const Blog = (props) => {
     >
       {/* post long description container */}
 
-      <div
-        className={s.test2Container}
-        style={props.verificationState.showText ? {} : { display: "none" }}
-      >
-        <div className={s.backBtnContainer}>
-          <h3 className={s.button} onClick={showLongDesc}>
-            cerrar
-          </h3>
-        </div>
+      {props.verificationState.showText && (
+        <motion.div
+          className={s.test2Container}
+          initial={{
+            opacity: 0,
+            scale: 0.95,
+            filter: "blur(10px)",
+          }}
+          animate={{
+            opacity: 1,
+            scale: 1,
+            filter: "blur(0px)",
+          }}
+          transition={{
+            duration: 1,
+            ease: [0.22, 1, 0.36, 1],
+          }}
+        >
+          <div className={s.backBtnContainer}>
+            <h3 className={s.button} onClick={showLongDesc}>
+              cerrar
+            </h3>
+          </div>
 
-        {postInfo?.split("\n").map((line, index) => (
-          <p key={index}>{line}</p>
-        ))}
-      </div>
+          {postInfo?.split("\n").map((line, index) => (
+            <p key={index}>{line}</p>
+          ))}
+        </motion.div>
+      )}
+
       {/* Top container */}
       <div
         className={s.top}
@@ -96,7 +114,28 @@ export const Blog = (props) => {
             };
 
             return (
-              <div className={s.postContainer} key={post._id}>
+              <motion.div
+                className={s.postContainer}
+                key={post._id}
+                initial={{
+                  opacity: 0,
+                  scale: 0.9,
+                  filter: "blur(20px)",
+                }}
+                whileInView={{
+                  opacity: 1,
+                  scale: 1,
+                  filter: "blur(0px)",
+                }}
+                viewport={{
+                  once: false,
+                  amount: 0.15,
+                }}
+                transition={{
+                  duration: 1.5,
+                  ease: [0.22, 1, 0.36, 1],
+                }}
+              >
                 {/* Title container */}
                 <div className={s.titleContainer}>
                   <p>{post.title}</p>
@@ -284,7 +323,7 @@ export const Blog = (props) => {
                     </div>
                   </div>
                 )}
-              </div>
+              </motion.div>
             );
           })}
         </div>
