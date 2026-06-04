@@ -33,7 +33,7 @@ export const Home = (props) => {
           filter: "blur(0px)",
         }}
         transition={{
-          duration: 1,
+          duration: 1.5,
         }}
       >
         <h1 className={s.text} role="heading">
