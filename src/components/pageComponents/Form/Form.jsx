@@ -6,6 +6,9 @@ import { useState, useRef } from "react";
 import { useNavigate } from "react-router-dom";
 // General comoponents
 import HomeButton from "../../generalComponents/HomeButton/HomeButton";
+// Dependencies:
+// framer motion for animation
+import { motion } from "framer-motion";
 // Axios
 import axios from "axios";
 // Toastify for handling errors
@@ -178,7 +181,23 @@ const Form = (props) => {
         <HomeButton />
       </div>
       {/* Page container */}
-      <div className={s.bottom}>
+      <motion.div
+        className={s.bottom}
+        initial={{
+          opacity: 0,
+          scale: 0.95,
+          filter: "blur(10px)",
+        }}
+        animate={{
+          opacity: 1,
+          scale: 1,
+          filter: "blur(0px)",
+        }}
+        transition={{
+          duration: 2,
+          ease: [0.22, 1, 0.36, 1],
+        }}
+      >
         {/* Form container */}
         <div className={s.formContainer}>
           <form className={s.form} encType="multipart/form-data">
@@ -242,7 +261,7 @@ const Form = (props) => {
             <button onClick={handleCancel}>Cancelar</button>
           </form>
         </div>
-      </div>
+      </motion.div>
     </div>
   );
 };

@@ -6,6 +6,9 @@ import HomeButton from "../../generalComponents/HomeButton/HomeButton";
 import { useLocation, useNavigate } from "react-router-dom";
 // React hooks
 import { useState, useRef } from "react";
+// Dependencies:
+// framer motion for animation
+import { motion } from "framer-motion";
 // Axios
 import axios from "axios";
 // Toastify for handling errors
@@ -109,7 +112,23 @@ const EditForm = (props) => {
         <HomeButton />
       </div>
       {/* Page container */}
-      <div className={s.bottom}>
+      <motion.div
+        className={s.bottom}
+        initial={{
+          opacity: 0,
+          scale: 0.95,
+          filter: "blur(10px)",
+        }}
+        animate={{
+          opacity: 1,
+          scale: 1,
+          filter: "blur(0px)",
+        }}
+        transition={{
+          duration: 2,
+          ease: [0.22, 1, 0.36, 1],
+        }}
+      >
         {/* Edit form container */}
         <div className={s.formContainer}>
           <form className={s.form}>
@@ -165,7 +184,7 @@ const EditForm = (props) => {
             <button onClick={handleCancel}>Cancelar</button>
           </form>
         </div>
-      </div>
+      </motion.div>
     </div>
   );
 };
