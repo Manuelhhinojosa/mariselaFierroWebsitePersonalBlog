@@ -86,6 +86,12 @@ export const SinglePost = (props) => {
           {post.description.split("\n").map((line, index) => (
             <p key={index}>{line}</p>
           ))}
+
+          <div className={s.backBtnContainer}>
+            <h3 className={s.button} onClick={showLongDesc}>
+              Volver
+            </h3>
+          </div>
         </motion.div>
       )}
 

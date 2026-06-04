@@ -68,13 +68,19 @@ export const Blog = (props) => {
         >
           <div className={s.backBtnContainer}>
             <h3 className={s.button} onClick={showLongDesc}>
-              cerrar
+              Volver
             </h3>
           </div>
 
           {postInfo?.split("\n").map((line, index) => (
             <p key={index}>{line}</p>
           ))}
+
+          <div className={s.backBtnContainer}>
+            <h3 className={s.button} onClick={showLongDesc}>
+              Volver
+            </h3>
+          </div>
         </motion.div>
       )}
 

@@ -33,15 +33,14 @@
 }
 
 .backBtnContainer {
-  position: fixed;
   width: fit-content;
-  top: 17.5%;
 }
 
 .button {
   opacity: 1;
   background-color: white;
-  text-align: center;
+  font-size: 0.9rem;
+  text-decoration: underline;
 }
 
 .button:hover {
