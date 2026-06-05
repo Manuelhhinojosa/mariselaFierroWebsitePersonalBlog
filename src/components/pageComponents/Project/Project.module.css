@@ -123,11 +123,8 @@
   width: 100%;
 }
 @media screen and (max-width: 600px) {
-  /* .mainProjectContainer {
-  } */
-
   .topContainer {
-    margin-top: 3rem;
+    margin-top: 4rem;
   }
 
   .mainProjectContainer {
