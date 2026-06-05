@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 import { useState } from "react";
 // Dependencies:
 // framer motion for animation
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import axios from "axios";
 // Toastify for handling errors
 import { toast } from "react-toastify";
@@ -177,7 +177,7 @@ export const Blog = (props) => {
                   </div>
                 )}
 
-                {post.media.length > 1 && (
+                {/* {post.media.length > 1 && (
                   <div className={s.imgContainer}>
                     <img src={post.media[currentIndex].url} alt="imagePost" />
 
@@ -195,7 +195,49 @@ export const Blog = (props) => {
                       </button>
                     </div>
                   </div>
+                )} */}
+
+                {post.media.length > 1 && (
+                  <div className={s.imgContainer}>
+                    <AnimatePresence mode="wait">
+                      <motion.img
+                        key={currentIndex}
+                        src={post.media[currentIndex].url}
+                        alt="imagePost"
+                        initial={{
+                          opacity: 0,
+                          filter: "blur(20px)",
+                        }}
+                        animate={{
+                          opacity: 1,
+                          filter: "blur(0px)",
+                        }}
+                        exit={{
+                          opacity: 0,
+                          filter: "blur(20px)",
+                        }}
+                        transition={{
+                          duration: 0.4,
+                        }}
+                      />
+                    </AnimatePresence>
+
+                    <div className={s.btnsContainer}>
+                      <button className={s.sliderButton} onClick={handlePrev}>
+                        {`<<<`}
+                      </button>
+
+                      <div className={s.mediaAmount}>
+                        {`${currentIndex + 1} de ${post.media.length}`}
+                      </div>
+
+                      <button className={s.sliderButton} onClick={handleNext}>
+                        {`>>>`}
+                      </button>
+                    </div>
+                  </div>
                 )}
+
                 {/* Description container */}
                 <div className={s.descriptionContainer}>
                   {post.description.length > 150 ? (
