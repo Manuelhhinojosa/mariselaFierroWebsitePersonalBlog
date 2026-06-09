@@ -96,12 +96,26 @@ export const SinglePost = (props) => {
       )}
 
       {/* Home button container */}
-      <div
+      <motion.div
         className={s.top}
         style={props.postState.showText ? { display: "none" } : {}}
+        initial={{
+          opacity: 0,
+          scale: 0.8,
+          filter: "blur(20px)",
+        }}
+        animate={{
+          opacity: 1,
+          scale: 1,
+          filter: "blur(0px)",
+        }}
+        transition={{
+          duration: 1.5,
+          ease: [0.22, 1, 0.36, 1],
+        }}
       >
         {<HomeButton />}
-      </div>
+      </motion.div>
       {/* Page container */}
 
       {!props.postState.showText && (

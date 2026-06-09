@@ -27,9 +27,25 @@ const Project = (props) => {
       }
     >
       {/* Home button container */}
-      <div className={s.topContainer}>
+      <motion.div
+        className={s.topContainer}
+        initial={{
+          opacity: 0,
+          scale: 0.8,
+          filter: "blur(20px)",
+        }}
+        animate={{
+          opacity: 1,
+          scale: 1,
+          filter: "blur(0px)",
+        }}
+        transition={{
+          duration: 1.5,
+          ease: [0.22, 1, 0.36, 1],
+        }}
+      >
         <HomeButton />
-      </div>
+      </motion.div>
       {/* component container */}
       <motion.div
         key={props.project.id}
