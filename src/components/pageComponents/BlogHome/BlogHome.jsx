@@ -60,27 +60,28 @@ const BlogHome = (props) => {
               </p>
             </Link>
           ))}
-        </div>
-        {/* Link to all posts container */}
-        <div className={s.allPostsLinkContainer}>
-          <Link className={s.postLink} to="/allposts">
-            <p style={{ textDecoration: "none" }}>
-              Ver todas las publicaciones
-            </p>
-          </Link>
-        </div>
-        {/* Admin options container */}
-        {props.postState.isLoggedIn ? (
-          <div className={s.addContainer}>
-            <Link
-              className={s.postLink}
-              style={{ textDecoration: "none" }}
-              to="/add"
-            >
-              <p>Agregar una publicación</p>
+
+          <div className={s.allPostsLinkContainer}>
+            <Link className={s.postLink} to="/allposts">
+              <p style={{ textDecoration: "none" }}>
+                Ver todas las publicaciones
+              </p>
             </Link>
           </div>
-        ) : null}
+          {/* Admin options container */}
+          {props.postState.isLoggedIn ? (
+            <div className={s.addContainer}>
+              <Link
+                className={s.postLink}
+                style={{ textDecoration: "none" }}
+                to="/add"
+              >
+                <p>Agregar una publicación</p>
+              </Link>
+            </div>
+          ) : null}
+        </div>
+        {/* Link to all posts container */}
       </motion.div>
     </div>
   );
