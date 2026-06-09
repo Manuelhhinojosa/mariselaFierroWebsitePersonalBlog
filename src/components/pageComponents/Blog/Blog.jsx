@@ -177,26 +177,6 @@ export const Blog = (props) => {
                   </div>
                 )}
 
-                {/* {post.media.length > 1 && (
-                  <div className={s.imgContainer}>
-                    <img src={post.media[currentIndex].url} alt="imagePost" />
-
-                    <div className={s.btnsContainer}>
-                      <button className={s.sliderButton} onClick={handlePrev}>
-                        {`<<<`}
-                      </button>
-
-                      <div className={s.mediaAmount}>
-                        {`${currentIndex + 1} de ${post.media.length}`}
-                      </div>
-
-                      <button className={s.sliderButton} onClick={handleNext}>
-                        {`>>>`}
-                      </button>
-                    </div>
-                  </div>
-                )} */}
-
                 {post.media.length > 1 && (
                   <div className={s.imgContainer}>
                     <AnimatePresence mode="wait">
@@ -217,7 +197,7 @@ export const Blog = (props) => {
                           filter: "blur(20px)",
                         }}
                         transition={{
-                          duration: 0.4,
+                          duration: 0.7,
                         }}
                       />
                     </AnimatePresence>

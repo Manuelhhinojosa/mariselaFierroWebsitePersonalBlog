@@ -177,7 +177,28 @@ export const SinglePost = (props) => {
               // Image container
               <div className={s.imgContainer}>
                 {/* Media post with one image */}
-                <img src={post.media[index].url} alt="imgePost" />
+
+                <motion.img
+                  key={index}
+                  src={post.media[index].url}
+                  alt="imgePost"
+                  initial={{
+                    opacity: 0,
+                    filter: "blur(20px)",
+                  }}
+                  animate={{
+                    opacity: 1,
+                    filter: "blur(0px)",
+                  }}
+                  exit={{
+                    opacity: 0,
+                    filter: "blur(20px)",
+                  }}
+                  transition={{
+                    duration: 0.7,
+                  }}
+                />
+
                 {/* Media post with more than 1 image */}
                 {post.media.length > 1 ? (
                   <div className={s.btnsContainer}>
