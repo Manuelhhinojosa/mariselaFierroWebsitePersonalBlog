@@ -277,7 +277,19 @@
 
 @media screen and (max-width: 600px) {
   .top {
-    margin-top: 4rem;
+    position: fixed;
+    top: 1rem;
+    right: 0;
+    width: fit-content;
+    height: 60px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    z-index: 1000;
+  }
+
+  .bottom {
+    padding-top: 60px;
   }
 
   .test2Container {
