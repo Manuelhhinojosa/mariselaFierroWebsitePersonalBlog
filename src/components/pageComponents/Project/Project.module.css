@@ -12,9 +12,11 @@
   text-align: end;
   position: sticky;
   top: 0px;
+  z-index: 1000;
   display: flex;
   justify-content: flex-end;
   align-items: center;
+  background-color: white;
 }
 
 .bottomContainer {
