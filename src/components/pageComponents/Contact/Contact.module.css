@@ -54,7 +54,7 @@
 
 .contactForm input:hover {
   border-bottom: 1px solid black;
-  transition: 0.5s;
+  transition: 1s;
 }
 
 .contactForm input:focus {
@@ -85,11 +85,12 @@
   border: none;
   color: black;
   font-family: "andale mono", "Reddit Mono", monospace;
+  text-decoration: underline;
 }
 
 .contactForm button:hover {
   opacity: 0.5;
-  transition: 0.5s;
+  transition: 1s;
   cursor: pointer;
 }
 

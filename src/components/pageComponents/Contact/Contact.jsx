@@ -142,7 +142,7 @@ const Contact = (props) => {
               placeholder="Mensaje"
               ref={messageRef}
             ></textarea>
-            <button onClick={handleUserData}>Enviar</button>
+            <button onClick={handleUserData}>Enviar mensaje</button>
           </form>
         </div>
       </motion.div>
