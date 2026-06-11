@@ -307,6 +307,7 @@ export const Blog = (props) => {
                       duration: 0.5,
                     }}
                     aria-label="black heart"
+                    style={{ textDecoration: "none" }}
                   >
                     🖤
                   </motion.span>
@@ -331,7 +332,7 @@ export const Blog = (props) => {
                     </Link>
                     {/* Delete container */}
                     <div
-                      className={s.btnContainer}
+                      className={(s.btnContainer, s.delete)}
                       onClick={() => {
                         axios
                           .delete(

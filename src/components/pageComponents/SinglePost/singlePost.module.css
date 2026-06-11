@@ -46,6 +46,7 @@
 .button:hover {
   opacity: 0.5;
   cursor: pointer;
+  transition: 1s;
 }
 
 .top {
@@ -104,16 +105,18 @@
 }
 
 .descriptionContainer span {
-  opacity: 0.7;
+  text-decoration: underline;
+  color: black;
 }
 
 .descriptionContainer span:hover {
   cursor: pointer;
-  opacity: 1;
+  opacity: 0.7;
+  transition: 1s;
 }
 
 .dateContainer {
-  font-size: 0.75rem;
+  font-size: 0.8rem;
   width: 90%;
   display: flex;
   justify-content: flex-end;
@@ -227,13 +230,7 @@
   margin-bottom: 1rem;
 }
 
-.likesBtnContainer {
-  color: gray;
-}
-
 .likesBtnContainer:hover {
-  color: black;
-  transition: 0.3s;
   cursor: pointer;
 }
 
@@ -245,17 +242,28 @@
   height: fit-content;
   margin: 1rem;
   font-size: 0.75rem;
-  color: gray;
+  color: black;
 }
 
 .barContainer div:hover {
-  color: black;
-  transition: 0.3s;
+  transition: 1s;
   cursor: pointer;
 }
 
 .editContainer {
-  color: gray;
+  text-decoration: underline;
+}
+
+.deleteContainer {
+  color: red;
+  opacity: 0.7;
+  text-decoration: underline;
+}
+
+.deleteContainer:hover {
+  opacity: 1;
+  cursor: pointer;
+  transition: 1s;
 }
 
 .linkContainer {
@@ -263,13 +271,13 @@
 }
 
 .backText {
-  color: gray;
+  text-decoration: underline;
   font-size: 0.75rem;
 }
 
 .backText:hover {
-  color: black;
-  transition: 0.3s;
+  color: gray;
+  transition: 1s;
 }
 
 @media screen and (max-width: 600px) {

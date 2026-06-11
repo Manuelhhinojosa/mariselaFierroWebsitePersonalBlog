@@ -256,6 +256,10 @@
   margin-bottom: 1rem;
 }
 
+.btnContainer {
+  text-decoration: underline;
+}
+
 .btnContainer:hover {
   cursor: pointer;
 }
@@ -268,14 +272,22 @@
   height: fit-content;
   margin: 1rem;
   font-size: 0.75rem;
-  color: red;
+
   opacity: 0.7;
 }
 
-.barContainer:hover {
+.delete {
+  text-decoration: underline;
+  color: red;
+  opacity: 0.8;
+}
+
+.delete:hover {
   opacity: 1;
   transition: 1s;
+  cursor: pointer;
 }
+
 @media screen and (max-width: 600px) {
   .top {
     position: fixed;

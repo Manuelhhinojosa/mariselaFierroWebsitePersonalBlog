@@ -243,7 +243,7 @@ export const SinglePost = (props) => {
                     .map((line, index) => (
                       <p key={index}>{line}</p>
                     ))}
-                  <span onClick={showLongDesc}>ver más</span>
+                  ... <span onClick={showLongDesc}>ver más</span>
                 </div>
               ) : (
                 `${post.description}`
@@ -252,7 +252,7 @@ export const SinglePost = (props) => {
             {/* Likes container */}
             <div className={s.likesContainer}>
               {/* Likes button container  */}
-              <div
+              <motion.span
                 className={s.likesBtnContainer}
                 onClick={() => {
                   axios
@@ -296,9 +296,19 @@ export const SinglePost = (props) => {
                       );
                     });
                 }}
+                whileHover={{
+                  scale: [1, 1.15, 1],
+                }}
+                whileTap={{
+                  scale: [1, 1.4, 1.2, 1],
+                }}
+                transition={{
+                  duration: 0.5,
+                }}
+                aria-label="black heart"
               >
-                Me gusta
-              </div>
+                🖤
+              </motion.span>
               {/* Likes count container */}
               <div className={s.likesCountContainer}>
                 {post.likes === 0 ? `0 Me gusta.` : null}
