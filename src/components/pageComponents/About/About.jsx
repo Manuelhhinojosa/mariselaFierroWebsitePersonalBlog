@@ -7,7 +7,7 @@ import HomeButton from "../../generalComponents/HomeButton/HomeButton";
 //
 // dependencies
 // framer motion for animation
-import { motion, scale } from "framer-motion";
+import { motion } from "framer-motion";
 // Component
 const About = (props) => {
   return (

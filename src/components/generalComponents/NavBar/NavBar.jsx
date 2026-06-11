@@ -147,7 +147,7 @@ const NavBar = (props) => {
                     <div className={s.menuItemContainer}>Expreso</div>
                   </Link>
 
-                  <div>
+                  <div className={s.storeLinkContainer}>
                     <p>
                       <a target="#" href="https://shopriga.netlify.app">
                         Tienda

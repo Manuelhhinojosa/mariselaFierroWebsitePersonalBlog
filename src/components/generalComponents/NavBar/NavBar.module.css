@@ -30,7 +30,7 @@
 .p:hover {
   cursor: pointer;
   color: gray;
-  transition: 0.3s;
+  transition: 1s;
 }
 
 .link:hover {
@@ -76,6 +76,15 @@
   justify-content: flex-start;
 }
 
+.storeLinkContainer a {
+  color: black;
+}
+
+.storeLinkContainer a:hover {
+  color: gray;
+  transition: 1s;
+}
+
 .contactMenuContainer {
   width: 100%;
   height: 15%;
@@ -110,7 +119,7 @@ img:hover {
 
 .link:hover {
   color: gray;
-  transition: 0.3s;
+  transition: 1s;
 }
 
 @media screen and (max-width: 600px) {
