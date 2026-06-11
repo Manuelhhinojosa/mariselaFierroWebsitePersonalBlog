@@ -50,7 +50,7 @@
 
 .form input:nth-child(1):hover {
   border-bottom: 1px solid black;
-  transition: 0.5s;
+  transition: 1s;
 }
 
 .form input:focus {
@@ -116,7 +116,7 @@
 
 .form textarea:hover {
   border-bottom: 1px solid black;
-  transition: 0.3s;
+  transition: 1s;
 }
 
 .form textarea:focus {
@@ -131,11 +131,12 @@
   border: none;
   color: black;
   font-family: "andale mono", "Reddit Mono", monospace;
+  text-decoration: underline;
 }
 
 .form button:hover {
   color: gray;
-  transition: 0.3s;
+  transition: 1s;
   cursor: pointer;
 }
 

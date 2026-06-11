@@ -150,7 +150,7 @@ const EditForm = (props) => {
           <form className={s.form}>
             <input
               type="text"
-              placeholder={`${post.title} (Título (Campo obligatorio))`}
+              placeholder={`(Título - Campo obligatorio) ${post.title} `}
               name="title"
               autocomplete="off"
               onChange={(e) => {
