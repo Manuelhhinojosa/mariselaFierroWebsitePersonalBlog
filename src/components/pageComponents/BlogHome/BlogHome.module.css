@@ -65,7 +65,7 @@
 }
 
 .titleText {
-  font-size: 0.9rem;
+  font-size: 1.5rem;
 }
 
 .postLink {
@@ -74,16 +74,21 @@
 
 .postLink p {
   color: black;
-  font-size: 0.8rem;
+  font-size: 0.9rem;
+  text-align: center;
 }
 
 .postLink p:hover {
   color: gray;
-  transition: 0.3s;
+  transition: 1s;
 }
 
 .allPostsLinkContainer {
   margin-top: 2rem;
+}
+
+.allPostsLinkContainer p:hover {
+  transition: 1s;
 }
 
 @media screen and (max-width: 600px) {

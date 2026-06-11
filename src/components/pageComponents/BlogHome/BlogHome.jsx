@@ -79,7 +79,7 @@ const BlogHome = (props) => {
 
           <div className={s.allPostsLinkContainer}>
             <Link className={s.postLink} to="/allposts">
-              <p style={{ textDecoration: "none" }}>
+              <p style={{ textDecoration: "underline" }}>
                 Ver todas las publicaciones
               </p>
             </Link>
