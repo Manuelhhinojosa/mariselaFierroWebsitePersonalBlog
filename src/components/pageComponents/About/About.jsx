@@ -117,7 +117,7 @@ const About = (props) => {
                 target="_blank"
                 rel="noreferrer"
               >
-                Descargar mi CV
+                Descarga mi CV
               </a>
             </p>
           </motion.div>

@@ -68,13 +68,13 @@
 }
 
 a {
-  color: gray;
-  text-decoration: none;
+  color: black;
+  text-decoration: underline;
 }
 
 a:hover {
-  color: black;
-  transition: 0.3s;
+  color: gray;
+  transition: 1s;
 }
 
 .aboutImg {
