@@ -242,7 +242,7 @@ export const Blog = (props) => {
                         .map((line, index) => (
                           <p key={index}>{line}</p>
                         ))}
-
+                      ...{" "}
                       <span onClick={() => showLongDesc(post._id)}>
                         ver más
                       </span>
@@ -254,7 +254,7 @@ export const Blog = (props) => {
                 {/* Likes container */}
                 <div className={s.likesContainer}>
                   {/* Likes button container */}
-                  <div
+                  <motion.span
                     className={s.btnContainer}
                     onClick={() => {
                       axios
@@ -297,9 +297,12 @@ export const Blog = (props) => {
                           );
                         });
                     }}
+                    whileTap={{ scale: 1.3 }}
+                    whileHover={{ scale: 1.5 }}
+                    aria-label="black heart"
                   >
-                    Me gusta
-                  </div>
+                    🖤
+                  </motion.span>
                   {/* Likes counter container */}
                   <div className={s.likesCountContaier}>
                     {post.likes === 0 && `0 Me gusta.`}

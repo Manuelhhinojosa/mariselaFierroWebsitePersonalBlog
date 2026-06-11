@@ -46,6 +46,7 @@
 .button:hover {
   opacity: 0.5;
   cursor: pointer;
+  transition: 1s;
 }
 
 .top {
@@ -129,16 +130,17 @@
 }
 
 .descriptionContainer span {
-  opacity: 0.7;
+  text-decoration: underline;
 }
 
 .descriptionContainer span:hover {
   cursor: pointer;
-  opacity: 1;
+  color: gray;
+  transition: 1s;
 }
 
 .dateContainer {
-  font-size: 0.75rem;
+  font-size: 0.8rem;
   width: 90%;
   display: flex;
   justify-content: flex-end;
@@ -215,8 +217,8 @@
   display: flex;
   justify-content: space-between;
   font-family: "andale mono", "Reddit Mono", monospace;
-  font-size: 0.7rem;
-  color: gray;
+  font-size: 0.8rem;
+  color: black;
   margin: 0.5rem;
 }
 
@@ -224,13 +226,13 @@
   background-color: transparent;
   border: none;
   font-family: "andale mono", "Reddit Mono", monospace;
-  font-size: 0.7rem;
-  color: gray;
+  font-size: 0.9rem;
+  color: black;
 }
 
 .btnsContainer button:hover {
-  color: black;
-  transition: 0.3s;
+  color: gray;
+  transition: 1s;
   cursor: pointer;
 }
 
@@ -254,13 +256,7 @@
   margin-bottom: 1rem;
 }
 
-.btnContainer {
-  color: gray;
-}
-
 .btnContainer:hover {
-  color: black;
-  transition: 0.3s;
   cursor: pointer;
 }
 
@@ -272,9 +268,14 @@
   height: fit-content;
   margin: 1rem;
   font-size: 0.75rem;
-  color: gray;
+  color: red;
+  opacity: 0.7;
 }
 
+.barContainer:hover {
+  opacity: 1;
+  transition: 1s;
+}
 @media screen and (max-width: 600px) {
   .top {
     position: fixed;
