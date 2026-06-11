@@ -297,8 +297,15 @@ export const Blog = (props) => {
                           );
                         });
                     }}
-                    whileTap={{ scale: 1.3 }}
-                    whileHover={{ scale: 1.5 }}
+                    whileHover={{
+                      scale: [1, 1.15, 1],
+                    }}
+                    whileTap={{
+                      scale: [1, 1.4, 1.2, 1],
+                    }}
+                    transition={{
+                      duration: 0.5,
+                    }}
                     aria-label="black heart"
                   >
                     🖤
