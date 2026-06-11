@@ -237,7 +237,7 @@ const Form = (props) => {
             ></textarea>
             {/* Orientation container */}
             <div className={s.directionsText}>
-              *** Elige sólo uno de los siguientes campos. ***
+              *** Elige sólo uno de los siguientes campos ***
             </div>
             {/* Video container */}
             <input
@@ -251,7 +251,7 @@ const Form = (props) => {
             />
             {/* Image container */}
             <div>
-              <label htmlFor="media">Media</label>
+              <label htmlFor="media">Img</label>
               <input
                 type="file"
                 accept="image/*"

@@ -50,7 +50,7 @@
 
 .form input:nth-child(1):hover {
   border-bottom: 1px solid black;
-  transition: 0.3s;
+  transition: 1s;
 }
 
 .videoInput {
@@ -64,12 +64,16 @@
 
 .videoInput:hover {
   border-bottom: 1px solid black;
-  transition: 0.3s;
+  transition: 1s;
+}
+
+.form input:nth-child(2) {
+  border-bottom: 1px solid transparent;
 }
 
 .form input:nth-child(2):hover {
   border-bottom: 1px solid black;
-  transition: 0.3s;
+  transition: 1s;
 }
 
 .form input:focus {
@@ -103,7 +107,8 @@
 
 .directionsText {
   color: red;
-  font-size: 0.7rem;
+  font-size: 0.9rem;
+  text-align: center;
 }
 
 .form textarea {
@@ -120,7 +125,7 @@
 
 .form textarea:hover {
   border-bottom: black 1px solid;
-  transition: 0.3s;
+  transition: 1s;
 }
 
 .form button {
@@ -130,11 +135,12 @@
   border: none;
   color: black;
   font-family: "andale mono", "Reddit Mono", monospace;
+  text-decoration: underline;
 }
 
 .form button:hover {
   opacity: 0.3;
-  transition: 0.3s;
+  transition: 1s;
   cursor: pointer;
 }
 
