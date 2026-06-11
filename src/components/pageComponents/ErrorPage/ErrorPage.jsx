@@ -37,7 +37,7 @@ const ErrorPage = (props) => {
       >
         <h1 className={s.text}>Esta URL no existe.</h1>
         <Link to="/" className={s.homeButton}>
-          Volver al inicio
+          Volver a la página de inicio
         </Link>
       </motion.div>
     </div>
