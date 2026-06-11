@@ -25,6 +25,11 @@ const NavBar = (props) => {
   //
   // Handles navigation bar visibility
   const handleNavBar = () => {
+    if (props.navBarState.isMobile) {
+      props.navBarState.setShowNavBar(false);
+    }
+  };
+  const toggleNavBar = () => {
     props.navBarState.setShowNavBar(!props.navBarState.showNavBar);
   };
 
@@ -44,7 +49,7 @@ const NavBar = (props) => {
       <div className={s.topNavBarContainer}>
         {/* HIDE BUTTON CONTAINER */}
         <div className={s.moreContainer}>
-          <p className={s.p} onClick={handleNavBar}>
+          <p className={s.p} onClick={toggleNavBar}>
             {props.navBarState.showNavBar ? "Ocultar" : "Ver más"}
           </p>
         </div>
