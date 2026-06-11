@@ -60,7 +60,7 @@
 
 .loginForm input:hover {
   border-bottom: 1px solid black;
-  transition: 0.5s;
+  transition: 1s;
 }
 
 .loginForm input:focus {
@@ -74,11 +74,12 @@
   border: none;
   color: black;
   font-family: "andale mono", "Reddit Mono", monospace;
+  text-decoration: underline;
 }
 
 .loginForm button:hover {
-  opacity: 0.5;
-  transition: 0.5s;
+  opacity: 0.7;
+  transition: 1s;
   cursor: pointer;
 }
 
