@@ -6,11 +6,6 @@
   align-items: center;
 }
 
-.text {
-  font-weight: 200;
-  color: darkgray;
-}
-
 .homeButton {
   text-decoration: underline;
   color: black;

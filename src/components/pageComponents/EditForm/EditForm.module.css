@@ -28,6 +28,7 @@
 .formContainer {
   height: 70%;
   width: 70%;
+  /* background-color: red; */
 }
 
 .form {
@@ -107,10 +108,11 @@
 
 .form textarea {
   width: 80%;
+  height: 150px;
   border: none;
   font-family: "andale mono", "Reddit Mono", monospace;
   text-align: center;
-  margin: 1rem;
+  margin-top: 2rem;
   border-bottom: 1px solid transparent;
 }
 
@@ -154,8 +156,9 @@
   }
 
   .bottom {
-    margin-top: 2rem;
+    margin-top: 5rem;
     padding-top: 60px;
+    align-items: start;
   }
 
   .editFormContainer {
