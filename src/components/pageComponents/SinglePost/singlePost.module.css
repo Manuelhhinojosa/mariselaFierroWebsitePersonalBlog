@@ -132,8 +132,8 @@
 }
 
 .videoContainer iframe {
-  width: 60%;
-  height: 70%;
+  width: 80%;
+  height: 80%;
 }
 
 .textContainer {
@@ -317,6 +317,18 @@
   .bottom {
     margin-top: 2rem;
     padding-top: 60px;
+  }
+
+  .videoContainer {
+    width: 100%;
+    height: 100%;
+    display: flex;
+  }
+
+  .videoContainer iframe {
+    width: 100%;
+    height: 100%;
+    margin: 3rem 0 3rem 0;
   }
 
   .postContainer {

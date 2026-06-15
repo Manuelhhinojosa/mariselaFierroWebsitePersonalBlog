@@ -94,7 +94,6 @@
   font-size: 0.8rem;
 }
 
-/*  */
 .imagesContainer {
   width: 100%;
   height: 75%;
@@ -135,6 +134,10 @@
     justify-content: flex-end;
     align-items: center;
     z-index: 1000;
+  }
+
+  .projectContainer {
+    width: 95%;
   }
 
   .bottomContainer {
