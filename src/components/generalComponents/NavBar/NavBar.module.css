@@ -24,7 +24,7 @@
   display: flex;
   align-items: flex-start;
   justify-content: flex-start;
-  font-weight: 200;
+  font-weight: 500;
 }
 
 .p:hover {
@@ -110,7 +110,7 @@ img {
 
 img:hover {
   opacity: 0.3;
-  transition: 0.5s;
+  transition: 1s;
 }
 
 .link {
