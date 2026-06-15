@@ -1,5 +1,5 @@
 .blogHomeContainer {
-  height: 95vh;
+  height: fit-content;
   flex: 7;
   display: flex;
   flex-direction: column;
@@ -19,17 +19,20 @@
 
 .bottom {
   width: 100%;
-  height: 95%;
+  height: 95vh;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
 }
 
+.titleText {
+  font-size: 1.5rem;
+}
+
 .listContainer {
   margin-top: 2rem;
-  width: 50%;
-  height: 75%;
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -54,37 +57,43 @@
   background-color: transparent;
 }
 
-.postTitleContainer {
-  width: 50%;
-  position: sticky;
-  top: 0;
+.postItem {
+  padding: 1rem 0;
+  transition: transform 1s ease, opacity 0.3s ease;
 }
 
-.postTitleContainer p {
-  text-align: center;
+.postItem:hover {
+  transform: translateX(10px);
 }
 
-.titleText {
-  font-size: 1.5rem;
-}
-
-.postLink {
-  text-decoration: none;
-}
-
-.postLink p {
-  color: black;
+.postTitle {
+  margin: 0;
   font-size: 0.9rem;
+  letter-spacing: 0.02em;
+  text-align: center;
+  color: black;
+}
+
+.postDate {
+  margin: 0.3rem 0 0 0;
+  color: rgba(0, 0, 0, 0.45);
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
   text-align: center;
 }
 
-.postLink p:hover {
-  color: gray;
-  transition: 1s;
+.footer {
+  position: sticky;
+  bottom: 0;
+  text-align: center;
+  text-decoration: underline;
+  font-size: 0.9rem;
 }
 
 .allPostsLinkContainer {
   margin-top: 2rem;
+  position: static;
 }
 
 .allPostsLinkContainer p:hover {
@@ -92,10 +101,6 @@
 }
 
 @media screen and (max-width: 600px) {
-  .blogHomeContainer {
-    min-height: 100vh;
-  }
-
   .top {
     position: fixed;
     top: 1rem;
@@ -109,16 +114,21 @@
   }
 
   .bottom {
-    margin-top: 2rem;
-    padding-top: 60px;
+    margin-top: 6rem;
+    height: fit-content;
+  }
+
+  .titleText {
+    width: 100%;
+    text-align: center;
   }
 
   .listContainer {
-    height: 65vh;
-    width: 90%;
+    height: 60vh;
+    margin: 0.5rem 0 0.5rem 0;
   }
 
-  .listContainer::-webkit-scrollbar {
-    width: 1.5px;
+  .footer {
+    letter-spacing: 0.02em;
   }
 }

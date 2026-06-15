@@ -179,7 +179,7 @@
 
 .videoContainer {
   width: 70%;
-  height: 45%;
+  height: 70%;
   margin: 1rem;
   padding: 1rem;
   display: flex;
@@ -188,8 +188,8 @@
 }
 
 .videoContainer iframe {
-  width: 70%;
-  height: 80%;
+  width: 100%;
+  height: 100%;
 }
 
 .imgContainer {
@@ -340,6 +340,10 @@
     max-height: 40vh;
     min-width: 40vh;
     padding: 0rem;
+  }
+
+  .videoContainer {
+    width: 100%;
   }
 
   .btnsContainer {

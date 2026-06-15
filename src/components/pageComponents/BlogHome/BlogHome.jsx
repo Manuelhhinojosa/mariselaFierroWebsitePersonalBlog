@@ -59,9 +59,8 @@ const BlogHome = (props) => {
           ease: [0.22, 1, 0.36, 1],
         }}
       >
-        {/* Title container */}
-        <div className={s.postTitleContainer}>
-          <p className={s.titleText}>Publicaciones:</p>
+        <div className={s.titleText} style={{ textDecoration: "none" }}>
+          Publicaciones:
         </div>
         {/* list of posts container */}
         <div className={s.listContainer}>
@@ -71,12 +70,15 @@ const BlogHome = (props) => {
               className={s.postLink}
               to={`/${post.reference}`}
             >
-              <p>
-                {post.title} Del 20{post.createdAt.slice(2, 10)}
-              </p>
+              <div className={s.postItem}>
+                <p className={s.postTitle}>{post.title}</p>
+                <p className={s.postDate}>20{post.createdAt.slice(2, 10)}</p>
+              </div>
             </Link>
           ))}
+        </div>
 
+        <div className={s.footer}>
           <div className={s.allPostsLinkContainer}>
             <Link className={s.postLink} to="/allposts">
               <p style={{ textDecoration: "underline" }}>
@@ -84,7 +86,6 @@ const BlogHome = (props) => {
               </p>
             </Link>
           </div>
-          {/* Admin options container */}
           {props.postState.isLoggedIn ? (
             <div className={s.addContainer}>
               <Link
@@ -95,9 +96,8 @@ const BlogHome = (props) => {
                 <p>Agregar una publicación</p>
               </Link>
             </div>
-          ) : null}
+          ) : null}{" "}
         </div>
-        {/* Link to all posts container */}
       </motion.div>
     </div>
   );
