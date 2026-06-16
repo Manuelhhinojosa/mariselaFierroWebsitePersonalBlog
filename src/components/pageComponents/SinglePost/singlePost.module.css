@@ -161,7 +161,6 @@
 
 .textContainer p {
   text-align: justify;
-  margin: 1rem;
   font-size: 0.8rem;
 }
 
@@ -329,7 +328,7 @@
   }
 
   .textContainer {
-    max-height: 30vh;
+    max-height: 40vh;
   }
 
   .btnsContainer {
