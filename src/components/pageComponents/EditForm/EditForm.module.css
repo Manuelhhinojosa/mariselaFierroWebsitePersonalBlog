@@ -105,6 +105,21 @@
   cursor: not-allowed;
 }
 
+.videoPost {
+  width: 40vh;
+  height: 45vh;
+  margin: 1rem;
+  padding: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.videoPost iframe {
+  width: 100%;
+  height: 100%;
+}
+
 .form textarea {
   width: 80%;
   height: 150px;

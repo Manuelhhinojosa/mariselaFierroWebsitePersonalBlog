@@ -93,7 +93,7 @@
 }
 
 .postContainer {
-  width: 85%;
+  width: 100%;
   min-height: 100%;
   margin: 2rem 3rem 3rem 3rem;
   display: flex;
@@ -178,7 +178,7 @@
 }
 
 .videoContainer {
-  width: 60vh;
+  width: 40vh;
   height: 45vh;
   margin: 1rem;
   padding: 1rem;
