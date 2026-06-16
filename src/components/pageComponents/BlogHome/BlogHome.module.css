@@ -22,27 +22,28 @@
   height: 95vh;
   display: flex;
   flex-direction: column;
-  justify-content: space-evenly;
+  justify-content: space-between;
   align-items: center;
 }
 
 .titleText {
-  font-size: 1.5rem;
+  font-size: 2rem;
 }
 
 .listContainer {
   margin-top: 2rem;
   width: 100%;
   display: flex;
-  flex-direction: column;
   align-items: center;
-  justify-content: top;
+  justify-content: center;
   overflow: hidden;
   overflow-y: scroll;
+  flex-wrap: wrap;
 }
 
 .listContainer p {
   text-decoration: underline;
+  margin: 2rem;
 }
 
 .listContainer::-webkit-scrollbar {
@@ -60,6 +61,10 @@
 .postItem {
   padding: 1rem 0;
   transition: transform 1s ease, opacity 0.3s ease;
+  margin: 1rem;
+  width: 200px;
+  height: 150px;
+  box-shadow: 0 4px 6px -4px rgba(0, 0, 0, 0.15);
 }
 
 .postItem:hover {
@@ -86,18 +91,25 @@
 .footer {
   position: sticky;
   bottom: 0;
-  text-align: center;
   text-decoration: underline;
   font-size: 0.9rem;
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  height: 10rem;
+  letter-spacing: 0.02em;
 }
 
-.allPostsLinkContainer {
-  margin-top: 2rem;
-  position: static;
+.footer div {
+  transition: transform 1s ease, opacity 0.3s ease;
+  width: 200px;
+  text-align: center;
+  box-shadow: 0 4px 6px -4px rgba(0, 0, 0, 0.15);
 }
 
-.allPostsLinkContainer p:hover {
-  transition: 1s;
+.footer div:hover {
+  transform: translateX(10px);
 }
 
 @media screen and (max-width: 600px) {
@@ -124,11 +136,10 @@
   }
 
   .listContainer {
-    height: 60vh;
-    margin: 0.5rem 0 0.5rem 0;
+    height: 62.5vh;
   }
 
   .footer {
-    letter-spacing: 0.02em;
+    height: 5rem;
   }
 }

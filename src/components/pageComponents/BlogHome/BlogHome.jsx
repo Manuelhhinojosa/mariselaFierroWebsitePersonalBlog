@@ -60,7 +60,7 @@ const BlogHome = (props) => {
         }}
       >
         <div className={s.titleText} style={{ textDecoration: "none" }}>
-          Publicaciones:
+          Publicaciones
         </div>
         {/* list of posts container */}
         <div className={s.listContainer}>

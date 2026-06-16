@@ -26,9 +26,8 @@
 }
 
 .formContainer {
-  height: 70%;
+  height: 80%;
   width: 70%;
-  /* background-color: red; */
 }
 
 .form {
@@ -161,16 +160,12 @@
     align-items: start;
   }
 
-  .editFormContainer {
-    min-height: 100vh;
-  }
-
   .formContainer {
     min-width: fit-content;
   }
 
   .form {
-    min-height: 80vh;
+    max-height: 80vh;
   }
 
   .textPost::-webkit-scrollbar {

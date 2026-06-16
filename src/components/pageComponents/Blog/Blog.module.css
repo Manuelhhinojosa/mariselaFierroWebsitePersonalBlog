@@ -178,8 +178,8 @@
 }
 
 .videoContainer {
-  width: 70%;
-  height: 70%;
+  width: 60vh;
+  height: 45vh;
   margin: 1rem;
   padding: 1rem;
   display: flex;
@@ -337,13 +337,14 @@
   }
 
   .textContainer {
-    max-height: 40vh;
-    min-width: 40vh;
+    max-height: 50vh;
+    min-width: 60vh;
     padding: 0rem;
   }
 
   .videoContainer {
     width: 100%;
+    height: 50vh;
   }
 
   .btnsContainer {
