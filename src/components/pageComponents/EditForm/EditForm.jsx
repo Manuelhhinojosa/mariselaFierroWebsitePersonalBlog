@@ -5,7 +5,7 @@ import HomeButton from "../../generalComponents/HomeButton/HomeButton";
 // React router V6
 import { useLocation, useNavigate } from "react-router-dom";
 // React hooks
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 // Dependencies:
 // framer motion for animation
 import { motion } from "framer-motion";
@@ -20,6 +20,10 @@ import { toastStyleObject } from "../../../toastStyle";
 //
 // Component function
 const EditForm = (props) => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   const location = useLocation();
   const post = location.state;
   // // State to edit a post

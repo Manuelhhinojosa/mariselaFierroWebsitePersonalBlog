@@ -10,7 +10,7 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 // Axios
 import axios from "axios";
 // React hooks
-import { useState } from "react";
+import { useState, useEffect } from "react";
 // Toastify for handling errors
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
@@ -19,6 +19,10 @@ import { toastStyleObject } from "../../../toastStyle";
 //
 // Component
 export const SinglePost = (props) => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   // Auxiliar variables
   const navigate = useNavigate();
   let location = useLocation();
