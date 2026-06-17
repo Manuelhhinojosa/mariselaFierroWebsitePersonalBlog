@@ -4,6 +4,8 @@ import s from "./BlogHome.module.css";
 import HomeButton from "../../generalComponents/HomeButton/HomeButton";
 // React Router V6
 import { Link } from "react-router-dom";
+// hooks
+import { useEffect } from "react";
 //
 // dependencies
 // framer motion for animation
@@ -11,6 +13,10 @@ import { motion } from "framer-motion";
 //
 // Component
 const BlogHome = (props) => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     // Main container
     <div
