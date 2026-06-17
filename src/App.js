@@ -1,14 +1,19 @@
 // Styles
 import s from "./App.module.css";
-// React Router V6
-import { Routes, Route, useNavigate } from "react-router-dom";
+//
+// React Router V6 Hooks
+import { Routes, Route } from "react-router-dom";
+//
 // Dependencies
 // Axios for API calls
 import axios from "axios";
+//
 // Toastify for handling errors
 import { ToastContainer } from "react-toastify";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+//
+// Components
 // Page components
 import { Home } from "./components/pageComponents/Home/Home";
 import ErrorPage from "./components/pageComponents/ErrorPage/ErrorPage";
@@ -23,22 +28,22 @@ import Project from "./components/pageComponents/Project/Project";
 import { SinglePost } from "./components/pageComponents/SinglePost/SinglePost";
 // General components
 import NavBar from "./components/generalComponents/NavBar/NavBar";
+//
 // React Hooks
 import { useState, useEffect } from "react";
-// Projects state (stored localy in src dir)
-import { projectsData } from "./projectsData";
-// error handling state (for styling)
-import { toastStyleObject } from "./toastStyle";
 //
+// State
+// Projects state for Project Component
+import { projectsData } from "./projectsData";
+// Tostify style object
+import { toastStyleObject } from "./toastStyle";
 //
 // App coponent (Main component)
 // App coponent (Main component)
 // App coponent (Main component)
 function App() {
   //
-  const navigate = useNavigate();
-
-  // is the user using mobile size screen/device
+  // Determines if user is using sm or lg screen
   const [isMobile, setIsMobile] = useState(window.innerWidth < 600);
   useEffect(() => {
     const handleResize = () => {
@@ -47,14 +52,20 @@ function App() {
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
   }, []);
-
+  //
   // state
+  // controls Navbar
   const [showNavBar, setShowNavBar] = useState(false);
+  //
   const [showText, setShowText] = useState(false);
+  // Is user loggied in / out
   const [isLoggedIn, setIsLoggedIn] = useState(false);
+  // Is there an user
   const [user, setUser] = useState("");
+  // Controls blog posts state
   const [posts, setPosts] = useState([]);
-
+  //
+  // Aux variables
   // API URL
   const getAllPostsUrl = process.env.REACT_APP_DATABASE_URL;
 
@@ -89,7 +100,11 @@ function App() {
         );
       });
   }, []);
-
+  //
+  // PROPS
+  // PROPS
+  // PROPS
+  //
   // NavBar props
   const navBarState = {
     showNavBar,
@@ -99,7 +114,7 @@ function App() {
     isMobile,
     setIsMobile,
   };
-
+  //
   // mobile state props
   const mobileState = {
     isMobile,
@@ -107,7 +122,7 @@ function App() {
     showNavBar,
     setShowNavBar,
   };
-
+  //
   // Blog props
   const verificationState = {
     isLoggedIn,
@@ -117,7 +132,7 @@ function App() {
     showText,
     setShowText,
   };
-
+  //
   // Form props
   const userState = {
     user,
@@ -127,7 +142,7 @@ function App() {
     posts,
     setPosts,
   };
-
+  //
   // BlogHome props
   // Single post props
   const postState = {
@@ -137,23 +152,32 @@ function App() {
     showText,
     setShowText,
   };
-
+  //
+  // return statement
+  // return statement
+  // return statement
   return (
+    //
+    // App main container
     <div className={s.appContainer}>
-      {/* General components */}
+      {/* Tostify notification component */}
       <ToastContainer />
 
+      {/* NavBar */}
       {showText ? "" : <NavBar navBarState={navBarState} />}
 
       {/* Page components */}
       <Routes>
+        {/* Home */}
         <Route path="/" element={<Home mobileState={mobileState} />} />
+        {/* About */}
         <Route path="/about" element={<About mobileState={mobileState} />} />
+        {/* BlogHome */}
         <Route
           path="/blogmain"
           element={<BlogHome postState={postState} mobileState={mobileState} />}
         />
-
+        {/* Project */}
         {projectsData.map((project) => (
           <Route
             key={project._id}
@@ -161,15 +185,17 @@ function App() {
             element={<Project project={project} mobileState={mobileState} />}
           />
         ))}
-
+        {/* Contact */}
         <Route
           path="/contact"
           element={<Contact mobileState={mobileState} />}
         />
+        {/* Login */}
         <Route
           path="/login"
           element={<Login userState={userState} mobileState={mobileState} />}
         />
+        {/* Blog */}
         <Route
           path="/allposts"
           element={
@@ -179,7 +205,7 @@ function App() {
             />
           }
         />
-
+        {/* SinglePost */}
         {posts.map((post) => (
           <Route
             key={post._id}
@@ -193,7 +219,7 @@ function App() {
             }
           />
         ))}
-
+        {/* AddPost */}
         <Route
           path="/add"
           element={
@@ -204,7 +230,7 @@ function App() {
             )
           }
         />
-
+        {/* EditPost */}
         <Route
           path="/edit"
           element={
@@ -218,7 +244,7 @@ function App() {
             )
           }
         />
-
+        {/* ErrorPage */}
         <Route path="*" element={<ErrorPage mobileState={mobileState} />} />
       </Routes>
     </div>

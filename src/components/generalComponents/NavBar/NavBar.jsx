@@ -1,42 +1,52 @@
 // Styles
 import s from "./NavBar.module.css";
-// React Router V6
+//
+// React Router V6 Hooks
 import { Link, useNavigate } from "react-router-dom";
-// Contact & media buttons images imported
+//
+// Dependencies
+// Toastify for handling errors
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+// Error handling state (for styling)
+import { toastStyleObject } from "../../../toastStyle";
+//
+// Framer motion for animations
+import { motion, AnimatePresence } from "framer-motion";
+//
+// State
+// Contact & media buttons images import
 import emailImg from "../../../images/contactBar/email.png";
 import linkedInImg from "../../../images/contactBar/linkedin.png";
 import igImg from "../../../images/contactBar/ig.png";
 import twitterImg from "../../../images/contactBar/twitter.png";
-// Toastify for handling errors
-import { toast } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
-// error handling state (for styling)
-import { toastStyleObject } from "../../../toastStyle";
 //
-//framer motion for animations
-import { motion, AnimatePresence, scale } from "framer-motion";
 // Component
 // Component
 // Component
 const NavBar = (props) => {
-  // Router
+  // Hooks
+  // Router V6
   const navigate = useNavigate();
-  // Functions:
   //
-  // Handles navigation bar visibility
+  // Functions
+  //
+  // Handle navigation bar visibility
   const handleNavBar = () => {
     if (props.navBarState.isMobile) {
       props.navBarState.setShowNavBar(false);
     }
   };
+  //
   const toggleNavBar = () => {
     props.navBarState.setShowNavBar(!props.navBarState.showNavBar);
   };
-
-  // return
-  // return
-  // return
+  //
+  // return statement
+  // return statement
+  // return statement
   return (
+    // Main Container
     <div
       className={s.navBarContainer}
       style={
@@ -46,8 +56,12 @@ const NavBar = (props) => {
       }
     >
       {/* TOP CONTAINER */}
+      {/* TOP CONTAINER */}
+      {/* TOP CONTAINER */}
       <div className={s.topNavBarContainer}>
-        {/* HIDE BUTTON CONTAINER */}
+        {/* HIDE / SHOW BUTTON CONTAINER */}
+        {/* HIDE / SHOW BUTTON CONTAINER */}
+        {/* HIDE / SHOW BUTTON CONTAINER */}
         <div className={s.moreContainer}>
           <p className={s.p} onClick={toggleNavBar}>
             {props.navBarState.showNavBar ? "Ocultar" : "Ver más"}
@@ -85,6 +99,8 @@ const NavBar = (props) => {
               }}
             >
               {/* ABOUT & BLOG CONTAINER */}
+              {/* ABOUT & BLOG CONTAINER */}
+              {/* ABOUT & BLOG CONTAINER */}
               <div className={s.pageMenuContainerTop}>
                 <Link className={s.link} to="/about" onClick={handleNavBar}>
                   <div className={s.menuItemContainer}>Acerca de</div>
@@ -94,14 +110,13 @@ const NavBar = (props) => {
                   <div className={s.menuItemContainer}>Blog</div>
                 </Link>
               </div>
-
               {/* PROJECTS CONTAINER */}
-
+              {/* PROJECTS CONTAINER */}
+              {/* PROJECTS CONTAINER */}
               <div className={s.pageMenuContainerBottom}>
                 <div className={s.pageMenuContainerBottom1}>
                   <div>Proyectos:</div>
                   <br />
-
                   <Link className={s.link} to="/tardio" onClick={handleNavBar}>
                     <div className={s.menuItemContainer}>Tardío</div>
                   </Link>
@@ -151,7 +166,9 @@ const NavBar = (props) => {
                   <Link className={s.link} to="/dif" onClick={handleNavBar}>
                     <div className={s.menuItemContainer}>Expreso</div>
                   </Link>
-
+                  {/* STORE LINK CONTAINER */}
+                  {/* STORE LINK CONTAINER */}
+                  {/* STORE LINK CONTAINER */}
                   <div className={s.storeLinkContainer}>
                     <p>
                       <a target="#" href="https://shopriga.netlify.app">
@@ -160,7 +177,8 @@ const NavBar = (props) => {
                     </p>
                   </div>
                 </div>
-
+                {/* LOGIN/OUT BUTTON CONTAINER */}
+                {/* LOGIN/OUT BUTTON CONTAINER */}
                 {/* LOGIN/OUT BUTTON CONTAINER */}
                 {props.navBarState.isLoggedIn ? (
                   <div className={s.pageMenuContainerBottom2}>
@@ -196,9 +214,12 @@ const NavBar = (props) => {
       </div>
 
       {/* BOTTOM CONTAINER */}
+      {/* BOTTOM CONTAINER */}
+      {/* BOTTOM CONTAINER */}
 
       {/* CONTACT BUTTONS CONTAINER */}
-
+      {/* CONTACT BUTTONS CONTAINER */}
+      {/* CONTACT BUTTONS CONTAINER */}
       <AnimatePresence>
         {props.navBarState.showNavBar && (
           <motion.div
@@ -230,7 +251,7 @@ const NavBar = (props) => {
               duration: 0.5,
             }}
           >
-            {/* email icon */}
+            {/* Email icon */}
             <div className={s.contactMenuItemContainer}>
               <Link to="/contact" onClick={handleNavBar}>
                 <img src={emailImg} alt="email-icon" />

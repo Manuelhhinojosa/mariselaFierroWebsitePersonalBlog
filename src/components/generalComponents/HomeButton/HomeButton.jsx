@@ -1,13 +1,18 @@
 // Styles
 import s from "./HomeButton.module.css";
-// React Router V6
+//
+// React Router V6 Hooks
 import { Link } from "react-router-dom";
 //
-//
-// Component function
+// HomeButton Component
+// HomeButton Component
+// HomeButton Component
 const HomeButton = () => {
+  // return statement
+  // return statement
+  // return statement
   return (
-    // main component container
+    // Main component container
     <div className={s.home}>
       <Link className={s.homeLink} to={"/"}>
         <p className={s.buttonText}>Inicio</p>
