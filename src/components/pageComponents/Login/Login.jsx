@@ -8,7 +8,7 @@ import { motion } from "framer-motion";
 // Axios
 import axios from "axios";
 // React hooks
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 // React router V6
 import { useNavigate } from "react-router-dom";
 // Toastify for handling errors
@@ -20,6 +20,10 @@ import { toastStyleObject } from "../../../toastStyle";
 //
 // Function component
 export const Login = (props) => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   // Initial state for user
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");

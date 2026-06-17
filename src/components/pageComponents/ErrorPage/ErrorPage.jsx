@@ -5,9 +5,15 @@ import { Link } from "react-router-dom";
 // Dependencies:
 // framer motion for animation
 import { motion } from "framer-motion";
+// hooks
+import { useEffect } from "react";
 //
 // Component
 const ErrorPage = (props) => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     // Main container
     <div

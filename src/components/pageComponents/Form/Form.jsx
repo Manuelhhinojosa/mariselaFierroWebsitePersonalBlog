@@ -1,7 +1,7 @@
 // Styles
 import s from "./Form.module.css";
 // React hooks
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 // React router V6
 import { useNavigate } from "react-router-dom";
 // General comoponents
@@ -20,6 +20,10 @@ import { toastStyleObject } from "../../../toastStyle";
 //
 // Function component
 const Form = (props) => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   // Inital state to create post
   // State for post object to be attached to formData that will be sent in Axios call to create post
   const [title, setTitle] = useState("");

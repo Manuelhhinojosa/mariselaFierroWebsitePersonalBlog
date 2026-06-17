@@ -3,7 +3,7 @@ import s from "./Contact.module.css";
 // General Components
 import HomeButton from "../../generalComponents/HomeButton/HomeButton";
 // React Hooks
-import { useRef } from "react";
+import { useRef, useEffect } from "react";
 // dependencies
 // framer motion for animation
 import { motion } from "framer-motion";
@@ -18,6 +18,10 @@ import { toastStyleObject } from "../../../toastStyle";
 //
 // Function Component
 const Contact = (props) => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   // Initial state
   const formRef = useRef(null);
   const nameRef = useRef(null);

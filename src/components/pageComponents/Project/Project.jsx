@@ -6,8 +6,14 @@ import HomeButton from "../../generalComponents/HomeButton/HomeButton";
 // dependencies
 // framer motion for animation
 import { motion } from "framer-motion";
+// hooks
+import { useEffect } from "react";
 // Function component
 const Project = (props) => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   // help vars
   const images = [
     props.project.imgOne,

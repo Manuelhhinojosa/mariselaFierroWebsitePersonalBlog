@@ -4,9 +4,15 @@ import s from "./Home.module.css";
 // Dependencies
 // Framer motion (for animation)
 import { motion } from "framer-motion";
+// hooks
+import { useEffect } from "react";
 //
 // Component
 export const Home = (props) => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     // Main container
     <div

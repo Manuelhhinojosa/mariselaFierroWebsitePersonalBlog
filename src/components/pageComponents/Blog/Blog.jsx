@@ -3,7 +3,7 @@ import s from "./Blog.module.css";
 // React Router V6
 import { Link } from "react-router-dom";
 // React hooks
-import { useState } from "react";
+import { useState, useEffect } from "react";
 // Dependencies:
 // framer motion for animation
 import { motion, AnimatePresence } from "framer-motion";
@@ -19,6 +19,10 @@ import { toastStyleObject } from "../../../toastStyle";
 //
 // Function component
 export const Blog = (props) => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   // Axios URL to get all posts
   const getAllPostsUrl = process.env.REACT_APP_DATABASE_URL;
   // Index to manage post's images display dinamicaly

@@ -5,11 +5,17 @@ import aboutImg from "../../../images/aboutPage/aboutImg.png";
 // General components
 import HomeButton from "../../generalComponents/HomeButton/HomeButton";
 //
+// hooks
+import { useEffect } from "react";
 // dependencies
 // framer motion for animation
 import { motion } from "framer-motion";
 // Component
 const About = (props) => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     //  Main container
     <div
