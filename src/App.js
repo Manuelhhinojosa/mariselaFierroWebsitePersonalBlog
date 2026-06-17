@@ -1,7 +1,7 @@
 // Styles
 import s from "./App.module.css";
 // React Router V6
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, useNavigate } from "react-router-dom";
 // Dependencies
 // Axios for API calls
 import axios from "axios";
@@ -35,6 +35,9 @@ import { toastStyleObject } from "./toastStyle";
 // App coponent (Main component)
 // App coponent (Main component)
 function App() {
+  //
+  const navigate = useNavigate();
+
   // is the user using mobile size screen/device
   const [isMobile, setIsMobile] = useState(window.innerWidth < 600);
   useEffect(() => {
@@ -191,28 +194,30 @@ function App() {
           />
         ))}
 
-        {isLoggedIn ? (
-          <Route
-            path="/add"
-            element={<Form userState={userState} mobileState={mobileState} />}
-          />
-        ) : (
-          ""
-        )}
+        <Route
+          path="/add"
+          element={
+            isLoggedIn ? (
+              <Form userState={userState} mobileState={mobileState} />
+            ) : (
+              <Login userState={userState} mobileState={mobileState} />
+            )
+          }
+        />
 
-        {isLoggedIn ? (
-          <Route
-            path="/edit"
-            element={
+        <Route
+          path="/edit"
+          element={
+            isLoggedIn ? (
               <EditForm
                 verificationState={verificationState}
                 mobileState={mobileState}
               />
-            }
-          />
-        ) : (
-          ""
-        )}
+            ) : (
+              <Login userState={userState} mobileState={mobileState} />
+            )
+          }
+        />
 
         <Route path="*" element={<ErrorPage mobileState={mobileState} />} />
       </Routes>
