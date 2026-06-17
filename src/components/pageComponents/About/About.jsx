@@ -45,6 +45,13 @@ const About = (props) => {
         {/* Text & Img container */}
         <motion.div
           className={s.aboutContainer}
+          key={
+            props.mobileState.isMobile
+              ? props.mobileState.showNavBar
+                ? "navbar-open"
+                : "navbar-closed"
+              : "desktop"
+          }
           initial={{
             opacity: 0,
             scale: 0.8,

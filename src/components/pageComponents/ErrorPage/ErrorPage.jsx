@@ -19,6 +19,13 @@ const ErrorPage = (props) => {
       }
     >
       <motion.div
+        key={
+          props.mobileState.isMobile
+            ? props.mobileState.showNavBar
+              ? "navbar-open"
+              : "navbar-closed"
+            : "desktop"
+        }
         initial={{
           opacity: 0,
           y: 40,

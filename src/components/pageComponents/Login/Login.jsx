@@ -109,6 +109,13 @@ export const Login = (props) => {
       </motion.div>
       {/* Component container */}
       <motion.div
+        key={
+          props.mobileState.isMobile
+            ? props.mobileState.showNavBar
+              ? "navbar-open"
+              : "navbar-closed"
+            : "desktop"
+        }
         className={s.bottom}
         initial={{
           opacity: 0,

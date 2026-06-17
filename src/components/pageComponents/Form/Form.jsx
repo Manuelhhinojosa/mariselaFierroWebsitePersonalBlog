@@ -198,6 +198,13 @@ const Form = (props) => {
       </motion.div>
       {/* Page container */}
       <motion.div
+        key={
+          props.mobileState.isMobile
+            ? props.mobileState.showNavBar
+              ? "navbar-open"
+              : "navbar-closed"
+            : "desktop"
+        }
         className={s.bottom}
         initial={{
           opacity: 0,

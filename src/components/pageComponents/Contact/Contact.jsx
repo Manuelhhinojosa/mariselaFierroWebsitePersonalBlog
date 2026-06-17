@@ -97,6 +97,13 @@ const Contact = (props) => {
         <HomeButton />
       </motion.div>
       <motion.div
+        key={
+          props.mobileState.isMobile
+            ? props.mobileState.showNavBar
+              ? "navbar-open"
+              : "navbar-closed"
+            : "desktop"
+        }
         className={s.bottomContainer}
         initial={{
           opacity: 0,

@@ -48,7 +48,13 @@ const Project = (props) => {
       </motion.div>
       {/* component container */}
       <motion.div
-        key={props.project.id}
+        key={
+          props.mobileState.isMobile
+            ? `${props.project.id}-${
+                props.mobileState.showNavBar ? "open" : "closed"
+              }`
+            : props.project.id
+        }
         className={s.bottomContainer}
         initial={{
           opacity: 0,

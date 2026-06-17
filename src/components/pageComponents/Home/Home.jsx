@@ -19,6 +19,13 @@ export const Home = (props) => {
     >
       {/* Text container */}
       <motion.div
+        key={
+          props.mobileState.isMobile
+            ? props.mobileState.showNavBar
+              ? "navbar-open"
+              : "navbar-closed"
+            : "desktop"
+        }
         className={s.textContainer}
         initial={{
           opacity: 0,
