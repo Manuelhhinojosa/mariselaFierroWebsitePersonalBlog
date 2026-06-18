@@ -394,7 +394,9 @@ export const SinglePost = (props) => {
                   to={"/edit"}
                   state={post}
                 >
-                  <div className={s.editContainer}>Editar</div>
+                  <div className={s.editContainer} style={{ color: "black" }}>
+                    Editar
+                  </div>
                 </Link>
                 {/* delete container */}
                 {/* delete container */}

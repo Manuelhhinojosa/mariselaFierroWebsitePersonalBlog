@@ -18,6 +18,7 @@
   overflow-y: scroll;
   z-index: 999;
   font-size: 0.75rem;
+  letter-spacing: 1px;
 }
 
 .test2Container::-webkit-scrollbar {
@@ -41,6 +42,7 @@
   background-color: white;
   text-align: center;
   text-decoration: underline;
+  letter-spacing: 2px;
 }
 
 .button:hover {
@@ -76,6 +78,12 @@
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
+  box-shadow: inset 0 16px 16px -16px rgba(0, 0, 0, 0.03),
+    inset 0 -16px 16px -16px rgba(0, 0, 0, 0.03);
+  border-top: 1px solid rgba(0, 0, 0, 0.05);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
 }
 
 .titleContainer {
@@ -83,12 +91,13 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  letter-spacing: 3px;
 }
 
 .titleContainer p {
   text-decoration: underline;
   font-size: 1rem;
-  text-align: justify;
+  text-align: center;
 }
 
 .descriptionContainer {
@@ -102,11 +111,13 @@
   align-items: center;
   justify-content: start;
   text-align: justify;
+  letter-spacing: 1px;
 }
 
 .descriptionContainer span {
   text-decoration: underline;
   color: black;
+  letter-spacing: 2px;
 }
 
 .descriptionContainer span:hover {
@@ -121,6 +132,7 @@
   display: flex;
   justify-content: flex-end;
   color: gray;
+  letter-spacing: 2px;
 }
 
 .videoContainer {
@@ -145,6 +157,7 @@
   padding: 1rem;
   display: flex;
   justify-content: center;
+  letter-spacing: 1px;
 }
 
 .textContainer::-webkit-scrollbar {
@@ -227,6 +240,7 @@
   align-items: center;
   font-size: 0.75rem;
   margin-bottom: 1rem;
+  letter-spacing: 1px;
 }
 
 .likesBtnContainer:hover {
@@ -242,6 +256,7 @@
   margin: 1rem;
   font-size: 0.75rem;
   color: black;
+  letter-spacing: 2px;
 }
 
 .barContainer div:hover {
@@ -272,6 +287,8 @@
 .backText {
   text-decoration: underline;
   font-size: 0.75rem;
+  color: black;
+  letter-spacing: 2px;
 }
 
 .backText:hover {

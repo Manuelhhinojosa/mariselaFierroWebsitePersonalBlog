@@ -15,6 +15,7 @@ export const toastStyleObject = () => {
       background: "rgba(20, 20, 20, 0.65)",
       color: "#f5f5f5",
       fontSize: "12px",
+      letterSpacing: "5px",
 
       width: isMobile ? "50vw" : "90vw",
       maxWidth: "320px",
