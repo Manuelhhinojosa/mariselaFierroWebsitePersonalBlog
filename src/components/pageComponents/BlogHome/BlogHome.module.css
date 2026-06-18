@@ -51,7 +51,6 @@
 
 .listContainer p {
   text-decoration: underline;
-  margin: 2rem;
 }
 
 .listContainer::-webkit-scrollbar {
@@ -67,15 +66,21 @@
 }
 
 .postItem {
-  transition: transform 1s ease, opacity 0.3s ease;
   margin: 1rem;
   width: 200px;
   height: 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   box-shadow: 0 4px 6px -4px rgba(0, 0, 0, 0.15);
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
 }
 
 .postItem:hover {
-  transform: translateX(10px);
+  background-color: gray;
+  transition: 1s;
 }
 
 .postTitle {
@@ -113,14 +118,15 @@
   transition: transform 1s ease, opacity 0.3s ease;
   width: 200px;
   text-align: center;
-  box-shadow: 0 4px 6px -4px rgba(0, 0, 0, 0.15);
   padding: 1rem;
   letter-spacing: 2px;
+  box-shadow: 0 4px 6px -4px rgba(0, 0, 0, 0.15);
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
 }
 
 .footer div:hover {
-  transform: translateX(10px);
-  color: gray;
+  background-color: gray;
   transition: 1s;
 }
 
@@ -149,7 +155,7 @@
 
   .listContainer {
     height: 55vh;
-    width: 100%;
+    width: 95%;
   }
 
   .footer {

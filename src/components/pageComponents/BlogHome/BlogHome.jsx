@@ -14,6 +14,7 @@ import { motion } from "framer-motion";
 //
 // General components
 import HomeButton from "../../generalComponents/HomeButton/HomeButton";
+import { div } from "framer-motion/client";
 // Function component
 // Function component
 // Function component
@@ -99,16 +100,37 @@ const BlogHome = (props) => {
         {/* list of posts container */}
         <div className={s.listContainer}>
           {props.postState.posts.map((post) => (
-            <Link
-              key={post.reference}
-              className={s.postLink}
-              to={`/${post.reference}`}
+            <motion.div
+              initial={{
+                opacity: 0,
+                scale: 0.9,
+                filter: "blur(20px)",
+              }}
+              whileInView={{
+                opacity: 1,
+                scale: 1,
+                filter: "blur(0px)",
+              }}
+              viewport={{
+                once: false,
+                amount: 0.15,
+              }}
+              transition={{
+                duration: 1.5,
+                ease: [0.22, 1, 0.36, 1],
+              }}
             >
-              <div className={s.postItem}>
-                <p className={s.postTitle}>{post.title}</p>
-                <p className={s.postDate}>20{post.createdAt.slice(2, 10)}</p>
-              </div>
-            </Link>
+              <Link
+                key={post.reference}
+                className={s.postLink}
+                to={`/${post.reference}`}
+              >
+                <div className={s.postItem}>
+                  <p className={s.postTitle}>{post.title}</p>
+                  <p className={s.postDate}>20{post.createdAt.slice(2, 10)}</p>
+                </div>
+              </Link>
+            </motion.div>
           ))}
         </div>
         {/* footer */}
