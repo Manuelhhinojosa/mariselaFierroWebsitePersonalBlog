@@ -114,6 +114,7 @@
   text-decoration: underline;
   font-size: 1rem;
   text-align: justify;
+  letter-spacing: 2px;
 }
 
 .descriptionContainer {
@@ -131,6 +132,7 @@
 
 .descriptionContainer span {
   text-decoration: underline;
+  letter-spacing: 2px;
 }
 
 .descriptionContainer span:hover {
@@ -145,6 +147,7 @@
   display: flex;
   justify-content: flex-end;
   color: gray;
+  letter-spacing: 2px;
 }
 
 .textContainer {
@@ -213,7 +216,7 @@
 }
 
 .btnsContainer {
-  width: 80%;
+  width: 50%;
   display: flex;
   justify-content: space-between;
   font-family: "andale mono", "Reddit Mono", monospace;
@@ -228,6 +231,7 @@
   font-family: "andale mono", "Reddit Mono", monospace;
   font-size: 0.9rem;
   color: black;
+  letter-spacing: 2px;
 }
 
 .btnsContainer button:hover {
@@ -258,10 +262,13 @@
 
 .btnContainer {
   text-decoration: underline;
+  color: black;
 }
 
 .btnContainer:hover {
   cursor: pointer;
+  color: gray;
+  transition: 1s;
 }
 
 .barContainer {
@@ -272,7 +279,7 @@
   height: fit-content;
   margin: 1rem;
   font-size: 0.75rem;
-
+  letter-spacing: 2px;
   opacity: 0.7;
 }
 
