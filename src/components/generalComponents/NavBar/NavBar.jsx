@@ -47,13 +47,21 @@ const NavBar = (props) => {
   // return statement
   return (
     // Main Container
+    // Main Container
+    // Main Container
     <div
       className={s.navBarContainer}
-      style={
-        props.navBarState.showNavBar
+      style={{
+        ...(props.navBarState.showNavBar
           ? { minHeight: "95vh", maxHeight: "95vh" }
-          : { height: "auto", maxHeight: "95vh" }
-      }
+          : { height: "auto", maxHeight: "95vh" }),
+
+        ...(props.navBarState.showNavBar &&
+          !props.navBarState.isMobile &&
+          {
+            // borderRight: "1px solid rgba(0, 0, 0, 0.05)",
+          }),
+      }}
     >
       {/* TOP CONTAINER */}
       {/* TOP CONTAINER */}
