@@ -228,7 +228,7 @@ const EditForm = (props) => {
             ) : null}
             {/* description text area */}
             <textarea
-              placeholder={`${post.description} (Descripción (Campo obligatorio))`}
+              placeholder={`(Descripción Campo obligatorio) ${post.description}`}
               name="description"
               cols="auto"
               rows="auto"

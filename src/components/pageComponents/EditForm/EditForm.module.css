@@ -42,10 +42,12 @@
 .form input:nth-child(1) {
   width: 60%;
   height: 2rem;
+  font-size: 0.8rem;
   border: none;
   border-bottom: 1px solid transparent;
   font-family: "andale mono", "Reddit Mono", monospace;
   text-align: center;
+  letter-spacing: 2px;
 }
 
 .form input:nth-child(1):hover {
@@ -87,6 +89,8 @@
   text-align: justify;
   padding: 1rem;
   text-align: center;
+  letter-spacing: 1px;
+  font-size: 0.8rem;
 }
 
 .textPost::-webkit-scrollbar {
@@ -128,6 +132,8 @@
   text-align: center;
   margin-top: 2rem;
   border-bottom: 1px solid transparent;
+  letter-spacing: 1px;
+  font-size: 0.8rem;
 }
 
 .form textarea:hover {
@@ -148,6 +154,7 @@
   color: black;
   font-family: "andale mono", "Reddit Mono", monospace;
   text-decoration: underline;
+  letter-spacing: 3px;
 }
 
 .form button:hover {

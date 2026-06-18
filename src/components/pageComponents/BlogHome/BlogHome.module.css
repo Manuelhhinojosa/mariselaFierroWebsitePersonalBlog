@@ -44,6 +44,9 @@
   letter-spacing: 2px;
   border-top: 1px solid rgba(0, 0, 0, 0.08);
   border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.06);
+  border-top-right-radius: 8px;
+  border-top-left-radius: 8px;
 }
 
 .listContainer p {
