@@ -50,6 +50,7 @@
   border-bottom: 1px solid transparent;
   font-family: "andale mono", "Reddit Mono", monospace;
   text-align: center;
+  letter-spacing: 5px;
 }
 
 .contactForm input:hover {
@@ -67,6 +68,7 @@
   border-bottom: 1px solid transparent;
   font-family: "andale mono", "Reddit Mono", monospace;
   text-align: center;
+  letter-spacing: 5px;
 }
 
 .contactForm textarea:hover {
@@ -86,6 +88,7 @@
   color: black;
   font-family: "andale mono", "Reddit Mono", monospace;
   text-decoration: underline;
+  letter-spacing: 3px;
 }
 
 .contactForm button:hover {
