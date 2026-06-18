@@ -1,20 +1,28 @@
 // Styles
 import s from "./Project.module.css";
+//
+// dependencies and Hooks
+// framer motion for animation
+import { motion } from "framer-motion";
+//
+// React hooks
+import { useEffect } from "react";
+//
 // General components
 import HomeButton from "../../generalComponents/HomeButton/HomeButton";
 //
-// dependencies
-// framer motion for animation
-import { motion } from "framer-motion";
-// hooks
-import { useEffect } from "react";
+// Function component
+// Function component
 // Function component
 const Project = (props) => {
+  // Aux functions
+  // Scroll page back to top after navigating back
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
-
+  //
   // help vars
+  // Project images
   const images = [
     props.project.imgOne,
     props.project.imgTwo,
@@ -22,7 +30,13 @@ const Project = (props) => {
     props.project.imgFour,
     props.project.imgFive,
   ];
+  //
+  // return component
+  // return component
+  // return component
   return (
+    // Main container
+    // Main container
     // Main container
     <div
       className={s.mainProjectContainer}
@@ -32,6 +46,8 @@ const Project = (props) => {
           : {}
       }
     >
+      {/* Home button container */}
+      {/* Home button container */}
       {/* Home button container */}
       <motion.div
         className={s.topContainer}
@@ -52,6 +68,8 @@ const Project = (props) => {
       >
         <HomeButton />
       </motion.div>
+      {/* component container */}
+      {/* component container */}
       {/* component container */}
       <motion.div
         key={
@@ -78,13 +96,20 @@ const Project = (props) => {
         }}
       >
         {/* Main project container */}
+        {/* Main project container */}
+        {/* Main project container */}
         <div className={s.projectContainer}>
+          {/* Title container */}
+          {/* Title container */}
           {/* Title container */}
           <div className={s.titleContainer}>
             <p>{props.project.title}</p>
           </div>
           {/* Description container */}
+          {/* Description container */}
+          {/* Description container */}
           <div className={s.descContainer}>
+            {/* project 1 */}
             {props.project.id === 1 ? (
               <div className={s.descText}>
                 <p>{props.project.description.slice(0, 385)}</p>
@@ -92,7 +117,7 @@ const Project = (props) => {
                 <p>{props.project.description.slice(973)}</p>
               </div>
             ) : null}
-
+            {/* project 2 */}
             {props.project.id === 2 ? (
               <div className={s.descText}>
                 <p>{props.project.description.slice(0, 141)}</p>
@@ -100,13 +125,13 @@ const Project = (props) => {
                 <p>{props.project.description.slice(435)}</p>
               </div>
             ) : null}
-
+            {/* project 3 */}
             {props.project.id === 3 ? (
               <div className={s.descText}>
                 <p>{props.project.description}</p>
               </div>
             ) : null}
-
+            {/* project 4 */}
             {props.project.id === 4 ? (
               <div className={s.descText}>
                 <p>{props.project.description.slice(0, 471)}</p>
@@ -133,7 +158,7 @@ const Project = (props) => {
                 </p>
               </div>
             ) : null}
-
+            {/* project 5 */}
             {props.project.id === 5 ? (
               <div className={s.descText}>
                 <p>{props.project.description.slice(0, 559)}</p>
@@ -141,20 +166,20 @@ const Project = (props) => {
                 <p>{props.project.description.slice(1024)}</p>
               </div>
             ) : null}
-
+            {/* project 6 */}
             {props.project.id === 6 ? (
               <div className={s.descText}>
                 <p>{props.project.description}</p>
               </div>
             ) : null}
-
+            {/* project 7 */}
             {props.project.id === 7 ? (
               <div className={s.descText}>
                 <p>{props.project.description.slice(0, 320)}</p>
                 <p>{props.project.description.slice(321)}</p>
               </div>
             ) : null}
-
+            {/* project 8 */}
             {props.project.id === 8 ? (
               <div className={s.descText}>
                 <p>{props.project.description.slice(0, 310)}</p>
@@ -162,7 +187,7 @@ const Project = (props) => {
                 <p>{props.project.description.slice(679)}</p>
               </div>
             ) : null}
-
+            {/* project 9 */}
             {props.project.id === 9 ? (
               <div className={s.descText}>
                 <p>{props.project.description.slice(0, 289)}</p>
@@ -178,7 +203,7 @@ const Project = (props) => {
                 <p>{props.project.description.slice(407)}</p>
               </div>
             ) : null}
-
+            {/* project 10 */}
             {props.project.id === 10 ? (
               <div className={s.descText}>
                 <p>{props.project.description.slice(0, 304)}</p>
@@ -191,7 +216,7 @@ const Project = (props) => {
                 </p>
               </div>
             ) : null}
-
+            {/* project 11 */}
             {props.project.id === 11 ? (
               <div className={s.descText}>
                 <p>{props.project.description.slice(0, 630)}</p>
@@ -201,6 +226,8 @@ const Project = (props) => {
               </div>
             ) : null}
           </div>
+          {/* Images container */}
+          {/* Images container */}
           {/* Images container */}
           <div className={s.imagesContainer}>
             {images.map(
@@ -231,7 +258,7 @@ const Project = (props) => {
                     <img
                       className={s.image}
                       src={img}
-                      alt={`project-${index + 1}`}
+                      alt={`project-img${index + 1}`}
                     />
                   </motion.div>
                 )

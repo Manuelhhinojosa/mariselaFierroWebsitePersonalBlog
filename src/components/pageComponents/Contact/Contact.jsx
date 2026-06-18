@@ -1,10 +1,11 @@
 // Styles
 import s from "./Contact.module.css";
-// General Components
-import HomeButton from "../../generalComponents/HomeButton/HomeButton";
+//
+// Dependencies
+// Hooks
 // React Hooks
 import { useRef, useEffect } from "react";
-// dependencies
+//
 // framer motion for animation
 import { motion } from "framer-motion";
 // emailJS
@@ -15,22 +16,30 @@ import "react-toastify/dist/ReactToastify.css";
 // error handling state (for styling)
 import { toastStyleObject } from "../../../toastStyle";
 //
+// General Components
+import HomeButton from "../../generalComponents/HomeButton/HomeButton";
 //
 // Function Component
+// Function Component
+// Function Component
 const Contact = (props) => {
+  // Aux functions
+  // Scroll page back to top after navigating back
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
-
-  // Initial state
+  //
+  // Initial form state
   const formRef = useRef(null);
   const nameRef = useRef(null);
   const subjectRef = useRef(null);
   const emailRef = useRef(null);
   const messageRef = useRef(null);
   //
-  //
-  // Function component
+  // Functions
+  // hanldles send mesage
+  // hanldles send mesage
+  // hanldles send mesage
   const handleUserData = (e) => {
     e.preventDefault();
     // handleling form filling error
@@ -71,8 +80,14 @@ const Contact = (props) => {
         }
       );
   };
-
+  //
+  // return statement
+  // return statement
+  // return statement
   return (
+    // main container
+    // main container
+    // main container
     <div
       className={s.contactPageContainer}
       style={
@@ -81,6 +96,9 @@ const Contact = (props) => {
           : {}
       }
     >
+      {/* top container */}
+      {/* top container */}
+      {/* top container */}
       <motion.div
         className={s.topContainer}
         initial={{
@@ -100,6 +118,9 @@ const Contact = (props) => {
       >
         <HomeButton />
       </motion.div>
+      {/* bottom container */}
+      {/* bottom container */}
+      {/* bottom container */}
       <motion.div
         key={
           props.mobileState.isMobile
@@ -124,8 +145,12 @@ const Contact = (props) => {
           ease: [0.22, 1, 0.36, 1],
         }}
       >
+        {/* form container */}
+        {/* form container */}
+        {/* form container */}
         <div className={s.contactFormContainer}>
           <form action="" className={s.contactForm} ref={formRef}>
+            {/* name input */}
             <input
               type="text"
               placeholder="Nombre"
@@ -133,6 +158,7 @@ const Contact = (props) => {
               autocomplete="off"
               ref={nameRef}
             />
+            {/* subject input */}
             <input
               type="text"
               placeholder="Tema"
@@ -140,6 +166,7 @@ const Contact = (props) => {
               autocomplete="off"
               ref={subjectRef}
             />
+            {/* email input */}
             <input
               type="text"
               placeholder="Correo eléctronico"
@@ -147,12 +174,14 @@ const Contact = (props) => {
               autocomplete="off"
               ref={emailRef}
             />
+            {/* message text area */}
             <textarea
               name="message"
               rows="10"
               placeholder="Mensaje"
               ref={messageRef}
             ></textarea>
+            {/* Submit btn */}
             <button onClick={handleUserData}>Enviar mensaje</button>
           </form>
         </div>

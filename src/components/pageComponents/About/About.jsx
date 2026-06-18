@@ -1,22 +1,35 @@
 // Styles
 import s from "./About.module.css";
-// Images
-import aboutImg from "../../../images/aboutPage/aboutImg.png";
+//
 // General components
 import HomeButton from "../../generalComponents/HomeButton/HomeButton";
 //
+// Dependencies
+// Framer motion for animation
+import { motion } from "framer-motion";
 // hooks
 import { useEffect } from "react";
-// dependencies
-// framer motion for animation
-import { motion } from "framer-motion";
-// Component
+//
+// State
+// About img import
+import aboutImg from "../../../images/aboutPage/aboutImg.png";
+//
+// About Component
+// About Component
+// About Component
 const About = (props) => {
+  // Aux functions
+  // Scroll page back to top after navigating back
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
-
+  //
+  // return statement
+  // return statement
+  // return statement
   return (
+    //  Main container
+    //  Main container
     //  Main container
     <div
       className={s.aboutPageContainer}
@@ -26,6 +39,8 @@ const About = (props) => {
           : {}
       }
     >
+      {/* Home button container */}
+      {/* Home button container */}
       {/* Home button container */}
       <motion.div
         className={s.top}
@@ -47,7 +62,11 @@ const About = (props) => {
         <HomeButton />
       </motion.div>
       {/* Page container */}
+      {/* Page container */}
+      {/* Page container */}
       <div className={s.bottom}>
+        {/* Text & Img container */}
+        {/* Text & Img container */}
         {/* Text & Img container */}
         <motion.div
           className={s.aboutContainer}
@@ -73,6 +92,8 @@ const About = (props) => {
             ease: [0.22, 1, 0.36, 1],
           }}
         >
+          {/* Text container */}
+          {/* Text container */}
           {/* Text container */}
           <motion.div
             className={s.aboutTextContainer}
@@ -125,6 +146,8 @@ const About = (props) => {
               <br />
               <br />
               {/* CV link */}
+              {/* CV link */}
+              {/* CV link */}
               <a
                 href="https://mariselafierrocv.netlify.app/cv.pdf"
                 target="_blank"
@@ -134,6 +157,8 @@ const About = (props) => {
               </a>
             </p>
           </motion.div>
+          {/* Image container */}
+          {/* Image container */}
           {/* Image container */}
           <motion.div
             className={s.aboutImgContainer}

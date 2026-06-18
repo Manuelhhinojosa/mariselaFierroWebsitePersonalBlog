@@ -1,33 +1,53 @@
 // Styles
 import s from "./singlePost.module.css";
-// General components
-import HomeButton from "../../generalComponents/HomeButton/HomeButton";
-// Dependencies:
+//
+// Dependencies and Hooks:
 // framer motion for animation
 import { motion } from "framer-motion";
-// React Router V6
+//
+// React Router V6 hooks
 import { Link, useLocation, useNavigate } from "react-router-dom";
+//
 // Axios
 import axios from "axios";
+//
 // React hooks
 import { useState, useEffect } from "react";
+//
 // Toastify for handling errors
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { toastStyleObject } from "../../../toastStyle";
 //
+// General components
+import HomeButton from "../../generalComponents/HomeButton/HomeButton";
 //
-// Component
+// Function Component
+// Function Component
+// Function Component
 export const SinglePost = (props) => {
+  // Aux functions
+  // Scroll page back to top after navigating back
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
-
-  // Auxiliar variables
+  //
+  // Hooks
+  // React v6
   const navigate = useNavigate();
+  //
+  // aux vars
+  // to locate the post id
   let location = useLocation();
+  //
+  // API url
   const getAllPostsUrl = process.env.REACT_APP_DATABASE_URL;
+  //
+  // ID
   let reference = location.pathname.slice(1);
+  //
+  // State
+  // POST
   let post = {};
   //
   // Selecting sigle post
@@ -37,11 +57,13 @@ export const SinglePost = (props) => {
       return;
     }
   });
+  //
   // handles dispplaying post's long descriptions
   const showLongDesc = () => {
     props.postState.setShowText(!props.postState.showText);
   };
-
+  //
+  // Aux Functions
   // Function that handles imgae to be displayed
   const [index, setIndex] = useState(0);
   const handlePrev = () => {
@@ -50,10 +72,18 @@ export const SinglePost = (props) => {
   const handleNext = () => {
     setIndex((prevIndex) => Math.min(prevIndex + 1, post.media.length - 1));
   };
-
+  //
+  // return statement
+  // return statement
+  // return statement
   return (
     // Main container
+    // Main container
+    // Main container
     <div
+      // single post container
+      // single post container
+      // single post container
       className={s.siglePostContainer}
       style={
         props.mobileState.isMobile && props.mobileState.showNavBar
@@ -61,7 +91,9 @@ export const SinglePost = (props) => {
           : {}
       }
     >
-      {/* text container */}
+      {/* long text container */}
+      {/* long text container */}
+      {/* long text container */}
       {props.verificationState.showText && (
         <motion.div
           className={s.test2Container}
@@ -81,16 +113,21 @@ export const SinglePost = (props) => {
             ease: [0.22, 1, 0.36, 1],
           }}
         >
+          {/* btn container */}
+          {/* btn container */}
+          {/* btn container */}
           <div className={s.backBtnContainer}>
             <h3 className={s.button} onClick={showLongDesc}>
               Volver
             </h3>
           </div>
-
+          {/* long text */}
           {post.description.split("\n").map((line, index) => (
             <p key={index}>{line}</p>
           ))}
-
+          {/* btn container */}
+          {/* btn container */}
+          {/* btn container */}
           <div className={s.backBtnContainer}>
             <h3 className={s.button} onClick={showLongDesc}>
               Volver
@@ -99,6 +136,8 @@ export const SinglePost = (props) => {
         </motion.div>
       )}
 
+      {/* Home button container */}
+      {/* Home button container */}
       {/* Home button container */}
       <motion.div
         className={s.top}
@@ -121,13 +160,16 @@ export const SinglePost = (props) => {
         {<HomeButton />}
       </motion.div>
       {/* Page container */}
-
+      {/* Page container */}
+      {/* Page container */}
       {!props.postState.showText && (
         <div
           className={s.bottom}
           style={props.postState.showText ? { opacity: "0" } : {}}
         >
-          {/* Full post container */}
+          {/* Post container */}
+          {/* Post container */}
+          {/* Post container */}
           <motion.div
             className={s.postContainer}
             key={post._id}
@@ -151,16 +193,22 @@ export const SinglePost = (props) => {
             }}
           >
             {/* Title container */}
+            {/* Title container */}
+            {/* Title container */}
             <div className={s.titleContainer}>
               <p>{post.title}</p>
             </div>
 
+            {/* Date container */}
+            {/* Date container */}
             {/* Date container */}
             <div className={s.dateContainer}>
               <p> {post.createdAt.slice(0, 10)}</p>
             </div>
             {/* if post is text  */}
             {post.text ? (
+              // Text container
+              // Text container
               // Text container
               <div className={s.textContainer}>
                 <p>
@@ -169,13 +217,13 @@ export const SinglePost = (props) => {
                   ))}
                 </p>
               </div>
-            ) : (
-              ""
-            )}
+            ) : null}
             {/* end if post is text */}
 
             {/* if post is video */}
             {post.video ? (
+              // Video container
+              // Video container
               // Video container
               <div className={s.videoContainer}>
                 <iframe
@@ -185,17 +233,16 @@ export const SinglePost = (props) => {
                   frameborder="0"
                 ></iframe>
               </div>
-            ) : (
-              ""
-            )}
+            ) : null}
             {/* end if post is video */}
 
             {/* if post is  media and media is image/gif */}
             {post.media.length > 0 ? (
               // Image container
+              // Image container
+              // Image container
               <div className={s.imgContainer}>
                 {/* Media post with one image */}
-
                 <motion.img
                   key={index}
                   src={post.media[index].url}
@@ -219,6 +266,9 @@ export const SinglePost = (props) => {
 
                 {/* Media post with more than 1 image */}
                 {post.media.length > 1 ? (
+                  // btns container
+                  // btns container
+                  // btns container
                   <div className={s.btnsContainer}>
                     <button className={s.sliderButton} onClick={handlePrev}>
                       {`<<<`}
@@ -232,13 +282,16 @@ export const SinglePost = (props) => {
                       {`>>>`}
                     </button>
                   </div>
-                ) : (
-                  ""
-                )}
+                ) : null}
               </div>
             ) : null}
             {/* end if post is  media and media is image/gif */}
+
+            {/* Descrition container */}
+            {/* Descrition container */}
+            {/* Descrition container */}
             <div className={s.descriptionContainer}>
+              {/* Long description */}
               {post.description.length > 150 ? (
                 <div>
                   {post.description
@@ -250,15 +303,21 @@ export const SinglePost = (props) => {
                   ... <span onClick={showLongDesc}>ver más</span>
                 </div>
               ) : (
+                // short description
                 `${post.description}`
               )}
             </div>
             {/* Likes container */}
+            {/* Likes container */}
+            {/* Likes container */}
             <div className={s.likesContainer}>
+              {/* Likes button container  */}
+              {/* Likes button container  */}
               {/* Likes button container  */}
               <motion.span
                 className={s.likesBtnContainer}
                 onClick={() => {
+                  // Axios call
                   axios
                     .patch(
                       `${process.env.REACT_APP_DATABASE_URL_POSTS}${post._id}`
@@ -314,6 +373,8 @@ export const SinglePost = (props) => {
                 🖤
               </motion.span>
               {/* Likes count container */}
+              {/* Likes count container */}
+              {/* Likes count container */}
               <div className={s.likesCountContainer}>
                 {post.likes === 0 ? `0 Me gusta.` : null}
 
@@ -322,9 +383,12 @@ export const SinglePost = (props) => {
                 {post.likes > 1 ? `${post.likes} Me gusta.` : null}
               </div>
             </div>
-            {/* Admin option container */}
+            {/* Admin options container */}
+            {/* Admin options container */}
+            {/* Admin options container */}
             {props.postState.isLoggedIn ? (
               <div className={s.barContainer}>
+                {/* Edit btn */}
                 <Link
                   style={{ textDecoration: "none" }}
                   to={"/edit"}
@@ -332,10 +396,13 @@ export const SinglePost = (props) => {
                 >
                   <div className={s.editContainer}>Editar</div>
                 </Link>
-
+                {/* delete container */}
+                {/* delete container */}
+                {/* delete container */}
                 <div
                   className={s.deleteContainer}
                   onClick={() => {
+                    // axios call
                     axios
                       .delete(
                         `${process.env.REACT_APP_DATABASE_URL_POSTS}${post._id}`
@@ -364,11 +431,11 @@ export const SinglePost = (props) => {
                   Eliminar
                 </div>
               </div>
-            ) : (
-              ""
-            )}
+            ) : null}
             {/* End admin options contianer */}
-            {/*  */}
+
+            {/* Home blog button container */}
+            {/* Home blog button container */}
             {/* Home blog button container */}
             <div className={s.linkContainer}>
               <Link

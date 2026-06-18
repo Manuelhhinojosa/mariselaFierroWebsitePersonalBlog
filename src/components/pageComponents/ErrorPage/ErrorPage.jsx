@@ -1,20 +1,32 @@
 // Styles
 import s from "./ErrorPage.module.css";
-// React Router
+//
+// Dependencies and Hooks
+// React Router V6 Hooks
 import { Link } from "react-router-dom";
-// Dependencies:
+//
 // framer motion for animation
 import { motion } from "framer-motion";
-// hooks
+//
+// React hooks
 import { useEffect } from "react";
 //
-// Component
+// Component funcstion
+// Component funcstion
+// Component funcstion
 const ErrorPage = (props) => {
+  // Aux functions
+  // Scroll page back to top after navigating back
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
-
+  //
+  // return statement
+  // return statement
+  // return statement
   return (
+    // Main container
+    // Main container
     // Main container
     <div
       className={s.errorPageContainer}
@@ -48,7 +60,9 @@ const ErrorPage = (props) => {
           duration: 0.5,
         }}
       >
+        {/* text */}
         <h1 className={s.text}>Esta URL no existe.</h1>
+        {/* home btn */}
         <Link to="/" className={s.homeButton}>
           Volver a la página de inicio
         </Link>

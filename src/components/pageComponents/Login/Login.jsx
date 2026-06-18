@@ -1,41 +1,56 @@
 // Styles
 import s from "./Login.module.css";
-// General components
-import HomeButton from "../../generalComponents/HomeButton/HomeButton";
-// dependencies
+//
+// dependencies and Hooks
 // framer motion for animation
 import { motion } from "framer-motion";
+//
 // Axios
 import axios from "axios";
+//
 // React hooks
 import { useState, useRef, useEffect } from "react";
-// React router V6
+//
+// React router V6 hooks
 import { useNavigate } from "react-router-dom";
+//
 // Toastify for handling errors
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 // error handling state (for styling)
 import { toastStyleObject } from "../../../toastStyle";
 //
+// General components
+import HomeButton from "../../generalComponents/HomeButton/HomeButton";
 //
 // Function component
+// Function component
+// Function component
 export const Login = (props) => {
+  // Aux functions
+  // Scroll page back to top after navigating back
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
-
+  //
+  // State
   // Initial state for user
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const data = { username: username, password: password };
+  // ref
+  //
   const usernameRef = useRef("");
   const passwordRef = useRef("");
+  //
   // React router V^ for redirecting
   const navigate = useNavigate();
+  //
+  // Funcstions
   // Login handle function
   const handleSignIn = async (e) => {
     e.preventDefault();
-    // API address
+    // API address va
     const loginURL = process.env.REACT_APP_DATABASE_URL_LOGIN;
     // Filling form error handleing
     if (usernameRef.current.value === "" || passwordRef.current.value === "") {
@@ -80,8 +95,13 @@ export const Login = (props) => {
         usernameRef.current.focus();
       });
   };
-
+  //
+  // return statement
+  // return statement
+  // return statement
   return (
+    // Main container
+    // Main container
     // Main container
     <div
       className={s.loginPageContainer}
@@ -91,6 +111,8 @@ export const Login = (props) => {
           : {}
       }
     >
+      {/* Home button container  */}
+      {/* Home button container  */}
       {/* Home button container  */}
       <motion.div
         className={s.top}
@@ -111,6 +133,8 @@ export const Login = (props) => {
       >
         <HomeButton />
       </motion.div>
+      {/* Component container */}
+      {/* Component container */}
       {/* Component container */}
       <motion.div
         key={
@@ -137,12 +161,18 @@ export const Login = (props) => {
         }}
       >
         {/* Title container */}
+        {/* Title container */}
+        {/* Title container */}
         <div className={s.BlogTitleContainer}>
           Blog personal de Marisela Fierro
         </div>
         {/* Login form container */}
+        {/* Login form container */}
+        {/* Login form container */}
         <div className={s.loginFormContainer}>
+          {/* form */}
           <form action="" className={s.loginForm}>
+            {/* user input */}
             <input
               type="text"
               name="username"
@@ -153,7 +183,7 @@ export const Login = (props) => {
               }}
               ref={usernameRef}
             />
-
+            {/* password input */}
             <input
               type="password"
               name="password"
@@ -164,6 +194,8 @@ export const Login = (props) => {
               }}
               ref={passwordRef}
             />
+            {/* loggin button container */}
+            {/* loggin button container */}
             {/* loggin button container */}
             <button onClick={handleSignIn}>Ingresar</button>
           </form>

@@ -1,19 +1,29 @@
 // Styles
 import s from "./Home.module.css";
 //
-// Dependencies
+// Dependencies and hooks
 // Framer motion (for animation)
 import { motion } from "framer-motion";
-// hooks
+//
+// React hooks
 import { useEffect } from "react";
 //
-// Component
+// Component function
+// Component function
+// Component function
 export const Home = (props) => {
+  // Aux functions
+  // Scroll page back to top after navigating back
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
-
+  //
+  // return statement
+  // return statement
+  // return statement
   return (
+    // Main container
+    // Main container
     // Main container
     <div
       className={s.homeCompContainer}
@@ -23,6 +33,8 @@ export const Home = (props) => {
           : {}
       }
     >
+      {/* Text container */}
+      {/* Text container */}
       {/* Text container */}
       <motion.div
         key={

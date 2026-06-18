@@ -1,31 +1,41 @@
 // Styles
 import s from "./Form.module.css";
+//
+// Dependencies and Hooks
 // React hooks
 import { useState, useRef, useEffect } from "react";
+//
 // React router V6
 import { useNavigate } from "react-router-dom";
-// General comoponents
-import HomeButton from "../../generalComponents/HomeButton/HomeButton";
+//
 // Dependencies:
 // framer motion for animation
 import { motion } from "framer-motion";
+//
 // Axios
 import axios from "axios";
+//
 // Toastify for handling errors
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 // error handling state (for styling)
 import { toastStyleObject } from "../../../toastStyle";
 //
+// General comoponents
+import HomeButton from "../../generalComponents/HomeButton/HomeButton";
 //
 // Function component
+// Function component
+// Function component
 const Form = (props) => {
+  // Aux functions
+  // Scroll page back to top after navigating back
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
-
+  //
+  // State
   // Inital state to create post
-  // State for post object to be attached to formData that will be sent in Axios call to create post
   const [title, setTitle] = useState("");
   const [textPost, setTextPost] = useState("");
   const [descriptionPost, setDescriptionPost] = useState("");
@@ -34,6 +44,7 @@ const Form = (props) => {
   const reference = Math.floor(Math.random() * 10000000000).toString();
   const likes = 0;
   const [video, setVideo] = useState("");
+  //
   // UseRef state
   const titleRef = useRef("");
   const mediaRef = useRef(null);
@@ -41,12 +52,17 @@ const Form = (props) => {
   const textRef = useRef("");
   const descriptionRef = useRef("");
   const navigate = useNavigate();
+  //
   // assigning selected files to mediaPsot var
   const handleSetMedia = (e) => {
     const files = e.target.files;
     const filesArr = Array.from(files);
     setMediaPost(filesArr);
   };
+  //
+  // Functions
+  // Function handles adding Post
+  // Function handles adding Post
   // Function handles adding Post
   const addPost = (e) => {
     // Defualt to prevent page reloading on click
@@ -95,9 +111,9 @@ const Form = (props) => {
       return;
     }
     //
-    //
     // Form data object to be sent to in axios call
     const formData = new FormData();
+    // attaching state to form data
     formData.append("reference", reference);
     formData.append("user", user);
     formData.append("title", title);
@@ -163,14 +179,17 @@ const Form = (props) => {
   };
   //
   // Handle cancel creating post function
+  // Handle cancel creating post function
+  // Handle cancel creating post function
   const handleCancel = (e) => {
     e.preventDefault();
     navigate(`/blogmain`);
   };
   //
-  //
-  // Component
+  // return statement
   return (
+    // Main container
+    // Main container
     // Main container
     <div
       className={s.formPageContainer}
@@ -180,6 +199,8 @@ const Form = (props) => {
           : {}
       }
     >
+      {/* Home button container */}
+      {/* Home button container */}
       {/* Home button container */}
       <motion.div
         className={s.top}
@@ -200,6 +221,8 @@ const Form = (props) => {
       >
         <HomeButton />
       </motion.div>
+      {/* Page container */}
+      {/* Page container */}
       {/* Page container */}
       <motion.div
         key={
@@ -226,9 +249,12 @@ const Form = (props) => {
         }}
       >
         {/* Form container */}
+        {/* Form container */}
+        {/* Form container */}
         <div className={s.formContainer}>
+          {/* form */}
           <form className={s.form} encType="multipart/form-data">
-            {/* Title container */}
+            {/* Title input*/}
             <input
               type="text"
               placeholder="Título (Campo obligatorio)"
@@ -237,7 +263,7 @@ const Form = (props) => {
               onChange={(e) => setTitle(e.target.value)}
               ref={titleRef}
             />
-            {/* Description container */}
+            {/* Description input */}
             <textarea
               placeholder="Descripción (Campo obligatorio)"
               name="description"
@@ -246,11 +272,13 @@ const Form = (props) => {
               onChange={(e) => setDescriptionPost(e.target.value)}
               ref={descriptionRef}
             ></textarea>
-            {/* Orientation container */}
+            {/* instructions container */}
+            {/* instructions container */}
+            {/* instructions container */}
             <div className={s.directionsText}>
               *** Elige sólo uno de los siguientes campos ***
             </div>
-            {/* Video container */}
+            {/* Video input */}
             <input
               className={s.videoInput}
               type="text"
@@ -260,7 +288,7 @@ const Form = (props) => {
               onChange={(e) => setVideo(e.target.value)}
               ref={videoRef}
             />
-            {/* Image container */}
+            {/* Image input */}
             <div>
               <label htmlFor="media">Img</label>
               <input
@@ -274,7 +302,7 @@ const Form = (props) => {
                 onChange={(e) => handleSetMedia(e)}
               />
             </div>
-            {/* Text container */}
+            {/* Text text area */}
             <textarea
               placeholder="Texto"
               name="textPost"
@@ -283,6 +311,8 @@ const Form = (props) => {
               onChange={(e) => setTextPost(e.target.value)}
               ref={textRef}
             ></textarea>
+            {/* Buttons container */}
+            {/* Buttons container */}
             {/* Buttons container */}
             <button onClick={addPost}>Agregar publicación</button>
             <button onClick={handleCancel}>Cancelar</button>

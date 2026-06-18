@@ -1,23 +1,35 @@
 // Styles
 import s from "./BlogHome.module.css";
-// General components
-import HomeButton from "../../generalComponents/HomeButton/HomeButton";
-// React Router V6
+//
+// Dependencies
+// Hooks
+// React Router V6 hooks
 import { Link } from "react-router-dom";
-// hooks
+//
+// react hooks
 import { useEffect } from "react";
 //
-// dependencies
 // framer motion for animation
 import { motion } from "framer-motion";
 //
-// Component
+// General components
+import HomeButton from "../../generalComponents/HomeButton/HomeButton";
+// Function component
+// Function component
+// Function component
 const BlogHome = (props) => {
+  // Aux functions
+  // Scroll page back to top after navigating back
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
-
+  //
+  // return statement
+  // return statement
+  // return statement
   return (
+    // Main container
+    // Main container
     // Main container
     <div
       className={s.blogHomeContainer}
@@ -27,6 +39,8 @@ const BlogHome = (props) => {
           : {}
       }
     >
+      {/* Home button container */}
+      {/* Home button container */}
       {/* Home button container */}
       <motion.div
         className={s.top}
@@ -47,6 +61,8 @@ const BlogHome = (props) => {
       >
         <HomeButton />
       </motion.div>
+      {/* Page container */}
+      {/* Page container */}
       {/* Page container */}
       <motion.div
         key={
@@ -72,9 +88,14 @@ const BlogHome = (props) => {
           ease: [0.22, 1, 0.36, 1],
         }}
       >
+        {/* Title container */}
+        {/* Title container */}
+        {/* Title container */}
         <div className={s.titleText} style={{ textDecoration: "none" }}>
           Publicaciones
         </div>
+        {/* list of posts container */}
+        {/* list of posts container */}
         {/* list of posts container */}
         <div className={s.listContainer}>
           {props.postState.posts.map((post) => (
@@ -90,8 +111,13 @@ const BlogHome = (props) => {
             </Link>
           ))}
         </div>
-
+        {/* footer */}
+        {/* footer */}
+        {/* footer */}
         <div className={s.footer}>
+          {/* all posts container */}
+          {/* all posts container */}
+          {/* all posts container */}
           <div className={s.allPostsLinkContainer}>
             <Link className={s.postLink} to="/allposts">
               <p style={{ textDecoration: "underline" }}>
@@ -99,6 +125,9 @@ const BlogHome = (props) => {
               </p>
             </Link>
           </div>
+          {/* Add post container */}
+          {/* Add post container */}
+          {/* Add post container */}
           {props.postState.isLoggedIn ? (
             <div className={s.addContainer}>
               <Link

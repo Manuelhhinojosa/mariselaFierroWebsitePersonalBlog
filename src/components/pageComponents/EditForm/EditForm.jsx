@@ -1,40 +1,56 @@
 // Styles
 import s from "./EditForm.module.css";
-// General cmponents
-import HomeButton from "../../generalComponents/HomeButton/HomeButton";
-// React router V6
+//
+// Dependencies and Hooks
+// React router V6 Hooks
 import { useLocation, useNavigate } from "react-router-dom";
+//
 // React hooks
 import { useState, useRef, useEffect } from "react";
-// Dependencies:
+//
 // framer motion for animation
 import { motion } from "framer-motion";
+//
 // Axios
 import axios from "axios";
+//
 // Toastify for handling errors
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 // error handling state (for styling)
 import { toastStyleObject } from "../../../toastStyle";
 //
+// General cmponents
+import HomeButton from "../../generalComponents/HomeButton/HomeButton";
 //
 // Component function
+// Component function
+// Component function
 const EditForm = (props) => {
+  // Aux functions
+  // Scroll page back to top after navigating back
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
-
+  //
+  // Aux variables
+  //
+  //  Navigate hook for redericting
+  const navigate = useNavigate();
   const location = useLocation();
   const post = location.state;
-  // // State to edit a post
+  //
+  // State to edit a post
   const [title, setTitle] = useState(post.title);
   const [descriptionPost, setDescriptionPost] = useState(post.description);
-  // // State for form references
+  //
+  // State for form references
   const titleRef = useRef("");
   const descriptionRef = useRef("");
-  // Navigate hook for redericting
-  const navigate = useNavigate();
-  // // Handle edit function
+  //
+  // functions
+  // Handle edit function
+  // Handle edit function
   const handleEdit = (e) => {
     // Prevent default brownser bevaier
     e.preventDefault();
@@ -95,13 +111,21 @@ const EditForm = (props) => {
         );
       });
   };
+  //
+  // Handle edit function
+  // Handle edit function
   // Cancel edit function
   const handleCancel = (e) => {
     e.preventDefault();
     navigate(`/${post.reference}`);
   };
-
+  //
+  // return statement
+  // return statement
+  // return statement
   return (
+    // Main container
+    // Main container
     // Main container
     <div
       className={s.editFormContainer}
@@ -111,6 +135,8 @@ const EditForm = (props) => {
           : {}
       }
     >
+      {/* Home button container */}
+      {/* Home button container */}
       {/* Home button container */}
       <motion.div
         className={s.top}
@@ -131,6 +157,8 @@ const EditForm = (props) => {
       >
         <HomeButton />
       </motion.div>
+      {/* Page container */}
+      {/* Page container */}
       {/* Page container */}
       <motion.div
         key={
@@ -157,8 +185,12 @@ const EditForm = (props) => {
         }}
       >
         {/* Edit form container */}
+        {/* Edit form container */}
+        {/* Edit form container */}
         <div className={s.formContainer}>
+          {/* form */}
           <form className={s.form}>
+            {/* title input */}
             <input
               type="text"
               placeholder={`(Título - Campo obligatorio) ${post.title} `}
@@ -169,7 +201,7 @@ const EditForm = (props) => {
               }}
               ref={titleRef}
             />
-            {/* if post is teset container */}
+            {/* if post is text container */}
             {post.text.length > 0 ? (
               <div className={s.textPost}>
                 {post.text.split("\n").map((line, index) => (
@@ -183,7 +215,7 @@ const EditForm = (props) => {
                 <img alt="Element to be edited" src={post.media[0].url}></img>
               </div>
             ) : null}
-            {/* Vf post is video */}
+            {/* If post is video */}
             {post.video ? (
               <div className={s.videoPost}>
                 <iframe
@@ -194,7 +226,7 @@ const EditForm = (props) => {
                 ></iframe>
               </div>
             ) : null}
-
+            {/* description text area */}
             <textarea
               placeholder={`${post.description} (Descripción (Campo obligatorio))`}
               name="description"
@@ -206,7 +238,11 @@ const EditForm = (props) => {
               ref={descriptionRef}
             ></textarea>
             {/* Edit button container */}
+            {/* Edit button container */}
+            {/* Edit button container */}
             <button onClick={handleEdit}>Editar publicación</button>
+            {/* Cancel eddit button container */}
+            {/* Cancel eddit button container */}
             {/* Cancel eddit button container */}
             <button onClick={handleCancel}>Cancelar</button>
           </form>

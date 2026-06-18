@@ -1,35 +1,50 @@
 // Styles
 import s from "./Blog.module.css";
-// React Router V6
+//
+// Dependencies:
+// Hooks
+// React Router V6 Hooks
 import { Link } from "react-router-dom";
+//
 // React hooks
 import { useState, useEffect } from "react";
-// Dependencies:
+//
 // framer motion for animation
 import { motion, AnimatePresence } from "framer-motion";
+//
+// Axios
 import axios from "axios";
+//
 // Toastify for handling errors
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+//
 // General components
 import HomeButton from "../../generalComponents/HomeButton/HomeButton";
+//
+// State
 // error handling state (for styling)
 import { toastStyleObject } from "../../../toastStyle";
 //
-//
+// Function component
+// Function component
 // Function component
 export const Blog = (props) => {
+  // Aux functions
+  // Scroll page back to top after navigating back
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
-
-  // Axios URL to get all posts
+  //
+  // Axios URL var
   const getAllPostsUrl = process.env.REACT_APP_DATABASE_URL;
+  //
   // Index to manage post's images display dinamicaly
   const [mediaIndexes, setMediaIndexes] = useState({});
+  //
   // post description state
   const [postInfo, setPostInfo] = useState("");
-
+  //
   // handles dispplaying post's long descriptions
   const showLongDesc = (id) => {
     props.verificationState.setShowText(!props.verificationState.showText);
@@ -39,7 +54,10 @@ export const Blog = (props) => {
       }
     });
   };
-
+  //
+  // return statement
+  // return statement
+  // return statement
   return (
     // Main container
     <div
@@ -51,7 +69,8 @@ export const Blog = (props) => {
       }
     >
       {/* post long description container */}
-
+      {/* post long description container */}
+      {/* post long description container */}
       {props.verificationState.showText && (
         <motion.div
           className={s.test2Container}
@@ -89,6 +108,8 @@ export const Blog = (props) => {
       )}
 
       {/* Top container */}
+      {/* Top container */}
+      {/* Top container */}
       <motion.div
         className={s.top}
         style={props.verificationState.showText ? { display: "none" } : {}}
@@ -110,15 +131,20 @@ export const Blog = (props) => {
         <HomeButton />
       </motion.div>
       {/* Bottom container */}
+      {/* Bottom container */}
+      {/* Bottom container */}
       <div
         className={s.bottom}
         style={props.verificationState.showText ? { display: "none" } : {}}
       >
         {/* posts container */}
-        {/*  */}
+        {/* posts container */}
+        {/* posts container */}
         <div className={s.postsContainer}>
           {props.verificationState.posts.map((post) => {
             const currentIndex = mediaIndexes[post._id] || 0;
+            // handle prev and next image display
+            // handle prev and next image display
             // handle prev and next image display
             const handlePrev = () => {
               setMediaIndexes((prev) => ({
@@ -126,7 +152,7 @@ export const Blog = (props) => {
                 [post._id]: Math.max((prev[post._id] || 0) - 1, 0),
               }));
             };
-
+            //
             const handleNext = () => {
               setMediaIndexes((prev) => ({
                 ...prev,
@@ -136,7 +162,10 @@ export const Blog = (props) => {
                 ),
               }));
             };
-
+            //
+            // Post container
+            // Post container
+            // Post container
             return (
               <motion.div
                 className={s.postContainer}
@@ -161,14 +190,20 @@ export const Blog = (props) => {
                 }}
               >
                 {/* Title container */}
+                {/* Title container */}
+                {/* Title container */}
                 <div className={s.titleContainer}>
                   <p>{post.title}</p>
                 </div>
 
                 {/* Date container */}
+                {/* Date container */}
+                {/* Date container */}
                 <div className={s.dateContainer}>
                   {post.createdAt.slice(0, 10)}
                 </div>
+                {/* If post is text */}
+                {/* If post is text */}
                 {/* If post is text */}
                 {post.text && (
                   <div className={s.textContainer}>
@@ -177,6 +212,8 @@ export const Blog = (props) => {
                     ))}
                   </div>
                 )}
+                {/* If post is video */}
+                {/* If post is video */}
                 {/* If post is video */}
                 {post.video && (
                   <div className={s.videoContainer}>
@@ -188,13 +225,17 @@ export const Blog = (props) => {
                     ></iframe>
                   </div>
                 )}
-                {/* If post is media */}
+                {/* If post is media one img */}
+                {/* If post is media one img */}
+                {/* If post is media one img */}
                 {post.media.length === 1 && (
                   <div className={s.imgContainer}>
                     <img src={post.media[0].url} alt="imagePost" />
                   </div>
                 )}
-
+                {/* Post is media > one img */}
+                {/* Post is media > one img */}
+                {/* Post is media > one img */}
                 {post.media.length > 1 && (
                   <div className={s.imgContainer}>
                     <AnimatePresence mode="wait">
@@ -219,7 +260,9 @@ export const Blog = (props) => {
                         }}
                       />
                     </AnimatePresence>
-
+                    {/* prev and next img btns */}
+                    {/* prev and next img btns */}
+                    {/* prev and next img btns */}
                     <div className={s.btnsContainer}>
                       <button className={s.sliderButton} onClick={handlePrev}>
                         {`<<<`}
@@ -235,7 +278,8 @@ export const Blog = (props) => {
                     </div>
                   </div>
                 )}
-
+                {/* Description container */}
+                {/* Description container */}
                 {/* Description container */}
                 <div className={s.descriptionContainer}>
                   {post.description.length > 150 ? (
@@ -256,11 +300,18 @@ export const Blog = (props) => {
                   )}
                 </div>
                 {/* Likes container */}
+                {/* Likes container */}
+                {/* Likes container */}
                 <div className={s.likesContainer}>
+                  {/* Likes button container */}
+                  {/* Likes button container */}
                   {/* Likes button container */}
                   <motion.span
                     className={s.btnContainer}
                     onClick={() => {
+                      // Axios call (add like)
+                      // Axios call (add like)
+                      // Axios call (add like)
                       axios
                         .patch(
                           `${process.env.REACT_APP_DATABASE_URL_POSTS}${post._id}`
@@ -316,14 +367,20 @@ export const Blog = (props) => {
                     🖤
                   </motion.span>
                   {/* Likes counter container */}
+                  {/* Likes counter container */}
+                  {/* Likes counter container */}
                   <div className={s.likesCountContaier}>
                     {post.likes === 0 && `0 Me gusta.`}
                     {post.likes === 1 && `1 Me gusta.`}
                     {post.likes > 1 && `${post.likes} Me gusta.`}
                   </div>
                 </div>
-                {/* Admin option container */}
+                {/* Admin options container */}
+                {/* Admin options container */}
+                {/* Admin options container */}
                 {props.verificationState.isLoggedIn && (
+                  // Edit button container
+                  // Edit button container
                   // Edit button container
                   <div className={s.barContainer}>
                     <Link
@@ -335,9 +392,14 @@ export const Blog = (props) => {
                       <div className={s.btnContainer}>Editar</div>
                     </Link>
                     {/* Delete container */}
+                    {/* Delete container */}
+                    {/* Delete container */}
                     <div
                       className={(s.btnContainer, s.delete)}
                       onClick={() => {
+                        // Axios call (delete post)
+                        // Axios call (delete post)
+                        // Axios call (delete post)
                         axios
                           .delete(
                             `${process.env.REACT_APP_DATABASE_URL_POSTS}${post._id}`
