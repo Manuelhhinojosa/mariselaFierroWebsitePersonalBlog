@@ -120,7 +120,7 @@ const BlogHome = (props) => {
           {/* all posts container */}
           <div className={s.allPostsLinkContainer}>
             <Link className={s.postLink} to="/allposts">
-              <p style={{ textDecoration: "underline" }}>
+              <p style={{ textDecoration: "underline", color: "black" }}>
                 Ver todas las publicaciones
               </p>
             </Link>
@@ -132,7 +132,7 @@ const BlogHome = (props) => {
             <div className={s.addContainer}>
               <Link
                 className={s.postLink}
-                style={{ textDecoration: "none" }}
+                style={{ textDecoration: "none", color: "black" }}
                 to="/add"
               >
                 <p>Agregar una publicación</p>
