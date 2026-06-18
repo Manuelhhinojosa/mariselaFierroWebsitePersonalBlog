@@ -37,6 +37,7 @@
   flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
+  letter-spacing: 2px;
 }
 
 .form input:nth-child(1) {
@@ -46,6 +47,7 @@
   border-bottom: 1px solid transparent;
   font-family: "andale mono", "Reddit Mono", monospace;
   text-align: center;
+  letter-spacing: 2px;
 }
 
 .form input:nth-child(1):hover {
@@ -60,6 +62,7 @@
   text-align: center;
   border-bottom: 1px solid transparent;
   font-family: "andale mono", "Reddit Mono", monospace;
+  letter-spacing: 2px;
 }
 
 .videoInput:hover {
@@ -69,6 +72,7 @@
 
 .form input:nth-child(2) {
   border-bottom: 1px solid transparent;
+  letter-spacing: 2px;
 }
 
 .form input:nth-child(2):hover {
@@ -103,12 +107,14 @@
   font-family: "andale mono", "Reddit Mono", monospace;
   font-weight: 100;
   font-size: 0.8rem;
+  letter-spacing: 2px;
 }
 
 .directionsText {
   color: red;
   font-size: 0.9rem;
   text-align: center;
+  letter-spacing: 2px;
 }
 
 .form textarea {
@@ -117,6 +123,7 @@
   border: 1px solid transparent;
   font-family: "andale mono", "Reddit Mono", monospace;
   text-align: center;
+  letter-spacing: 2px;
 }
 
 .form textarea:focus {
@@ -136,6 +143,7 @@
   color: black;
   font-family: "andale mono", "Reddit Mono", monospace;
   text-decoration: underline;
+  letter-spacing: 3px;
 }
 
 .form button:hover {
